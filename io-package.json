@@ -1,0 +1,115 @@
+{
+    "common": {
+        "name": "plenticore-g3",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "uk": "Початкова версія",
+                "zh-cn": "首次出版"
+            }
+        },
+        "titleLang": {
+            "en": "KOSTAL Plenticore G3 API",
+            "de": "Kostal Plenticore G3 API",
+            "ru": "Kostal Plenticore G3 API",
+            "pt": "Kostal Plenticore G3 API",
+            "nl": "Kostal Plenticore G3 API",
+            "fr": "API Kostal Plenicore G3",
+            "it": "Kostal Plenticore G3 API",
+            "es": "Kostal Plenticore G3 API",
+            "pl": "Kostal Plenticore G3 API",
+            "uk": "Kostal Plenicore G3 API",
+            "zh-cn": "Kostal Plenticore G3 API"
+        },
+        "desc": {
+            "en": "Adapter to communicate with a KOSTAL Plenticore Plus via local network (non-modbus)",
+            "de": "Adapter zur Kommunikation mit einem Kostal Plenticore Plus über lokales Netzwerk (Nicht-Modbus)",
+            "ru": "Адаптер для общения с Kostal Plenticore Plus через локальную сеть (не модбус)",
+            "pt": "Adaptador para se comunicar com um Kostal Plenticore Plus via rede local (não-Modbus)",
+            "nl": "Adapter om te communiceren met een Kostal Plenticore plus via lokaal netwerk (niet-Modbus)",
+            "fr": "Adaptateur pour communiquer avec un Plenticore plus kostal via le réseau local (non-modbus)",
+            "it": "Adattatore per comunicare con un Kostal Plenticore Plus tramite rete locale (non modbus)",
+            "es": "Adaptador para comunicarse con un Kostal Plenticore Plus a través de la red local (no Modbus)",
+            "pl": "Adapter do komunikacji z Kostal Plenticore Plus za pośrednictwem sieci lokalnej (nie-Modbus)",
+            "uk": "Адаптер для спілкування з Kostal Plenicore Plus через локальну мережу (не модбус)",
+            "zh-cn": "适配器通过本地网络（非Modbus）与Kostal Plenticore Plus通信"
+        },
+        "authors": [
+            "fernetmenta <fernetmenta@online.de>"
+        ],
+        "keywords": [
+            "kostal",
+            "inverter",
+            "plenticore",
+            "api"
+        ],
+        "licenseInformation": {
+            "type": "free",
+            "license": "MIT"
+        },
+        "platform": "Javascript/Node.js",
+        "icon": "plenticore-g3.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/fernetmenta/ioBroker.plenticore-g3/main/admin/plenticore-g3.png",
+        "readme": "https://github.com/fernetmenta/ioBroker.plenticore-g3/blob/main/README.md",
+        "loglevel": "info",
+        "tier": 3,
+        "mode": "daemon",
+        "type": "energy",
+        "compact": true,
+        "connectionType": "local",
+        "dataSource": "poll",
+        "adminUI": {
+            "config": "materialize",
+            "tab": "materialize"
+        },
+        "eraseOnUpload": true,
+        "dependencies": [
+            {
+                "js-controller": ">=6.0.11"
+            }
+        ],
+        "globalDependencies": [
+            {
+                "admin": "^7.4.21"
+            }
+        ]
+    },
+    "native": {
+        "option1": true,
+        "option2": "42"
+    },
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "role": "indicator.connected",
+                "name": "Device or service connected",
+                "type": "boolean",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        }
+    ]
+}
