@@ -1,4 +1,8 @@
 {
     "(Instance not running)": "(Instance not running)",
-    "Add": "Add"
+    "Base Config": "Base Config",
+    "Hostname or IP": "Hostname or IP",
+    "Port": "Port",
+    "Password": "Password",
+    "Polling Interval": "Polling Interval"
 }

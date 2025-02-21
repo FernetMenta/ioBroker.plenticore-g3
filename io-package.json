@@ -85,9 +85,17 @@
         ]
     },
     "native": {
-        "option1": true,
-        "option2": "42"
+        "host": true,
+        "port": "80",
+        "password": "",
+        "pollinginterval": "15"
     },
+    "encryptedNative": [
+        "password"
+    ],
+    "protectedNative": [
+        "password"
+    ],
     "objects": [],
     "instanceObjects": [
         {
