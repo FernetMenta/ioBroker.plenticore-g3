@@ -11,7 +11,7 @@ import { GenericApp } from '@iobroker/adapter-react-v5';
 
 // import './App.css';
 
-import TabConnection from './Tabs/BaseConfig';
+import TabBaseConfig from './Tabs/BaseConfig';
 
 const styles = theme => ({
   root: {},
@@ -102,7 +102,7 @@ class App extends GenericApp {
           }
         >
           {(this.state.selectedTab === 'config' || !this.state.selectedTab) && (
-            <TabConnection
+            <TabBaseConfig
               key='config'
               common={this.common}
               socket={this.socket}

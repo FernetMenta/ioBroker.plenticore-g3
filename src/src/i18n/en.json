@@ -1,8 +1,9 @@
 {
     "(Instance not running)": "(Instance not running)",
-    "Base Config": "Base Config",
+    "Base Config": "General Settings",
     "Hostname or IP": "Hostname or IP",
     "Port": "Port",
     "Password": "Password",
-    "Polling Interval": "Polling Interval"
+    "Polling Interval": "Polling Interval",
+    "Use HTTPS": "Use HTTPS"
 }

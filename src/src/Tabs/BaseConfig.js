@@ -11,6 +11,8 @@ import {
   IconButton,
   InputAdornment,
   Input,
+  FormControlLabel,
+  Checkbox
 } from '@mui/material';
 
 import { Visibility, VisibilityOff } from '@mui/icons-material';
@@ -152,6 +154,7 @@ class Options extends Component {
   }
 
   render () {
+    const narrowWidth = this.props.width === 'xs' || this.props.width === 'sm' || this.props.width === 'md';
     return (
       <form className={this.props.classes.tab}>
         <Logo
@@ -180,6 +183,12 @@ class Options extends Component {
             type='text'
             onChange={e => this.props.onChange('port', e.target.value)}
             margin='normal'
+          />
+          {narrowWidth && <br />}
+          <FormControlLabel
+            classes={{ label: this.props.classes.checkBoxLabel }}
+            control={<Checkbox checked={this.props.native.https === undefined ? true : this.props.native.https} onChange={e => this.props.onChange('https', e.target.checked)} />}
+            label={I18n.t('Use HTTPS')}
           />
           <br />
           <FormControl variant='standard' className={this.props.classes.input} margin='normal'>
