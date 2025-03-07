@@ -1,0 +1,9 @@
+{
+    "(Instance not running)": "(Instanz nicht laufen)",
+    "Base Config": "Allgemeine Einstellungen",
+    "Hostname or IP": "Hostname oder IP",
+    "Port": "Hafen",
+    "Password": "Passwort",
+    "Polling Interval": "Wahlintervall",
+    "Use HTTPS": "Verwenden Sie HTTPS"
+}

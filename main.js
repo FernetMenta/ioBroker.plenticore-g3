@@ -40,7 +40,14 @@ class PlenticoreG3 extends utils.Adapter {
   async onReady () {
     console.log('------------ ready');
     // Initialize your adapter here
-    await I18n.init(path.join(__dirname, 'lib'), this);
+    if (this.config.language != "") {
+      console.log("init to: " + this.config.language);
+      await I18n.init(path.join(__dirname, 'lib'), this.config.language);
+    } else {
+      await I18n.init(path.join(__dirname, 'lib'), this);
+    }
+    
+    console.log(I18n.translate("Grid_P"));
 
 
     // Reset the connection indicator during startup
@@ -180,9 +187,9 @@ class PlenticoreG3 extends utils.Adapter {
 
       try {
         let allProcessData = await this.#plenticoreAPI.getAllProcessData();
-        console.log("----------------------------");
-        console.log(allProcessData);
-        console.log("----------------------------");
+        // console.log("----------------------------");
+        // console.log(allProcessData);
+        // console.log("----------------------------");
         this.#processdata.setAllIDs(allProcessData);
         this.#processdata.init();
       } catch(e) {

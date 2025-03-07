@@ -89,7 +89,8 @@
         "port": "80",
         "https": false,
         "password": "",
-        "pollinginterval": "15"
+        "pollinginterval": "15",
+        "language": ""
     },
     "encryptedNative": [
         "password"

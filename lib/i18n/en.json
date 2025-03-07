@@ -7,7 +7,7 @@
     "battery/SoC": "SoC of battery",
     "Statistic:Yield:Day": "Yield of current day (PV + battery)",
     "Statistic:EnergyChargePv:Day": "Energy of PV used to charge batter",
-    "Statistic:EnergyHome:Day": "Engery used by home",
+    "Statistic:EnergyHome:Day": "Energy used by home",
     "Statistic:EnergyHomeBat:Day": "Energy provided by battery",
     "Statistic:EnergyHomeGrid:Day": "Energy provided by grid",
     "Statistic:EnergyHomePv:Day": "Energy provided by PV"

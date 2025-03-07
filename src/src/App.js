@@ -39,7 +39,7 @@ class App extends GenericApp {
     extendedProps.encryptedFields = ['pass']; // this parameter will be encrypted and decrypted automatically
     extendedProps.translations = {
       en: require('./i18n/en'),
-      //     de: require('./i18n/de'),
+      de: require('./i18n/de'),
       //     ru: require('./i18n/ru'),
       //     pt: require('./i18n/pt'),
       //     nl: require('./i18n/nl'),
