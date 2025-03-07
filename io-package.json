@@ -119,6 +119,30 @@
                 "def": false
             },
             "native": {}
+        },
+        {
+            "_id": "processdata",
+            "type": "state",
+            "common": {
+                "role": "config",
+                "name": "Available ProcessData IDs with presets",
+                "type": "json",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "settings",
+            "type": "state",
+            "common": {
+                "role": "config",
+                "name": "Available Setting IDs with presets",
+                "type": "json",
+                "read": true,
+                "write": false
+            },
+            "native": {}
         }
     ]
 }

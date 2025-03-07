@@ -7,13 +7,17 @@
 // The adapter-core module gives you access to the core ioBroker functions
 // you need to create an adapter
 const utils = require('@iobroker/adapter-core');
+const I18n = require('@iobroker/adapter-core').I18n;
 
 // Load your modules here, e.g.:
 // const fs = require("fs");
+const path = require('path');
 const PlenticoreAPI = require('./lib/plenticoreAPI.js');
+const ProcessData = require('./lib/processdata.js');
 
 class PlenticoreG3 extends utils.Adapter {
   #plenticoreAPI;
+  #processdata;
   #mainlooptimer;
   /**
    * @param {Partial<utils.AdapterOptions>} [options={}]
@@ -36,13 +40,14 @@ class PlenticoreG3 extends utils.Adapter {
   async onReady () {
     console.log('------------ ready');
     // Initialize your adapter here
+    await I18n.init(path.join(__dirname, 'lib'), this);
+
 
     // Reset the connection indicator during startup
     this.setState('info.connection', false, true);
 
     // The adapters config (in the instance object everything under the attribute "native") is accessible via
     // this.config:
-    console.log('----------------');
     console.log(this.config);
 
     /*
@@ -53,8 +58,8 @@ class PlenticoreG3 extends utils.Adapter {
     await this.setObjectNotExistsAsync('testVariable', {
       type: 'state',
       common: {
-        name: 'testVariable',
-        type: 'number',
+        name: 'testVariable1',
+        type: 'string',
         role: 'indicator',
         read: true,
         write: true,
@@ -75,6 +80,9 @@ class PlenticoreG3 extends utils.Adapter {
         */
     // the variable testVariable is set to true as command (ack=false)
     //await this.setStateAsync("testVariable", true);
+
+    this.#processdata = new ProcessData(this, I18n);
+  //  console.log(this.#processdata.printData());
 
     this.#plenticoreAPI = new PlenticoreAPI(
       this.config.host,
@@ -156,17 +164,54 @@ class PlenticoreG3 extends utils.Adapter {
   // main loop for polling and sending data
   async mainloop () {
     if (!this.#plenticoreAPI.loggedIn) {
-      let ret = await this.#plenticoreAPI.login();
-      if (ret == -1) {
-        // stop loop due to authorization issue
-        this.terminate();
-      } else if (ret < 0){
-         this.nextLoop();
-         return;
+      try {
+        await this.#plenticoreAPI.login();
+      } catch(e) {
+        if (e == 'auth') {
+          // stop loop due to authorization issue
+          this.terminate();
+        } else {
+          this.nextLoop();
+          return;
+        }
       }
+
       this.setState('info.connection', true, true);
 
+      try {
+        let allProcessData = await this.#plenticoreAPI.getAllProcessData();
+        console.log("----------------------------");
+        console.log(allProcessData);
+        console.log("----------------------------");
+        this.#processdata.setAllIDs(allProcessData);
+        this.#processdata.init();
+      } catch(e) {
+        if (e == 'auth') {
+          // stop loop due to authorization issue
+          this.terminate();
+        } else {
+          this.nextLoop();
+          return;
+        }
+      }
     }
+
+    // poll process data
+    let pdPollIDs = this.#processdata.getPollIDs();
+    try {
+      let processData = await this.#plenticoreAPI.getProcessData(pdPollIDs);
+      await this.#processdata.processData(processData);
+    } catch(e) {
+      if (e == 'auth') {
+        // stop loop due to authorization issue
+        this.terminate();
+      } else {
+        this.nextLoop();
+        return;
+      }
+    }
+
+    // timer for next interval
     this.nextLoop();
   }
 

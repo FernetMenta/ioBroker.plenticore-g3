@@ -1,0 +1,14 @@
+{
+    "Grid_P": "Power consumption or Feed-In (negative values)",
+    "Dc_P": "Power provided by generator",
+    "Home_P": "Power consumption by Home",
+    "ac/P": "Power of AC side of inverter",
+    "battery/P": "Power to of from battery",
+    "battery/SoC": "SoC of battery",
+    "Statistic:Yield:Day": "Yield of current day (PV + battery)",
+    "Statistic:EnergyChargePv:Day": "Energy of PV used to charge batter",
+    "Statistic:EnergyHome:Day": "Engery used by home",
+    "Statistic:EnergyHomeBat:Day": "Energy provided by battery",
+    "Statistic:EnergyHomeGrid:Day": "Energy provided by grid",
+    "Statistic:EnergyHomePv:Day": "Energy provided by PV"
+}
