@@ -1,38 +1,30 @@
 import React from 'react';
-import { withStyles } from '@mui/styles';
 import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 
 import AppBar from '@mui/material/AppBar';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import Box from '@mui/material/Box';
 
-import { ColorPicker, Router, Loader, I18n } from '@iobroker/adapter-react-v5';
+import { Router, Loader, I18n } from '@iobroker/adapter-react-v5';
 import { GenericApp } from '@iobroker/adapter-react-v5';
-
-// import './App.css';
 
 import TabBaseConfig from './Tabs/BaseConfig';
 import TabProcessData from './Tabs/ProcessData';
 
-const styles = theme => ({
+const styles = {
   root: {},
   tabContent: {
-    padding: 10,
+    p: 5,
     height: 'calc(100% - 64px - 48px - 20px)',
     overflow: 'auto',
   },
   tabContentIFrame: {
-    padding: 10,
+    padding: 5,
     height: 'calc(100% - 64px - 48px - 20px - 38px)',
     overflow: 'auto',
-  },
-  selected: {
-    color: theme.palette.mode === 'dark' ? undefined : '#FFF !important',
-  },
-  indicator: {
-    backgroundColor: theme.palette.mode === 'dark' ? theme.palette.secondary.main : '#FFF',
-  },
-});
+  }
+};
 
 class App extends GenericApp {
   constructor (props) {
@@ -87,26 +79,21 @@ class App extends GenericApp {
           <Tabs
             value={this.getSelectedTab()}
             onChange={e => Router.doNavigate(e.target.dataset.name)}
-            classes={{ indicator: this.props.classes.indicator }}
+            textColor="secondary"
+            indicatorColor="secondary"
           >
             <Tab
-              classes={{ selected: this.props.classes.selected }}
               label={I18n.t('Base Config')}
               data-name='config'
             />
             <Tab
-              classes={{ selected: this.props.classes.selected }}
               label={I18n.t('Process Data')}
               data-name='processdata'
             />
           </Tabs>
         </AppBar>
 
-        <div
-          className={
-            this.isIFrame ? this.props.classes.tabContentIFrame : this.props.classes.tabContent
-          }
-        >
+         <Box component='div' sx={{ ...(this.isIFrame ? styles.tabContentIFrame : styles.tabContent) }}>
           {(this.state.selectedTab === 'config' || !this.state.selectedTab) && (
             <TabBaseConfig
               key='config'
@@ -126,7 +113,7 @@ class App extends GenericApp {
               onChange={(attr, value, cb) => this.updateNativeValue(attr, value, cb)}
             />
           )}
-          {(this.state.selectedTab === 'processdata') && (
+          {this.state.selectedTab === 'processdata' && (
             <TabProcessData
               key='processdata'
               common={this.common}
@@ -145,7 +132,7 @@ class App extends GenericApp {
               onChange={(attr, value, cb) => this.updateNativeValue(attr, value, cb)}
             />
           )}
-        </div>
+        </Box>
         {this.renderSaveCloseButtons()}
       </>
     );
@@ -181,4 +168,4 @@ class App extends GenericApp {
   }
 }
 
-export default withStyles(styles)(App);
+export default App;

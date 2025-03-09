@@ -6,35 +6,13 @@ import './index.css';
 import App from './App';
 import packageInfo from '../package.json';
 
-import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
-import { StylesProvider, createGenerateClassName } from '@mui/styles';
-import {Theme, Utils} from '@iobroker/adapter-react-v5';
-
-let themeName = Utils.getThemeName();
-
 console.log(`iobroker.scenes@${packageInfo.version}`);
 
-const generateClassName = createGenerateClassName({
-    productionPrefix: 'kp3',
-});
-
-function build() {
-    const container = document.getElementById('root');
-    const root = createRoot(container);
- //   root.render(<App />);
-    return root.render(
-        <StylesProvider generateClassName={generateClassName}>
-            <StyledEngineProvider injectFirst>
-                <ThemeProvider theme={Theme(themeName)}>
-                    <App
-                        onThemeChange={_theme => {
-                            themeName = _theme;
-                            build();
-                        }}
-                    />
-                </ThemeProvider>
-            </StyledEngineProvider>
-        </StylesProvider>);
+function build () {
+  const container = document.getElementById('root');
+  const root = createRoot(container);
+  root.render(<App 
+               adapterName="plenticore-g3"/>);
 }
 
 build();

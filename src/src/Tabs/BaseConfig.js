@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { withStyles } from '@mui/styles';
 import PropTypes from 'prop-types';
 
 import {
@@ -12,82 +11,31 @@ import {
   InputAdornment,
   Input,
   FormControlLabel,
-  Checkbox
+  Checkbox,
 } from '@mui/material';
 
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { I18n, Logo } from '@iobroker/adapter-react-v5';
 
-const styles = theme => ({
+const styles = {
   tab: {
     width: '100%',
     minHeight: '100%',
   },
   input: {
-    minWidth: 300,
-    marginRight: theme.spacing(2),
-    marginBottom: theme.spacing(2),
-  },
-  inputNarrowText: {
-    minWidth: 300,
-    marginRight: theme.spacing(2),
-    marginTop: 6,
-  },
-  buttonDelete: {
-    marginTop: 14,
-  },
-  inputNarrowColor: {
-    minWidth: 300,
-    marginRight: theme.spacing(2),
-    marginTop: 0,
-  },
-  inputMessengers: {
-    minWidth: 200,
-    marginRight: theme.spacing(2),
-    marginBottom: theme.spacing(2),
-  },
-  button: {
-    marginRight: 20,
-    marginBottom: 40,
-  },
-  card: {
-    maxWidth: 345,
-    textAlign: 'center',
-  },
-  media: {
-    height: 180,
+    minWidth: 400,
+    marginRight: 2,
+    marginBottom: 2,
   },
   column: {
     display: 'inline-block',
     verticalAlign: 'top',
     marginRight: 20,
   },
-  columnLogo: {
-    width: 350,
-    marginRight: 0,
-  },
   columnSettings: {
     width: 'calc(100% - 10px)',
   },
-  cannotUse: {
-    color: 'red',
-    fontWeight: 'bold',
-  },
-  hintUnsaved: {
-    fontSize: 12,
-    color: 'red',
-    fontStyle: 'italic',
-  },
-  buttonFormat: {
-    marginTop: 20,
-  },
-  checkBoxLabel: {
-    whiteSpace: 'nowrap',
-  },
-  heading: {
-    fontWeight: 'bold',
-  },
-});
+};
 
 class Options extends Component {
   constructor (props) {
@@ -110,14 +58,13 @@ class Options extends Component {
     };
 
     this.aliveId = `system.adapter.${this.props.adapterName}.${this.props.instance}.alive`;
-
-    this.props.socket
-      .getState(this.aliveId)
-      .then(state => this.setState({ isInstanceAlive: state && state.val }));
   }
 
   componentDidMount () {
-    this.props.socket.subscribeState(this.aliveId, this.onAliveChanged);
+    this.props.socket.getState(this.aliveId).then(state => {
+      this.setState({ isInstanceAlive: state && state.val });
+      this.props.socket.subscribeState(this.aliveId, this.onAliveChanged);
+    });
   }
 
   componentWillUnmount () {
@@ -144,19 +91,20 @@ class Options extends Component {
   }
 
   handleClickShowPassword () {
-    let newState = !(this.state.showPassword);
-    this.setState({showPassword: newState});
+    let newState = !this.state.showPassword;
+    this.setState({ showPassword: newState });
   }
 
   handleMouseDownPassword () {
-    let newState = !(this.state.showPassword);
-    this.setState({showPassword: newState});
+    let newState = !this.state.showPassword;
+    this.setState({ showPassword: newState });
   }
 
   render () {
-    const narrowWidth = this.props.width === 'xs' || this.props.width === 'sm' || this.props.width === 'md';
+    const narrowWidth =
+      this.props.width === 'xs' || this.props.width === 'sm' || this.props.width === 'md';
     return (
-      <form className={this.props.classes.tab}>
+      <form style={{ ...styles.tab }}>
         <Logo
           instance={this.props.instance}
           common={this.props.common}
@@ -164,11 +112,11 @@ class Options extends Component {
           onError={text => this.setState({ errorText: text })}
           onLoad={this.props.onLoad}
         />
-        <div className={`${this.props.classes.column} ${this.props.classes.columnSettings}`}>
+        <div style={{ ...styles.column, ...styles.columnSettings }}>
           <TextField
+            style={{ ...styles.input }}
             variant='standard'
             label={I18n.t('Hostname or IP')}
-            className={this.props.classes.input}
             value={this.props.native.host}
             type='text'
             onChange={e => this.props.onChange('host', e.target.value)}
@@ -176,9 +124,9 @@ class Options extends Component {
           />
           <br />
           <TextField
+            style={{ ...styles.input }}
             variant='standard'
-            label={I18n.t('Port')}
-            className={this.props.classes.input}
+            label={'Port'}
             value={this.props.native.port}
             type='text'
             onChange={e => this.props.onChange('port', e.target.value)}
@@ -186,12 +134,16 @@ class Options extends Component {
           />
           {narrowWidth && <br />}
           <FormControlLabel
-            classes={{ label: this.props.classes.checkBoxLabel }}
-            control={<Checkbox checked={this.props.native.https === undefined ? true : this.props.native.https} onChange={e => this.props.onChange('https', e.target.checked)} />}
+            control={
+              <Checkbox
+                checked={this.props.native.https === undefined ? true : this.props.native.https}
+                onChange={e => this.props.onChange('https', e.target.checked)}
+              />
+            }
             label={I18n.t('Use HTTPS')}
           />
           <br />
-          <FormControl variant='standard' className={this.props.classes.input} margin='normal'>
+          <FormControl variant='standard' style={{ ...styles.input }} margin='normal'>
             <InputLabel htmlFor='standard-adornment-password'>{I18n.t('Password')}</InputLabel>
             <Input
               id='standard-adornment-password'
@@ -201,7 +153,9 @@ class Options extends Component {
               endAdornment={
                 <InputAdornment position='end'>
                   <IconButton
-                    aria-label={this.state.showPassword ? 'hide the password' : 'display the password'}
+                    aria-label={
+                      this.state.showPassword ? 'hide the password' : 'display the password'
+                    }
                     onClick={() => this.handleClickShowPassword()}
                     onMouseDown={() => this.handleMouseDownPassword()}
                   >
@@ -213,22 +167,22 @@ class Options extends Component {
           </FormControl>
           <br />
           <TextField
+            style={{ ...styles.input }}
             variant='standard'
             label={I18n.t('Polling Interval')}
-            className={this.props.classes.input}
             value={this.props.native.pollinginterval}
-            type="number"
+            type='number'
             slotProps={{
-              htmlInput: { 
-                max: 60, 
-                min: 5 
-              }
+              htmlInput: {
+                max: 60,
+                min: 5,
+              },
             }}
             onChange={e => this.props.onChange('pollinginterval', e.target.value)}
             margin='normal'
           />
           <br />
-          <FormControl variant='standard' className={this.props.classes.input}>
+          <FormControl variant='standard' style={{ ...styles.input }}>
             <InputLabel>{I18n.t('Language')}</InputLabel>
             <Select
               variant='standard'
@@ -268,4 +222,4 @@ Options.propTypes = {
   socket: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Options);
+export default Options;

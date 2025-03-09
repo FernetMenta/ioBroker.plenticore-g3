@@ -5,8 +5,7 @@ import { darken, lighten, styled } from '@mui/material/styles';
 import { Box } from '@mui/material';
 
 import { DataGrid } from '@mui/x-data-grid';
-import { Visibility, VisibilityOff } from '@mui/icons-material';
-import { I18n, ITEM_IMAGES, Logo } from '@iobroker/adapter-react-v5';
+import { Logo } from '@iobroker/adapter-react-v5';
 
 const getBackgroundColor = (color, theme, coefficient) => ({
   backgroundColor: darken(color, coefficient),
@@ -29,7 +28,7 @@ const StyledDataGrid = styled(DataGrid)(({ theme }) => ({
     },
   },
   '& .super-app-theme--Options': {
-    ...getBackgroundColor(theme.palette.info.main, theme, 0.7),
+    ...getBackgroundColor(theme.palette.background.default, theme, 0.7),
     '&:hover': {
       ...getBackgroundColor(theme.palette.info.main, theme, 0.6),
     },
@@ -58,10 +57,6 @@ class Optionals extends Component {
     this.aliveId = `system.adapter.${this.props.adapterName}.${this.props.instance}.alive`;
     this.processdataid = `${this.props.adapterName}.${this.props.instance}.processdata`;
 
-    this.props.socket
-      .getState(this.aliveId)
-      .then(state => this.setState({ isInstanceAlive: state && state.val }));
-
     this.columns = [
       { field: 'id', headerName: 'ID', minWidth: 200, editable: false, flex: 1 },
       {
@@ -75,7 +70,6 @@ class Optionals extends Component {
   }
 
   updatePDWithOptionals (pcocessdata) {
-    console.log("update optionals");
     let newRowSelectionModel = [];
     let optionals = JSON.parse(this.props.native.pdoptionals);
     console.log(optionals);
@@ -84,11 +78,9 @@ class Optionals extends Component {
       if (found) {
         found.description = option.description;
         newRowSelectionModel.push(found.id);
-        console.log("--------- found");
         console.log(found);
       }
     }
-    console.log("--------- end update");
     this.setState({ rowSelectionModel: newRowSelectionModel });
   }
 
@@ -98,10 +90,10 @@ class Optionals extends Component {
         let processdata;
         try {
           processdata = state && state.val ? JSON.parse(state.val) : [];
-          console.log("---- status read");
+          console.log(processdata);
           this.updatePDWithOptionals(processdata);
         } catch (e) {
-          console.log("---- status read empty");
+          console.log(e);
           processdata = [];
         }
 
@@ -114,9 +106,14 @@ class Optionals extends Component {
   }
 
   componentDidMount () {
-    this.readStatus(() => {
-      this.props.socket.subscribeState(this.aliveId, this.onAliveChanged);
-      this.props.socket.subscribeState(this.processdataid, this.onStateChanged);
+    this.props.socket
+      .getState(this.aliveId)
+      .then((state) => {
+        this.setState({ isInstanceAlive: state && state.val });
+        this.readStatus(() => {
+          this.props.socket.subscribeState(this.aliveId, this.onAliveChanged);
+          this.props.socket.subscribeState(this.processdataid, this.onStateChanged);
+      });
     });
   }
 
@@ -141,7 +138,6 @@ class Optionals extends Component {
         processdata = [];
       }
       this.setState({ processdata });
-      console.log("----- on state change");
     }
   };
 
@@ -157,29 +153,16 @@ class Optionals extends Component {
   };
 
   onProcessUpdateRow = (updatedRow, originalRow) => {
-    console.log("------------- onProcessUpdateRow");
-    console.log(updatedRow);
-
-    console.log("------------- selected model");
     console.log(this.state.rowSelectionModel);
     let isSelected = this.state.rowSelectionModel.includes(updatedRow.id);
     if (isSelected) {
-      console.log("------------- is selected");
       let optionals = JSON.parse(this.props.native.pdoptionals);
-      console.log("------------- marker 1 ");
-      console.log(optionals);
       let found = optionals.find((elem) => elem.id === updatedRow.id);
-      console.log("------------- marker 2 ");
       if (found) {
-        console.log("------------- found ");
         found.description = updatedRow.description;
       }
-      console.log("------------- marker 3 ");
       this.props.onChange('pdoptionals', JSON.stringify(optionals));
-      console.log("------------- new optionals");
-      console.log(optionals);
     }
-    console.log("------------- end update");
     return updatedRow;
   };
 
@@ -195,8 +178,9 @@ class Optionals extends Component {
         />
         <Box
           sx={theme => ({
-            height: '85%',
+            height: '100%',
             width: '100%',
+            pb: 10
           })}
         >
           <StyledDataGrid
