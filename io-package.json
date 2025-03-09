@@ -90,6 +90,8 @@
         "https": false,
         "password": "",
         "pollinginterval": "15",
+        "pdoptionals": "",
+        "settingoptionals": "",
         "language": ""
     },
     "encryptedNative": [

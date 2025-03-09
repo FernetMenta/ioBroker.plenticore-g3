@@ -21,6 +21,7 @@ const generateClassName = createGenerateClassName({
 function build() {
     const container = document.getElementById('root');
     const root = createRoot(container);
+ //   root.render(<App />);
     return root.render(
         <StylesProvider generateClassName={generateClassName}>
             <StyledEngineProvider injectFirst>

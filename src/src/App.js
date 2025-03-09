@@ -12,6 +12,7 @@ import { GenericApp } from '@iobroker/adapter-react-v5';
 // import './App.css';
 
 import TabBaseConfig from './Tabs/BaseConfig';
+import TabProcessData from './Tabs/ProcessData';
 
 const styles = theme => ({
   root: {},
@@ -72,9 +73,9 @@ class App extends GenericApp {
     const tab = this.state.selectedTab;
     if (!tab || tab === 'config') {
       return 0;
-    } else if (tab === 'list') {
+    } else if (tab === 'processdata') {
       return 1;
-    } else if (tab === 'pdf') {
+    } else if (tab === 'settings') {
       return 2;
     }
   }
@@ -93,6 +94,11 @@ class App extends GenericApp {
               label={I18n.t('Base Config')}
               data-name='config'
             />
+            <Tab
+              classes={{ selected: this.props.classes.selected }}
+              label={I18n.t('Process Data')}
+              data-name='processdata'
+            />
           </Tabs>
         </AppBar>
 
@@ -104,6 +110,25 @@ class App extends GenericApp {
           {(this.state.selectedTab === 'config' || !this.state.selectedTab) && (
             <TabBaseConfig
               key='config'
+              common={this.common}
+              socket={this.socket}
+              native={this.state.native}
+              onError={text =>
+                this.setState({
+                  errorText:
+                    (text || text === 0) && typeof text !== 'string' ? text.toString() : text,
+                })
+              }
+              onLoad={native => this.onLoadConfig(native)}
+              instance={this.instance}
+              adapterName={this.adapterName}
+              changed={this.state.changed}
+              onChange={(attr, value, cb) => this.updateNativeValue(attr, value, cb)}
+            />
+          )}
+          {(this.state.selectedTab === 'processdata') && (
+            <TabProcessData
+              key='processdata'
               common={this.common}
               socket={this.socket}
               native={this.state.native}

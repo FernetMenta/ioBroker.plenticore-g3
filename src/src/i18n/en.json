@@ -5,5 +5,7 @@
     "Port": "Port",
     "Password": "Password",
     "Polling Interval": "Polling Interval",
-    "Use HTTPS": "Use HTTPS"
+    "Use HTTPS": "Use HTTPS",
+
+    "Process Data": "Process Data"
 }
