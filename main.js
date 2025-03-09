@@ -187,11 +187,9 @@ class PlenticoreG3 extends utils.Adapter {
 
       try {
         let allProcessData = await this.#plenticoreAPI.getAllProcessData();
-        // console.log("----------------------------");
-        // console.log(allProcessData);
-        // console.log("----------------------------");
+        let optionalProcessData = JSON.parse(this.config.pdoptionals);
         this.#processdata.setAllIDs(allProcessData);
-        this.#processdata.init();
+        this.#processdata.init(optionalProcessData);
       } catch(e) {
         if (e == 'auth') {
           // stop loop due to authorization issue
