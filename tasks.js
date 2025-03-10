@@ -18,8 +18,8 @@ function copyAllFiles() {
         [
             `${SRC}/build/*`,
             `!${SRC}/build/index.html`,
-//            `!${SRC}/build/static/css/*.map`,
-//            `!${SRC}/build/static/js/*.map`,
+            //            `!${SRC}/build/static/css/*.map`,
+            //            `!${SRC}/build/static/js/*.map`,
             `!${SRC}/build/static/js/main.*.chunk.js`,
             `!${SRC}/build/static/media/*.svg`,
             `!${SRC}/build/static/media/*.txt`,
@@ -76,7 +76,7 @@ if (process.argv.find(arg => arg === '--0-clean')) {
         process.exit(1);
     });
 } else if (process.argv.find(arg => arg === '--2-build')) {
-    buildReact(__dirname + '/src', { rootDir: __dirname }).catch(e => {
+    buildReact(`${__dirname}/src`, { rootDir: __dirname }).catch(e => {
         console.error(`Cannot build: ${e}`);
         process.exit(1);
     });
@@ -88,7 +88,7 @@ if (process.argv.find(arg => arg === '--0-clean')) {
     clean();
 
     installNpmLocal()
-        .then(() => buildReact(__dirname + '/src', { rootDir: __dirname }))
+        .then(() => buildReact(`${__dirname}/src`, { rootDir: __dirname }))
         .then(() => copyAllFiles())
         .then(() => patchFiles());
 }

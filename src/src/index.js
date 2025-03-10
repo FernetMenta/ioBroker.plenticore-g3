@@ -8,11 +8,10 @@ import packageInfo from '../package.json';
 
 console.log(`iobroker.scenes@${packageInfo.version}`);
 
-function build () {
-  const container = document.getElementById('root');
-  const root = createRoot(container);
-  root.render(<App 
-               adapterName="plenticore-g3"/>);
+function build() {
+    const container = document.getElementById('root');
+    const root = createRoot(container);
+    root.render(<App adapterName="plenticore-g3" />);
 }
 
 build();
