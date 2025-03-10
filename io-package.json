@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "plenticore-g3",
-    "version": "0.0.1",
+    "version": "0.0.2-alpha.0",
     "news": {
+      "0.0.2-alpha.0": {
+        "en": "Did some changes\nDid some more changes",
+        "de": "Einige Änderungen\nHat sich etwas geändert",
+        "ru": "Были некоторые изменения\nСделали больше изменений",
+        "pt": "Fez algumas mudanças\nFez mais mudanças",
+        "nl": "Deed wat veranderingen\nDeed nog wat veranderingen",
+        "fr": "Quelques changements\nD'autres changements",
+        "it": "Qualche cambiamento\nAltri cambiamenti",
+        "es": "¿Algún cambio\nHice algunos cambios más",
+        "pl": "Czy jakieś zmiany\nCzy trochę więcej zmian",
+        "uk": "Чи були деякі зміни\nБільше змін",
+        "zh-cn": "做了一些改变\n做了更多的改变"
+      },
       "1.0.0": {
         "en": "initial release",
         "de": "erstausstrahlung",
