@@ -102,14 +102,6 @@ For later updates, the above procedure is not necessary. Just do the following:
 1. Overwrite the changed files in the adapter directory (`/opt/iobroker/node_modules/iobroker.plenticore-g3`)
 1. Execute `iobroker upload plenticore-g3` on the ioBroker host
 
-## Changelog
-<!--
-    Placeholder for the next version (at the beginning of the line):
-    ### **WORK IN PROGRESS**
--->
-### 1.0.0 (2025-03-09)
-* (fernetmenta) initial release
-
 ## License
 MIT License
 
