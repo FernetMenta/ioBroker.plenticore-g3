@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "plenticore-g3",
-    "version": "0.0.3-alpha.0",
+    "version": "0.0.3-alpha.1",
     "news": {
+      "0.0.3-alpha.1": {
+        "en": "eslint\nremove node 18.x from github workflow",
+        "de": "eslin\nknoten 18.x aus github workflow entfernen",
+        "ru": "эслинт\nудалить узел 18.x из рабочего процесса github",
+        "pt": "eslint\nremover nó 18.x do fluxo de trabalho do github",
+        "nl": "eslint\nverwijderen node 18.x van github workflow",
+        "fr": "eslint\nsupprimer le noeud 18.x du flux de travail github",
+        "it": "eslint\nrimuovere nodo 18.x dal flusso di lavoro github",
+        "es": "eslint\nquitar nodo 18.x del flujo de trabajo github",
+        "pl": "eslint\nusunąć węzeł 18.x z przepływu pracy github",
+        "uk": "еслінт\nremove node 18.x від github workflow",
+        "zh-cn": "埃斯林特语name\n从 github 工作流程中删除节点 18.x"
+      },
       "0.0.3-alpha.0": {
         "en": "Did some changes\nDid some more changes",
         "de": "Einige Änderungen\nHat sich etwas geändert",
