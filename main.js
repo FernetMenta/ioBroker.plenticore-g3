@@ -13,7 +13,7 @@ const I18n = require('@iobroker/adapter-core').I18n;
 // const fs = require("fs");
 const path = require('path');
 const PlenticoreAPI = require('./lib/plenticoreAPI.js');
-const ProcessData = require('./lib/processdata.js');
+const PlenticoreData = require('./lib/plenticoredata.js');
 
 class PlenticoreG3 extends utils.Adapter {
     #plenticoreAPI;
@@ -87,7 +87,7 @@ class PlenticoreG3 extends utils.Adapter {
         // the variable testVariable is set to true as command (ack=false)
         //await this.setStateAsync("testVariable", true);
 
-        this.#processdata = new ProcessData(this, I18n);
+        this.#processdata = new PlenticoreData(this, I18n, 'processdata');
         //  console.log(this.#processdata.printData());
 
         this.#plenticoreAPI = new PlenticoreAPI(

@@ -176,7 +176,7 @@
       "native": {}
     },
     {
-      "_id": "processdata",
+      "_id": "processdata-available",
       "type": "state",
       "common": {
         "role": "config",
@@ -188,7 +188,7 @@
       "native": {}
     },
     {
-      "_id": "settings",
+      "_id": "settings-available",
       "type": "state",
       "common": {
         "role": "config",

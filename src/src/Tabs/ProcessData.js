@@ -55,7 +55,7 @@ class Optionals extends Component {
         };
 
         this.aliveId = `system.adapter.${this.props.adapterName}.${this.props.instance}.alive`;
-        this.processdataid = `${this.props.adapterName}.${this.props.instance}.processdata`;
+        this.processdataid = `${this.props.adapterName}.${this.props.instance}.processdata-available`;
 
         this.columns = [
             { field: 'id', headerName: 'ID', minWidth: 200, editable: false, flex: 1 },
