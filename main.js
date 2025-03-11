@@ -111,7 +111,6 @@ class PlenticoreG3 extends utils.Adapter {
             clearTimeout(this.#mainlooptimer);
             this.#plenticoreAPI = null;
             this.setState('info.connection', false, true);
-
             callback();
         } catch (e) {
             this.log.error(e);
@@ -178,18 +177,25 @@ class PlenticoreG3 extends utils.Adapter {
             } catch (e) {
                 if (e == 'auth') {
                     // stop loop due to authorization issue
+                    console.log('klkjlkj');
                     this.terminate();
                 } else {
                     this.nextLoop();
-                    return;
                 }
+                return;
             }
 
             this.setState('info.connection', true, true);
 
             try {
                 let allProcessData = await this.#plenticoreAPI.getAllProcessData();
-                let optionalProcessData = JSON.parse(this.config.pdoptionals);
+                let optionalProcessData;
+                try {
+                    optionalProcessData = JSON.parse(this.config.pdoptionals);
+                } catch (e) {
+                    optionalProcessData = [];
+                    console.log(e);
+                }
                 this.#processdata.setAllIDs(allProcessData);
                 this.#processdata.init(optionalProcessData);
             } catch (e) {

@@ -137,7 +137,7 @@
     ]
   },
   "native": {
-    "host": true,
+    "host": "hostname",
     "port": "80",
     "https": false,
     "password": "",

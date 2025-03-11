@@ -71,7 +71,12 @@ class Optionals extends Component {
 
     updatePDWithOptionals(pcocessdata) {
         let newRowSelectionModel = [];
-        let optionals = JSON.parse(this.props.native.pdoptionals);
+        let optionals = [];
+        try {
+            optionals = JSON.parse(this.props.native.pdoptionals);
+        } catch (e) {
+            console.log(e);
+        }
         console.log(optionals);
         for (const option of optionals) {
             let found = pcocessdata.find(elem => elem.id === option.id);
@@ -153,7 +158,12 @@ class Optionals extends Component {
         console.log(this.state.rowSelectionModel);
         let isSelected = this.state.rowSelectionModel.includes(updatedRow.id);
         if (isSelected) {
-            let optionals = JSON.parse(this.props.native.pdoptionals);
+            let optionals = [];
+            try {
+                optionals = JSON.parse(this.props.native.pdoptionals);
+            } catch (e) {
+                console.log(e);
+            }
             let found = optionals.find(elem => elem.id === updatedRow.id);
             if (found) {
                 found.description = updatedRow.description;

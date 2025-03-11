@@ -16,7 +16,7 @@ function copyAllFiles() {
 
     copyFiles(
         [
-            `${SRC}/build/*`,
+            `${SRC}/build/**`,
             `!${SRC}/build/index.html`,
             //            `!${SRC}/build/static/css/*.map`,
             //            `!${SRC}/build/static/js/*.map`,
