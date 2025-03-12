@@ -5,7 +5,7 @@ import { darken, lighten, styled } from '@mui/material/styles';
 import { Box } from '@mui/material';
 
 import { DataGrid } from '@mui/x-data-grid';
-import { Logo } from '@iobroker/adapter-react-v5';
+import { I18n, Logo } from '@iobroker/adapter-react-v5';
 
 const getBackgroundColor = (color, theme, coefficient) => ({
     backgroundColor: darken(color, coefficient),
@@ -50,18 +50,20 @@ class Optionals extends Component {
             toast: '',
             isInstanceAlive: false,
             errorWithPercent: false,
-            processdata: [],
+            availabledata: [],
             rowSelectionModel: [],
         };
 
         this.aliveId = `system.adapter.${this.props.adapterName}.${this.props.instance}.alive`;
-        this.processdataid = `${this.props.adapterName}.${this.props.instance}.processdata-available`;
+        this.allAvailableId = `${this.props.adapterName}.${this.props.instance}.${this.props.type}-available`;
+        this.optionalsId =
+            this.props.type == 'processdata' ? this.props.native.pdoptionals : this.props.native.settingoptionals;
 
         this.columns = [
             { field: 'id', headerName: 'ID', minWidth: 200, editable: false, flex: 1 },
             {
                 field: 'description',
-                headerName: 'Description',
+                headerName: I18n.t('Description'),
                 minWidth: 150,
                 editable: true,
                 flex: 1,
@@ -69,21 +71,19 @@ class Optionals extends Component {
         ];
     }
 
-    updatePDWithOptionals(pcocessdata) {
+    updateDataWithOptionals(data) {
         let newRowSelectionModel = [];
         let optionals = [];
         try {
-            optionals = JSON.parse(this.props.native.pdoptionals);
-        } catch (e) {
-            console.log(e);
+            optionals = JSON.parse(this.optionalsId);
+        } catch {
+            // ignore;
         }
-        console.log(optionals);
         for (const option of optionals) {
-            let found = pcocessdata.find(elem => elem.id === option.id);
+            let found = data.find(elem => elem.id === option.id);
             if (found) {
                 found.description = option.description;
                 newRowSelectionModel.push(found.id);
-                console.log(found);
             }
         }
         this.setState({ rowSelectionModel: newRowSelectionModel });
@@ -91,18 +91,16 @@ class Optionals extends Component {
 
     readStatus(cb) {
         this.props.socket.getState(this.aliveId).then(aliveState =>
-            this.props.socket.getState(this.processdataid).then(state => {
-                let processdata;
+            this.props.socket.getState(this.allAvailableId).then(state => {
+                let allavailable;
                 try {
-                    processdata = state && state.val ? JSON.parse(state.val) : [];
-                    console.log(processdata);
-                    this.updatePDWithOptionals(processdata);
-                } catch (e) {
-                    console.log(e);
-                    processdata = [];
+                    allavailable = state && state.val ? JSON.parse(state.val) : [];
+                    this.updateDataWithOptionals(allavailable);
+                } catch {
+                    allavailable = [];
                 }
 
-                this.setState({ isInstanceAlive: aliveState && aliveState.val, processdata }, () => cb && cb());
+                this.setState({ isInstanceAlive: aliveState && aliveState.val, allavailable }, () => cb && cb());
             }),
         );
     }
@@ -112,14 +110,14 @@ class Optionals extends Component {
             this.setState({ isInstanceAlive: state && state.val });
             this.readStatus(() => {
                 this.props.socket.subscribeState(this.aliveId, this.onAliveChanged);
-                this.props.socket.subscribeState(this.processdataid, this.onStateChanged);
+                this.props.socket.subscribeState(this.allAvailableId, this.onStateChanged);
             });
         });
     }
 
     componentWillUnmount() {
         this.props.socket.unsubscribeState(this.aliveId, this.onAliveChanged);
-        this.props.socket.unsubscribeState(this.processdataid, this.onStateChanged);
+        this.props.socket.unsubscribeState(this.allAvailableId, this.onStateChanged);
     }
 
     onAliveChanged = (id, state) => {
@@ -129,16 +127,15 @@ class Optionals extends Component {
     };
 
     onStateChanged = (id, state) => {
-        if (id === this.processdataid) {
-            let processdata;
+        if (id === this.allAvailableId) {
+            let allavailable;
             try {
-                processdata = state && state.val ? JSON.parse(state.val) : [];
-                this.updatePDWithOptionals(processdata);
-            } catch (e) {
-                console.log(e);
-                processdata = [];
+                allavailable = state && state.val ? JSON.parse(state.val) : [];
+                this.updateDataWithOptionals(allavailable);
+            } catch {
+                allavailable = [];
             }
-            this.setState({ processdata });
+            this.setState({ allavailable });
         }
     };
 
@@ -146,29 +143,34 @@ class Optionals extends Component {
         this.setState({ rowSelectionModel: newRowSelectionModel });
         let optionals = [];
         for (const id of newRowSelectionModel) {
-            let found = this.state.processdata.find(elem => elem.id === id);
+            let found = this.state.allavailable.find(elem => elem.id === id);
             if (found) {
                 optionals.push(found);
             }
         }
-        this.props.onChange('pdoptionals', JSON.stringify(optionals));
+        this.props.onChange(
+            this.props.type == 'processdata' ? 'pdoptionals' : 'settingoptionals',
+            JSON.stringify(optionals),
+        );
     };
 
     onProcessUpdateRow = updatedRow => {
-        console.log(this.state.rowSelectionModel);
         let isSelected = this.state.rowSelectionModel.includes(updatedRow.id);
         if (isSelected) {
             let optionals = [];
             try {
-                optionals = JSON.parse(this.props.native.pdoptionals);
-            } catch (e) {
-                console.log(e);
+                optionals = JSON.parse(this.optionalsId);
+            } catch {
+                // ignore;
             }
             let found = optionals.find(elem => elem.id === updatedRow.id);
             if (found) {
                 found.description = updatedRow.description;
             }
-            this.props.onChange('pdoptionals', JSON.stringify(optionals));
+            this.props.onChange(
+                this.props.type == 'processdata' ? 'pdoptionals' : 'settingoptionals',
+                JSON.stringify(optionals),
+            );
         }
         return updatedRow;
     };
@@ -185,7 +187,7 @@ class Optionals extends Component {
                 />
                 <Box sx={{ height: '100%', width: '100%', pb: 10 }}>
                     <StyledDataGrid
-                        rows={this.state.processdata}
+                        rows={this.state.allavailable}
                         columns={this.columns}
                         checkboxSelection
                         disableRowSelectionOnClick
@@ -216,6 +218,7 @@ Optionals.propTypes = {
     onLoad: PropTypes.func,
     onChange: PropTypes.func,
     socket: PropTypes.object.isRequired,
+    type: PropTypes.object.isRequired,
 };
 
 export default Optionals;

@@ -166,7 +166,7 @@ class PlenticoreG3 extends utils.Adapter {
                 let optionalProcessData;
                 try {
                     optionalProcessData = JSON.parse(this.config.pdoptionals);
-                } catch (e) {
+                } catch {
                     optionalProcessData = [];
                 }
                 this.#processdata.setAllIDs(allProcessData);
@@ -176,8 +176,8 @@ class PlenticoreG3 extends utils.Adapter {
                 let allSettings = await this.#plenticoreAPI.getAllSettings();
                 let optionalSettings;
                 try {
-                    optionalSettings = JSON.parse(this.config.pdoptionals);
-                } catch (e) {
+                    optionalSettings = JSON.parse(this.config.settingoptionals);
+                } catch {
                     optionalSettings = [];
                 }
                 this.#settings.setAllIDs(allSettings);

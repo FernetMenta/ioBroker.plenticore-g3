@@ -9,7 +9,7 @@ import Box from '@mui/material/Box';
 import { GenericApp, Router, Loader, I18n } from '@iobroker/adapter-react-v5';
 
 import TabBaseConfig from './Tabs/BaseConfig';
-import TabProcessData from './Tabs/ProcessData';
+import TabOptionalData from './Tabs/OptionalData';
 
 const styles = {
     root: {},
@@ -88,6 +88,10 @@ class App extends GenericApp {
                             label={I18n.t('Process Data')}
                             data-name="processdata"
                         />
+                        <Tab
+                            label={I18n.t('Settings')}
+                            data-name="settings"
+                        />
                     </Tabs>
                 </AppBar>
 
@@ -115,8 +119,29 @@ class App extends GenericApp {
                         />
                     )}
                     {this.state.selectedTab === 'processdata' && (
-                        <TabProcessData
+                        <TabOptionalData
                             key="processdata"
+                            type="processdata"
+                            common={this.common}
+                            socket={this.socket}
+                            native={this.state.native}
+                            onError={text =>
+                                this.setState({
+                                    errorText:
+                                        (text || text === 0) && typeof text !== 'string' ? text.toString() : text,
+                                })
+                            }
+                            onLoad={native => this.onLoadConfig(native)}
+                            instance={this.instance}
+                            adapterName={this.adapterName}
+                            changed={this.state.changed}
+                            onChange={(attr, value, cb) => this.updateNativeValue(attr, value, cb)}
+                        />
+                    )}
+                    {this.state.selectedTab === 'settings' && (
+                        <TabOptionalData
+                            key="settings"
+                            type="settings"
                             common={this.common}
                             socket={this.socket}
                             native={this.state.native}
