@@ -10,5 +10,7 @@
     "Statistic:EnergyHome:Day": "Energy used by home",
     "Statistic:EnergyHomeBat:Day": "Energy provided by battery",
     "Statistic:EnergyHomeGrid:Day": "Energy provided by grid",
-    "Statistic:EnergyHomePv:Day": "Energy provided by PV"
+    "Statistic:EnergyHomePv:Day": "Energy provided by PV",
+    "Battery:MinHomeComsumption": "Minimum home consumption for using battery",
+    "Battery:MinSoc": "Minimum sate of charge for battery"
 }

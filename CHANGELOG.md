@@ -8,6 +8,7 @@
 
 -   exclude react from test:js
 -   terminate on authentication issue (fix)
+-   add read and write for settings
 
 ## 0.0.3-alpha.1 (2025-03-10)
 

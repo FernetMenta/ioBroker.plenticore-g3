@@ -18,6 +18,7 @@ const PlenticoreData = require('./lib/plenticoredata.js');
 class PlenticoreG3 extends utils.Adapter {
     #plenticoreAPI;
     #processdata;
+    #settings;
     #mainlooptimer;
     /**
      * @param {Partial<utils.AdapterOptions>} [options]
@@ -88,7 +89,7 @@ class PlenticoreG3 extends utils.Adapter {
         //await this.setStateAsync("testVariable", true);
 
         this.#processdata = new PlenticoreData(this, I18n, 'processdata');
-        //  console.log(this.#processdata.printData());
+        this.#settings = new PlenticoreData(this, I18n, 'settings');
 
         this.#plenticoreAPI = new PlenticoreAPI(
             this.config.host,
@@ -177,7 +178,6 @@ class PlenticoreG3 extends utils.Adapter {
             } catch (e) {
                 if (e == 'auth') {
                     // stop loop due to authorization issue
-                    console.log('klkjlkj');
                     this.terminate();
                 } else {
                     this.nextLoop();
@@ -188,16 +188,28 @@ class PlenticoreG3 extends utils.Adapter {
             this.setState('info.connection', true, true);
 
             try {
+                // init processdata
                 let allProcessData = await this.#plenticoreAPI.getAllProcessData();
                 let optionalProcessData;
                 try {
                     optionalProcessData = JSON.parse(this.config.pdoptionals);
                 } catch (e) {
                     optionalProcessData = [];
-                    console.log(e);
                 }
                 this.#processdata.setAllIDs(allProcessData);
                 this.#processdata.init(optionalProcessData);
+
+                // init settings
+                let allSettings = await this.#plenticoreAPI.getAllSettings();
+                let optionalSettings;
+                try {
+                    optionalSettings = JSON.parse(this.config.pdoptionals);
+                } catch (e) {
+                    optionalSettings = [];
+                }
+                this.#settings.setAllIDs(allSettings);
+                this.#settings.init(optionalSettings);
+
             } catch (e) {
                 if (e == 'auth') {
                     // stop loop due to authorization issue
@@ -209,11 +221,15 @@ class PlenticoreG3 extends utils.Adapter {
             }
         }
 
-        // poll process data
-        let pdPollIDs = this.#processdata.getPollIDs();
+        // poll process data and settings
         try {
+            let pdPollIDs = this.#processdata.getPollIDs();
             let processData = await this.#plenticoreAPI.getProcessData(pdPollIDs);
             await this.#processdata.processData(processData);
+
+            let settingPollIDs = this.#settings.getPollIDs();
+            let settings = await this.#plenticoreAPI.getSettings(settingPollIDs);
+            await this.#settings.processData(settings);
         } catch (e) {
             if (e == 'auth') {
                 // stop loop due to authorization issue
