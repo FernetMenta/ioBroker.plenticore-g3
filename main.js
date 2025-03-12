@@ -39,7 +39,6 @@ class PlenticoreG3 extends utils.Adapter {
      * Is called when databases are connected and adapter received configuration.
      */
     async onReady() {
-        console.log('------------ ready');
         // Initialize your adapter here
         if (this.config.language != '') {
             console.log(`init to: ${this.config.language}`);
@@ -52,41 +51,6 @@ class PlenticoreG3 extends utils.Adapter {
 
         // Reset the connection indicator during startup
         this.setState('info.connection', false, true);
-
-        // The adapters config (in the instance object everything under the attribute "native") is accessible via
-        // this.config:
-        console.log(this.config);
-
-        /*
-        For every state in the system there has to be also an object of type state
-        Here a simple template for a boolean variable named "testVariable"
-        Because every adapter instance uses its own unique namespace variable names can't collide with other adapters variables
-        */
-        await this.setObjectNotExistsAsync('testVariable', {
-            type: 'state',
-            common: {
-                name: 'testVariable1',
-                type: 'string',
-                role: 'indicator',
-                read: true,
-                write: true,
-            },
-            native: {},
-        });
-
-        // In order to get state updates, you need to subscribe to them. The following line adds a subscription for our variable we have created above.
-        this.subscribeStates('testVariable');
-        // You can also add a subscription for multiple states. The following line watches all states starting with "lights."
-        // this.subscribeStates("lights.*");
-        // Or, if you really must, you can also watch all states. Don't do this if you don't need to. Otherwise this will cause a lot of unnecessary load on the system:
-        // this.subscribeStates("*");
-
-        /*
-            setState examples
-            you will notice that each setState will cause the stateChange event to fire (because of above subscribeStates cmd)
-        */
-        // the variable testVariable is set to true as command (ack=false)
-        //await this.setStateAsync("testVariable", true);
 
         this.#processdata = new PlenticoreData(this, I18n, 'processdata');
         this.#settings = new PlenticoreData(this, I18n, 'settings');
@@ -142,13 +106,21 @@ class PlenticoreG3 extends utils.Adapter {
      * @param {string} id
      * @param {ioBroker.State | null | undefined} state
      */
-    onStateChange(id, state) {
-        if (state) {
+    async onStateChange(id, state) {
+        if (state && !state.ack) {
             // The state was changed
-            this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
-        } else {
-            // The state was deleted
-            this.log.info(`state ${id} deleted`);
+            this.log.silly(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
+            if (!id) {
+                return;
+            }
+            let payload = PlenticoreData.prepareWriteValue(id, state);
+            try {
+                await this.#plenticoreAPI.writeSetting(payload);
+                this.setState(id, state, true);
+                this.log.silly('successfully written value');
+            } catch (e) {
+                this.log.warn(`cannot write state ${id} with value ${state.val} - error: ${e}`);
+            }
         }
     }
 
@@ -178,6 +150,7 @@ class PlenticoreG3 extends utils.Adapter {
             } catch (e) {
                 if (e == 'auth') {
                     // stop loop due to authorization issue
+                    this.log.warn('terminating because of authentication issue');
                     this.terminate();
                 } else {
                     this.nextLoop();
@@ -210,9 +183,12 @@ class PlenticoreG3 extends utils.Adapter {
                 this.#settings.setAllIDs(allSettings);
                 this.#settings.init(optionalSettings);
 
+                // subscribe to all settings that are writable
+                this.subscribeStates('settings.*');
             } catch (e) {
                 if (e == 'auth') {
                     // stop loop due to authorization issue
+                    this.log.warn('terminating because of authentication issue');
                     this.terminate();
                 } else {
                     this.nextLoop();
@@ -233,6 +209,7 @@ class PlenticoreG3 extends utils.Adapter {
         } catch (e) {
             if (e == 'auth') {
                 // stop loop due to authorization issue
+                this.log.warn('terminating because of authentication issue');
                 this.terminate();
             } else {
                 this.nextLoop();
