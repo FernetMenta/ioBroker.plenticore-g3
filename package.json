@@ -6,7 +6,7 @@
     "name": "fernetmenta",
     "email": "fernetmenta@online.de"
   },
-  "homepage": "https://github.com/fernetmenta/ioBroker.plenticore-g3",
+  "homepage": "https://github.com/FernetMenta/ioBroker.plenticore-g3",
   "license": "MIT",
   "keywords": [
     "kostal",
@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:fernetmenta/ioBroker.plenticore-g3.git"
+    "url": "git@github.com:FerneMmenta/ioBroker.plenticore-g3.git"
   },
   "engines": {
     "node": ">= 20"
@@ -84,7 +84,7 @@
     "build": "node tasks"
   },
   "bugs": {
-    "url": "https://github.com/fernetmenta/ioBroker.plenticore-g3/issues"
+    "url": "https://github.com/FernetMenta/ioBroker.plenticore-g3/issues"
   },
   "readmeFilename": "README.md"
 }
