@@ -9,7 +9,7 @@
 const fs = require('node:fs');
 const { deleteFoldersRecursive, npmInstall, buildReact, copyFiles } = require('@iobroker/build-tools');
 
-const SRC = 'src';
+const SRC = 'src-admin';
 
 function copyAllFiles() {
     deleteFoldersRecursive('admin', ['.png', '.json', 'i18n']);
@@ -76,7 +76,7 @@ if (process.argv.find(arg => arg === '--0-clean')) {
         process.exit(1);
     });
 } else if (process.argv.find(arg => arg === '--2-build')) {
-    buildReact(`${__dirname}/src`, { rootDir: __dirname }).catch(e => {
+    buildReact(`${__dirname}/${SRC}`, { rootDir: __dirname }).catch(e => {
         console.error(`Cannot build: ${e}`);
         process.exit(1);
     });
@@ -88,7 +88,7 @@ if (process.argv.find(arg => arg === '--0-clean')) {
     clean();
 
     installNpmLocal()
-        .then(() => buildReact(`${__dirname}/src`, { rootDir: __dirname }))
+        .then(() => buildReact(`${__dirname}/${SRC}`, { rootDir: __dirname }))
         .then(() => copyAllFiles())
         .then(() => patchFiles());
 }

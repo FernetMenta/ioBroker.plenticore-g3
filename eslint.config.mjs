@@ -16,8 +16,8 @@ export default [
             '*.config.mjs', 
             'build',
             'node_modules/*',
-            'src/build/*',
-            'src/node_modules/*',
+            'src-admin/build/*',
+            'src-admin/node_modules/*',
             'admin/static/*', 
             'admin/admin.d.ts',
             '**/adapter-config.d.ts'     
