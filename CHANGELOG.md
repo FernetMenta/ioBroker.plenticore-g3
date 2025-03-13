@@ -1,10 +1,6 @@
 # Changelog
 
-<!--
-    Placeholder for the next version (at the beginning of the line):
-    ## **WORK IN PROGRESS**
--->
-## **WORK IN PROGRESS**
+## **WORK IN PROGRESS** beta 1
 
 -   exclude react from test:js
 -   terminate on authentication issue (fix)
