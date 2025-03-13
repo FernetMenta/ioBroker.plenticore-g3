@@ -81,7 +81,7 @@ class Optionals extends Component {
         }
         for (const option of optionals) {
             let found = data.find(elem => elem.id === option.id);
-            if (found) {
+            if (found && !found.preset) {
                 found.description = option.description;
                 newRowSelectionModel.push(found.id);
             }
