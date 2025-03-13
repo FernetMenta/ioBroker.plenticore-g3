@@ -33,7 +33,26 @@ This adapter uses 'Process Data' and 'Settings' of the REST API. Because no user
 You can also add your own descriptions to optional data points that will show up as descriptions in iobroker's object tree. In most cases the purpose of a data point can be derived by its name. For example 'devices:local/HomeBat_P' represents the power home uses from the battery.
 
 ## Changelog
-[see](CHANGELOG.md)
+
+### **WORK IN PROGRESS** beta 1
+
+-   exclude react from test:js
+-   terminate on authentication issue (fix)
+-   add read and write for settings
+
+### 0.0.3-alpha.1 (2025-03-10)
+
+-   eslint
+-   remove node 18.x from github workflow
+
+### 0.0.3-alpha.0 (2025-03-10)
+
+-   Did some changes
+-   Did some more changes
+
+### v0.0.1 (2025-03-10)
+
+Initial release
 
 ## License
 MIT License
