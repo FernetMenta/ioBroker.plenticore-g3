@@ -57,7 +57,7 @@ class Optionals extends Component {
         this.aliveId = `system.adapter.${this.props.adapterName}.${this.props.instance}.alive`;
         this.allAvailableId = `${this.props.adapterName}.${this.props.instance}.${this.props.type}-available`;
         this.optionalsId =
-            this.props.type == 'processdata' ? this.props.native.pdoptionals : this.props.native.settingoptionals;
+            this.props.type === 'processdata' ? this.props.native.pdoptionals : this.props.native.settingoptionals;
 
         this.columns = [
             { field: 'id', headerName: 'ID', minWidth: 200, editable: false, flex: 1 },
@@ -149,7 +149,7 @@ class Optionals extends Component {
             }
         }
         this.props.onChange(
-            this.props.type == 'processdata' ? 'pdoptionals' : 'settingoptionals',
+            this.props.type === 'processdata' ? 'pdoptionals' : 'settingoptionals',
             JSON.stringify(optionals),
         );
     };
@@ -168,7 +168,7 @@ class Optionals extends Component {
                 found.description = updatedRow.description;
             }
             this.props.onChange(
-                this.props.type == 'processdata' ? 'pdoptionals' : 'settingoptionals',
+                this.props.type === 'processdata' ? 'pdoptionals' : 'settingoptionals',
                 JSON.stringify(optionals),
             );
         }

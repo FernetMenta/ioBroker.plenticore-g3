@@ -26,8 +26,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Unset CI to avoid treating warnings as errors
-        run: unset CI
       - uses: ioBroker/testing-action-check@v1
         with:
           node-version: '20.x'
