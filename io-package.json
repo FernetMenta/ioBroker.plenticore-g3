@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "plenticore-g3",
-    "version": "0.0.3-alpha.1",
+    "version": "0.0.4-beta.0",
     "news": {
+      "0.0.4-beta.0": {
+        "en": "exclude react from test:js\nterminate on authentication issue (fix)\nadd read and write for settings",
+        "de": "ausschließen der reaktion von test:js\nauthentifizierungsproblem beenden (fix)\nlesen und schreiben für einstellungen",
+        "ru": "исключить реакцию из теста:js\nокончание проблемы аутентификации (исправление)\nдобавить читать и писать для настроек",
+        "pt": "excluir a reação do teste:\nrescindir no problema de autenticação (fixo)\nadicionar leitura e escrever para configurações",
+        "nl": "uitgesloten reactie van test:js\nbeëindigen bij authenticatie probleem (fix)\nlezen toevoegen en schrijven voor instellingen",
+        "fr": "exclure la réaction de l'essai:js\nfin sur la question d'authentification (fix)\najouter lire et écrire pour les paramètres",
+        "it": "escludere la reazione da test:js\nterminare sul problema dell'autenticazione (fix)\naggiungere lettura e scrittura per le impostazioni",
+        "es": "excluir la reacción de la prueba:js\nterminar en el problema de autenticación (fix)\nañadir lectura y escribir para la configuración",
+        "pl": "wykluczyć reakcję z badania: js\nzakończyć w przypadku wydania uwierzytelniania (fix)\ndodawanie odczytu i zapisu dla ustawień",
+        "uk": "виключіть відгук з test:js\nприпинити автентифікацію (фікс)\nдодати читання і писати для налаштувань",
+        "zh-cn": "从测试中排除反应:js\n在认证问题上终止( 修补)\n为设置添加读写"
+      },
       "0.0.3-alpha.1": {
         "en": "eslint\nremove node 18.x from github workflow",
         "de": "eslin\nknoten 18.x aus github workflow entfernen",
