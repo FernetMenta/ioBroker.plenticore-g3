@@ -9,6 +9,7 @@
   "homepage": "https://github.com/FernetMenta/ioBroker.plenticore-g3",
   "license": "MIT",
   "keywords": [
+    "ioBroker",
     "kostal",
     "inverter",
     "plenticore",
@@ -16,7 +17,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:FerneMmenta/ioBroker.plenticore-g3.git"
+    "url": "git@github.com:FernetMenta/ioBroker.plenticore-g3.git"
   },
   "engines": {
     "node": ">= 20"
