@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "plenticore-g3",
-    "version": "0.0.4-beta.1",
+    "version": "0.0.4",
     "news": {
+      "0.0.4": {
+        "en": "prepare for iobroker repo",
+        "de": "vorbereitung auf iobroker repo",
+        "ru": "подготовьтесь к iobroker repo",
+        "pt": "preparar para o repo do iobroker",
+        "nl": "voorbereiden voor iobroker repo",
+        "fr": "préparer pour iobroker repo",
+        "it": "preparare per iobroker repo",
+        "es": "prepararse para iobroker repo",
+        "pl": "przygotować się na iobroker repo",
+        "uk": "підготовка до iobroker repo",
+        "zh-cn": "准备io经纪人雷波"
+      },
       "0.0.4-beta.1": {
         "en": "update translations",
         "de": "übersetzungen aktualisieren",
