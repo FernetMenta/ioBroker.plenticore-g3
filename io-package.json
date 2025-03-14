@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "plenticore-g3",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "news": {
+      "0.0.6": {
+        "en": "fix repo url in package.json",
+        "de": "repo url in paket reparieren. json",
+        "ru": "почините url в упаковке. джонсон",
+        "pt": "corrigir repo url no pacote. o que foi",
+        "nl": "repareren repo url in pakket. json",
+        "fr": "réparer les repo url dans l'emballage. json",
+        "it": "risolvere il repo url in pacchetto. j",
+        "es": "arregla la url en el paquete. json",
+        "pl": "naprawić repo url w opakowaniu. json",
+        "uk": "закріпити репо виворіт в пакеті. свінгери",
+        "zh-cn": "将 repo url 固定在包装中。 贾森"
+      },
       "0.0.5": {
         "en": "avoid potential issues: js-controller >= 7.0.6",
         "de": "potenzielle probleme vermeiden: js-controller >= 7.0.6",
