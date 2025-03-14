@@ -21,7 +21,7 @@ class PlenticoreG3 extends utils.Adapter {
     #settings;
     #mainlooptimer;
     /**
-     * @param {Partial<utils.AdapterOptions>} [options]
+     * @param {Partial<utils.AdapterOptions>} [options] - options given from iobroker
      */
     constructor(options) {
         super({
@@ -68,7 +68,7 @@ class PlenticoreG3 extends utils.Adapter {
     /**
      * Is called when adapter shuts down - callback has to be called under any circumstances!
      *
-     * @param {() => void} callback
+     * @param {() => void} callback - call back into iobroker
      */
     onUnload(callback) {
         try {
@@ -103,8 +103,8 @@ class PlenticoreG3 extends utils.Adapter {
     /**
      * Is called if a subscribed state changes
      *
-     * @param {string} id
-     * @param {ioBroker.State | null | undefined} state
+     * @param {string} id - id of the state changed
+     * @param {ioBroker.State | null | undefined} state - state that was changed
      */
     async onStateChange(id, state) {
         if (state && !state.ack) {
@@ -234,7 +234,7 @@ class PlenticoreG3 extends utils.Adapter {
 if (require.main !== module) {
     // Export the constructor in compact mode
     /**
-     * @param {Partial<utils.AdapterOptions>} [options]
+     * @param {Partial<utils.AdapterOptions>} [options] - options given from iobroker
      */
     module.exports = options => new PlenticoreG3(options);
 } else {

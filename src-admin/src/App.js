@@ -25,22 +25,28 @@ const styles = {
     },
 };
 
+/**
+ * Base class for the admin UI
+ */
 class App extends GenericApp {
+    /**
+     * @param {object} props - react properties including 'adapterName'
+     */
     constructor(props) {
         const extendedProps = { ...props };
         extendedProps.encryptedFields = ['pass']; // this parameter will be encrypted and decrypted automatically
         extendedProps.translations = {
             en: require('./i18n/en'),
             de: require('./i18n/de'),
-            //     ru: require('./i18n/ru'),
-            //     pt: require('./i18n/pt'),
-            //     nl: require('./i18n/nl'),
-            //     fr: require('./i18n/fr'),
-            //     it: require('./i18n/it'),
-            //     es: require('./i18n/es'),
-            //     pl: require('./i18n/pl'),
-            //     uk: require('./i18n/uk'),
-            //     'zh-cn': require('./i18n/zh-cn'),
+            ru: require('./i18n/ru'),
+            pt: require('./i18n/pt'),
+            nl: require('./i18n/nl'),
+            fr: require('./i18n/fr'),
+            it: require('./i18n/it'),
+            es: require('./i18n/es'),
+            pl: require('./i18n/pl'),
+            uk: require('./i18n/uk'),
+            'zh-cn': require('./i18n/zh-cn'),
         };
         // get actual admin port
         extendedProps.socket = { port: parseInt(window.location.port, 10) };
@@ -59,6 +65,9 @@ class App extends GenericApp {
         super(props, extendedProps);
     }
 
+    /**
+     * returns index of selected tab
+     */
     getSelectedTab() {
         const tab = this.state.selectedTab;
         if (!tab || tab === 'config') {
@@ -70,6 +79,9 @@ class App extends GenericApp {
         }
     }
 
+    /**
+     * renders an AppBar with Tabs
+     */
     renderTabsForConfig() {
         return (
             <>
@@ -164,6 +176,9 @@ class App extends GenericApp {
         );
     }
 
+    /**
+     * renders this component
+     */
     render() {
         if (!this.state.loaded) {
             return (

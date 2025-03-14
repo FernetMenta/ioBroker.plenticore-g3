@@ -37,7 +37,13 @@ const styles = {
     },
 };
 
+/**
+ * Class for handling basic settings like connection parameters
+ */
 class Options extends Component {
+    /**
+     * @param {object} props - properties set when the component gets created
+     */
     constructor(props) {
         super(props);
 
@@ -61,6 +67,9 @@ class Options extends Component {
         this.aliveId = `system.adapter.${this.props.adapterName}.${this.props.instance}.alive`;
     }
 
+    /**
+     * Called by React when component was mounted
+     */
     componentDidMount() {
         this.props.socket.getState(this.aliveId).then(state => {
             this.setState({ isInstanceAlive: state && state.val });
@@ -68,6 +77,9 @@ class Options extends Component {
         });
     }
 
+    /**
+     * Called by React before component will unmount.
+     */
     componentWillUnmount() {
         this.props.socket.unsubscribeState(this.aliveId, this.onAliveChanged);
     }
@@ -78,29 +90,25 @@ class Options extends Component {
         }
     };
 
-    onToggle(id) {
-        const expanded = [...this.state.expanded];
-        const pos = expanded.indexOf(id);
-        if (pos !== -1) {
-            expanded.splice(pos, 1);
-        } else {
-            expanded.push(id);
-            expanded.sort();
-        }
-        window.localStorage.setItem('plenticore.connection.expanded', JSON.stringify(expanded));
-        this.setState({ expanded });
-    }
-
+    /**
+     * Toggle show/hide password
+     */
     handleClickShowPassword() {
         let newState = !this.state.showPassword;
         this.setState({ showPassword: newState });
     }
 
+    /**
+     * Toggle show/hide password
+     */
     handleMouseDownPassword() {
         let newState = !this.state.showPassword;
         this.setState({ showPassword: newState });
     }
 
+    /**
+     * Renders the component
+     */
     render() {
         const narrowWidth = this.props.width === 'xs' || this.props.width === 'sm' || this.props.width === 'md';
         return (

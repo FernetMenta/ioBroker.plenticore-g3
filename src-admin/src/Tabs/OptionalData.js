@@ -41,7 +41,13 @@ const StyledDataGrid = styled(DataGrid)(({ theme }) => ({
     },
 }));
 
+/**
+ * Class for handling optional process data and settings
+ */
 class Optionals extends Component {
+    /**
+     * @param {object} props - properties set in App.js when component is created
+     */
     constructor(props) {
         super(props);
 
@@ -71,6 +77,11 @@ class Optionals extends Component {
         ];
     }
 
+    /**
+     * Updates the arry of IDs in data with user defined optionals
+     *
+     * @param {Array} data - array of IDs and with descriptions
+     */
     updateDataWithOptionals(data) {
         let newRowSelectionModel = [];
         let optionals = [];
@@ -89,6 +100,11 @@ class Optionals extends Component {
         this.setState({ rowSelectionModel: newRowSelectionModel });
     }
 
+    /**
+     * Reads the iobroker state with all available data
+     *
+     * @param {callback} cb - callback when finished
+     */
     readStatus(cb) {
         this.props.socket.getState(this.aliveId).then(aliveState =>
             this.props.socket.getState(this.allAvailableId).then(state => {
@@ -105,6 +121,9 @@ class Optionals extends Component {
         );
     }
 
+    /**
+     * Called by React when component was mounted
+     */
     componentDidMount() {
         this.props.socket.getState(this.aliveId).then(state => {
             this.setState({ isInstanceAlive: state && state.val });
@@ -115,6 +134,9 @@ class Optionals extends Component {
         });
     }
 
+    /**
+     * Called by React before component will unmount.
+     */
     componentWillUnmount() {
         this.props.socket.unsubscribeState(this.aliveId, this.onAliveChanged);
         this.props.socket.unsubscribeState(this.allAvailableId, this.onStateChanged);
@@ -175,6 +197,9 @@ class Optionals extends Component {
         return updatedRow;
     };
 
+    /**
+     * Renders the component
+     */
     render() {
         return (
             <form>
