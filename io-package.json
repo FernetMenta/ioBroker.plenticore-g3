@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "plenticore-g3",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "news": {
+      "0.0.5": {
+        "en": "avoid potential issues: js-controller >= 7.0.6",
+        "de": "potenzielle probleme vermeiden: js-controller >= 7.0.6",
+        "ru": "избегайте потенциальных проблем: js-контроллер >= 7.0.6",
+        "pt": "evitar possíveis problemas: - sim. 7.0.6",
+        "nl": "mogelijke problemen vermijden: js-controller 7.0,6",
+        "fr": "éviter les problèmes potentiels: js-contrôleur >= 70,6",
+        "it": "evitare potenziali problemi: >= 7.0.6",
+        "es": "evitar posibles problemas: js-controller 7.0.6",
+        "pl": "unikać potencjalnych problemów: ss- controller > = 7, 0",
+        "uk": "уникнути потенційних питань: js-controller >= 7.0.6 км",
+        "zh-cn": "避免可能出现的问题: js控制器 qq 7.0.6 联合国"
+      },
       "0.0.4": {
         "en": "prepare for iobroker repo",
         "de": "vorbereitung auf iobroker repo",
