@@ -17,7 +17,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/FernetMenta/ioBroker.repositories.git"
+    "url": "https://github.com/FernetMenta/ioBroker.plenticore-g3"
   },
   "engines": {
     "node": ">= 20"
