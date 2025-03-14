@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "plenticore-g3",
-    "version": "0.0.4-beta.0",
+    "version": "0.0.4-beta.1",
     "news": {
+      "0.0.4-beta.1": {
+        "en": "update translations",
+        "de": "übersetzungen aktualisieren",
+        "ru": "обновление переводов",
+        "pt": "traduções de atualização",
+        "nl": "vertalingen bijwerken",
+        "fr": "mettre à jour les traductions",
+        "it": "aggiornare le traduzioni",
+        "es": "traducción actualizada",
+        "pl": "aktualizacja tłumaczeń",
+        "uk": "оновлення перекладів",
+        "zh-cn": "更新翻译"
+      },
       "0.0.4-beta.0": {
         "en": "exclude react from test:js\nterminate on authentication issue (fix)\nadd read and write for settings",
         "de": "ausschließen der reaktion von test:js\nauthentifizierungsproblem beenden (fix)\nlesen und schreiben für einstellungen",
