@@ -1,0 +1,16 @@
+{
+    "Grid_P": "Zużycie energii lub pasze (wartości ujemne)",
+    "Dc_P": "moc elektryczna generowana przez PV",
+    "Home_P": "Zużycie energii według domu",
+    "ac/P": "Moc elektryczna po stronie prądu przemiennego Plenticore",
+    "battery/P": "Zasilanie elektryczne w lub od kierunku akumulatora",
+    "battery/SoC": "SoC baterii",
+    "Statistic:Yield:Day": "Wydajność dnia bieżącego (PV + bateria)",
+    "Statistic:EnergyChargePv:Day": "Energia PV, która była używana do ładowania akumulatora",
+    "Statistic:EnergyHome:Day": "Zużycie energii, które było używane przez dom",
+    "Statistic:EnergyHomeBat:Day": "Zużycie energii, które zapewniła bateria",
+    "Statistic:EnergyHomeGrid:Day": "Zużycie energii, które zostało dostarczone przez Grid",
+    "Statistic:EnergyHomePv:Day": "Zużycie energii, które zostało dostarczone przez PV",
+    "Battery:MinHomeComsumption": "Minimalne zużycie domu do korzystania z baterii",
+    "Battery:MinSoc": "Minimalne SoC baterii"
+}

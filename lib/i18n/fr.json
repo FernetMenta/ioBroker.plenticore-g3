@@ -1,0 +1,16 @@
+{
+    "Grid_P": "Consommation d'énergie ou alimentation (valeurs négatives)",
+    "Dc_P": "puissance électrique générée par PV",
+    "Home_P": "Consommation d'énergie par la maison",
+    "ac/P": "Puissance électrique du côté AC de Plenticocore",
+    "battery/P": "Puissance électrique dans ou en direction de la batterie",
+    "battery/SoC": "Soc de la batterie",
+    "Statistic:Yield:Day": "Rendement du jour actuel (batterie PV +)",
+    "Statistic:EnergyChargePv:Day": "Énergie de PV qui a été utilisée pour charger la batterie",
+    "Statistic:EnergyHome:Day": "Consommation d'énergie qui a été utilisée par la maison",
+    "Statistic:EnergyHomeBat:Day": "Consommation énergétique qui a été fournie par la batterie",
+    "Statistic:EnergyHomeGrid:Day": "Consommation d'énergie fournie par Grid",
+    "Statistic:EnergyHomePv:Day": "Consommation d'énergie qui a été fournie par PV",
+    "Battery:MinHomeComsumption": "Consommation minimale de la maison pour l'utilisation de la batterie",
+    "Battery:MinSoc": "SoC minimum de la batterie"
+}

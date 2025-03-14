@@ -1,9 +1,12 @@
 {
-    "(Instance not running)": "(Instanz nicht laufen)",
+    "(Instance not running)": "(Instanz läuft nicht)",
     "Base Config": "Allgemeine Einstellungen",
     "Hostname or IP": "Hostname oder IP",
     "Port": "Hafen",
     "Password": "Passwort",
-    "Polling Interval": "Wahlintervall",
-    "Use HTTPS": "Verwenden Sie HTTPS"
+    "Polling Interval": "Intervall des Lesens/Schreibens",
+    "Use HTTPS": "Verwendung von HTTPS",
+    "Process Data": "Prozessdaten",
+    "Settings": "Einstellungen",
+    "Description": "Beschreibung"
 }

@@ -1,0 +1,16 @@
+{
+    "Grid_P": "功耗或进料（负值）",
+    "Dc_P": "PV产生的电力",
+    "Home_P": "家里的功耗",
+    "ac/P": "AC侧的电力",
+    "battery/P": "电池的电力",
+    "battery/SoC": "电池",
+    "Statistic:Yield:Day": "当前的产量（PV +电池）",
+    "Statistic:EnergyChargePv:Day": "用于电池充电的PV能量",
+    "Statistic:EnergyHome:Day": "家庭使用的能耗",
+    "Statistic:EnergyHomeBat:Day": "电池提供的能源消耗",
+    "Statistic:EnergyHomeGrid:Day": "网格提供的能耗",
+    "Statistic:EnergyHomePv:Day": "PV提供的能耗",
+    "Battery:MinHomeComsumption": "使用电池的最低房屋消费",
+    "Battery:MinSoc": "电池的最低soc"
+}

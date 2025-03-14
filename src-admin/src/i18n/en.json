@@ -1,11 +1,11 @@
 {
-    "(Instance not running)": "(Instance not running)",
+    "(Instance not running)": "(Instance is not running)",
     "Base Config": "General Settings",
     "Hostname or IP": "Hostname or IP",
     "Port": "Port",
     "Password": "Password",
-    "Polling Interval": "Polling Interval",
-    "Use HTTPS": "Use HTTPS",
+    "Polling Interval": "Interval of read/write",
+    "Use HTTPS": "Use of HTTPS",
 
     "Process Data": "Process Data",
     "Settings": "Settings",

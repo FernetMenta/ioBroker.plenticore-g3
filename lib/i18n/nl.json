@@ -1,0 +1,16 @@
+{
+    "Grid_P": "Stroomverbruik of feed-in (negatieve waarden)",
+    "Dc_P": "elektrisch vermogen dat wordt gegenereerd door PV",
+    "Home_P": "Stroomverbruik per huis",
+    "ac/P": "Elektrisch vermogen aan AC -kant van Plenticore",
+    "battery/P": "Elektrische stroom in of vanuit de richting van de batterij",
+    "battery/SoC": "SOC van de batterij",
+    "Statistic:Yield:Day": "Opbrengst van de huidige dag (PV + batterij)",
+    "Statistic:EnergyChargePv:Day": "Energie van PV die werd gebruikt om de batterij op te laden",
+    "Statistic:EnergyHome:Day": "Energieverbruik dat door huis werd gebruikt",
+    "Statistic:EnergyHomeBat:Day": "Energie -consumptie die door de batterij werd verstrekt",
+    "Statistic:EnergyHomeGrid:Day": "Energieverbruik dat werd geleverd door Grid",
+    "Statistic:EnergyHomePv:Day": "Energieverbruik dat werd geleverd door PV",
+    "Battery:MinHomeComsumption": "Minimaal thuisverbruik voor het gebruik van de batterij",
+    "Battery:MinSoc": "Minimale SOC van de batterij"
+}

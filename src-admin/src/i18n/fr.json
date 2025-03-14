@@ -1,0 +1,12 @@
+{
+    "(Instance not running)": "(L'instance n'est pas en cours d'exécution)",
+    "Base Config": "Paramètres généraux",
+    "Hostname or IP": "Nom d'hôte ou IP",
+    "Port": "Port",
+    "Password": "Mot de passe",
+    "Polling Interval": "Intervalle de lecture / écriture",
+    "Use HTTPS": "Utilisation de HTTPS",
+    "Process Data": "Traiter les données",
+    "Settings": "Paramètres",
+    "Description": "Description"
+}

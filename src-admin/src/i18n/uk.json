@@ -1,0 +1,12 @@
+{
+    "(Instance not running)": "(Екземпляр не працює)",
+    "Base Config": "Загальні налаштування",
+    "Hostname or IP": "Ім'я хоста або IP",
+    "Port": "Порт",
+    "Password": "Пароль",
+    "Polling Interval": "Інтервал читання/запису",
+    "Use HTTPS": "Використання HTTPS",
+    "Process Data": "Обробка даних",
+    "Settings": "Налаштування",
+    "Description": "Опис"
+}

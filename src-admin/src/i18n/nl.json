@@ -1,0 +1,12 @@
+{
+    "(Instance not running)": "(Exemplaar is niet actief)",
+    "Base Config": "Algemene instellingen",
+    "Hostname or IP": "Hostnaam of ip",
+    "Port": "Haven",
+    "Password": "Wachtwoord",
+    "Polling Interval": "Interval van lezen/schrijven",
+    "Use HTTPS": "Gebruik van HTTPS",
+    "Process Data": "Procesgegevens",
+    "Settings": "Instellingen",
+    "Description": "Beschrijving"
+}

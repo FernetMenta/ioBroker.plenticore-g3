@@ -1,14 +1,16 @@
 {
     "Grid_P": "Stromverbrauch oder Einspeisung (negative Werte)",
-    "Dc_P": "Stromversorgung durch Generator",
+    "Dc_P": "Elektrische Leistung, die durch PV erzeugt wird",
     "Home_P": "Stromverbrauch von zu Hause",
-    "ac/P": "Kraft der Wechselrichter",
-    "battery/P": "Stromversorgung von Batterie",
+    "ac/P": "Elektrische Leistung auf der Wechselstromseite von Plenticore",
+    "battery/P": "Elektrische Leistung in oder aus Richtung der Batterie",
     "battery/SoC": "SOC der Batterie",
     "Statistic:Yield:Day": "Ausbeute des aktuellen Tages (PV + Batterie)",
-    "Statistic:EnergyChargePv:Day": "Energie von PV zum Laden von Teig verwendet",
-    "Statistic:EnergyHome:Day": "Energie, die von zu Hause genutzt wird",
-    "Statistic:EnergyHomeBat:Day": "Energie, die durch Batterie bereitgestellt wird",
-    "Statistic:EnergyHomeGrid:Day": "Energie, die durch Netz bereitgestellt wird",
-    "Statistic:EnergyHomePv:Day": "Energie, die durch PV bereitgestellt wird"
+    "Statistic:EnergyChargePv:Day": "Energie von PV, die zum Laden der Batterie verwendet wurde",
+    "Statistic:EnergyHome:Day": "Energieverbrauch, der von zu Hause genutzt wurde",
+    "Statistic:EnergyHomeBat:Day": "Energieverbrauch, die von der Batterie bereitgestellt wurde",
+    "Statistic:EnergyHomeGrid:Day": "Energieverbrauch, der von Grid bereitgestellt wurde",
+    "Statistic:EnergyHomePv:Day": "Energieverbrauch, der von PV bereitgestellt wurde",
+    "Battery:MinHomeComsumption": "Minimaler Hausverbrauch für die Verwendung der Batterie",
+    "Battery:MinSoc": "Minimaler Soc der Batterie"
 }
