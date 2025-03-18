@@ -161,6 +161,9 @@ class PlenticoreG3 extends utils.Adapter {
             this.setState('info.connection', true, true);
 
             try {
+                // want to delete unused objects later
+                let allAdapterObjs = await this.getAdapterObjectsAsync();
+
                 // init processdata
                 let allProcessData = await this.#plenticoreAPI.getAllProcessData();
                 let optionalProcessData;
@@ -170,7 +173,7 @@ class PlenticoreG3 extends utils.Adapter {
                     optionalProcessData = [];
                 }
                 this.#processdata.setAllIDs(allProcessData);
-                this.#processdata.init(optionalProcessData);
+                await this.#processdata.init(optionalProcessData, allAdapterObjs);
 
                 // init settings
                 let allSettings = await this.#plenticoreAPI.getAllSettings();
@@ -181,7 +184,7 @@ class PlenticoreG3 extends utils.Adapter {
                     optionalSettings = [];
                 }
                 this.#settings.setAllIDs(allSettings);
-                this.#settings.init(optionalSettings);
+                await this.#settings.init(optionalSettings, allAdapterObjs);
 
                 // subscribe to all settings that are writable
                 this.subscribeStates('settings.*');
