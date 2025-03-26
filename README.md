@@ -41,8 +41,7 @@ Colons in the data ID are replaced by an underscore:
 <br> 'Statistic:Yield:Day' will become 'Statistic_Yield_Day'
 
 ## Changelog
-
-### **WORK IN PROGRESS**
+### 0.0.7 (2025-03-26)
 
 - replace ':' by '_' in object IDs
 - delete unused objects and channels

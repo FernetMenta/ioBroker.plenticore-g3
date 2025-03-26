@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "plenticore-g3",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "news": {
+      "0.0.7": {
+        "en": "replace ':' by '_' in object IDs\ndelete unused objects and channels",
+        "de": "ersetzen ':' durch '_' in Objekt-IDs\nungenutzte objekte und kanäle löschen",
+        "ru": "заменить \":\" на \"_\" в идентификаторах объектов\nудалить неиспользуемые объекты и каналы",
+        "pt": "substituir ':' por '_' em IDs de objeto\nexcluir objetos e canais não utilizados",
+        "nl": "':' vervangen door '_' in object-ID's\nongebruikte objecten en kanalen verwijderen",
+        "fr": "remplacer ':' par '_' dans les ID des objets\nsupprimer les objets et canaux inutilisés",
+        "it": "sostituire ':' da '_' in ID oggetto\neliminare oggetti e canali non utilizzati",
+        "es": "reemplazar ':' por '_' en IDs de objetos\neliminar objetos y canales no utilizados",
+        "pl": "zastąp ':' przez '_' w identyfikatorach obiektu\nusuń niewykorzystane obiekty i kanały",
+        "uk": "замінити ':' by '_' в ідентифікаторах об'єкта\nвидалити невикористані об'єкти та канали",
+        "zh-cn": "在对象ID中将“:”改为“_”\n删除未使用的对象和频道"
+      },
       "0.0.6": {
         "en": "fix repo url in package.json",
         "de": "repo url in paket reparieren. json",
