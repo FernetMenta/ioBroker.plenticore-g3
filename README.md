@@ -32,7 +32,21 @@ This adapter uses 'Process Data' and 'Settings' of the REST API. Because no user
 
 You can also add your own descriptions to optional data points that will show up as descriptions in iobroker's object tree. In most cases the purpose of a data point can be derived by its name. For example 'devices:local/HomeBat_P' represents the power home uses from the battery.
 
+### Naming
+
+Native objects are comprised of a module ID and a data ID, for example 'scb:statistic:EnergyFlow/Statistic:Yield:Day'. The part before the slash is the module ID. In this case 'scb:statistic:EnergyFlow'. In iobroker's object tree a folder structure will be created for the modules ID:
+<br> scb <br> &emsp; statistics <br> &emsp; &emsp;  EnergyFlow <br>
+
+Colons in the data ID are replaced by an underscore:
+<br> 'Statistic:Yield:Day' will become 'Statistic_Yield_Day'
+
 ## Changelog
+
+### **WORK IN PROGRESS**
+
+- replace ':' by '_' in object IDs
+- delete unused objects and channels
+
 ### 0.0.6 (2025-03-14)
 
 -   fix repo url in package.json
