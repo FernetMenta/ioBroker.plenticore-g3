@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "plenticore-g3",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "news": {
+      "0.0.8": {
+        "en": "fix writing of settings after 0.0.7\nfix crash after failed API requests",
+        "de": "festschreiben der einstellungen nach 0,0.7\ncrash nach gescheiterten API-Anforderungen beheben",
+        "ru": "фиксировать запись настроек после 0.0.7\nсбой исправления после неудавшихся запросов API",
+        "pt": "corrigir a escrita das configurações após 0,0.7\ncorrigir falha após pedidos de API falhados",
+        "nl": "fix het schrijven van instellingen na 0.07\nreparatie crash na mislukte API-verzoeken",
+        "fr": "corriger l'écriture des paramètres après 0.0.7\ncorrection du crash après l'échec des requêtes API",
+        "it": "correzione della scrittura delle impostazioni dopo 0.0.7\nfix crash dopo le richieste API fallite",
+        "es": "fijar escritura de configuración después de 0.0.7\narreglar fallo después de las solicitudes de API falladas",
+        "pl": "naprawić zapis ustawień po 0.0.7\nnaprawić awarię po nieudanym żądaniu API",
+        "uk": "виправлено написання параметрів після 0.0.7\nвиправлення аварійних ситуацій після невдалих запитів API",
+        "zh-cn": "0.7 之后设置的固定写入\naPI 请求失败后修复崩溃"
+      },
       "0.0.7": {
         "en": "replace ':' by '_' in object IDs\ndelete unused objects and channels",
         "de": "ersetzen ':' durch '_' in Objekt-IDs\nungenutzte objekte und kanäle löschen",
