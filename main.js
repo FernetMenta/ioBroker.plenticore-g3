@@ -20,6 +20,7 @@ class PlenticoreG3 extends utils.Adapter {
     #processdata;
     #settings;
     #mainlooptimer;
+    #isInitialized = false;
     /**
      * @param {Partial<utils.AdapterOptions>} [options] - options given from iobroker
      */
@@ -145,6 +146,8 @@ class PlenticoreG3 extends utils.Adapter {
     // main loop for polling and sending data
     async mainloop() {
         if (!this.#plenticoreAPI.loggedIn) {
+            this.#isInitialized = false;
+            this.setState('info.connection', false, true);
             try {
                 await this.#plenticoreAPI.login();
             } catch (e) {
@@ -157,9 +160,9 @@ class PlenticoreG3 extends utils.Adapter {
                 }
                 return;
             }
+        }
 
-            this.setState('info.connection', true, true);
-
+        if (!this.#isInitialized) {
             try {
                 // want to delete unused objects later
                 let allAdapterObjs = await this.getAdapterObjectsAsync();
@@ -188,6 +191,11 @@ class PlenticoreG3 extends utils.Adapter {
 
                 // subscribe to all settings that are writable
                 this.subscribeStates('settings.*');
+
+                // init done
+                this.setState('info.connection', true, true);
+                this.#isInitialized = true;
+                this.log.info('init completed');
             } catch (e) {
                 if (e == 'auth') {
                     // stop loop due to authorization issue
