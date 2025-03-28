@@ -113,7 +113,7 @@ class PlenticoreG3 extends utils.Adapter {
             if (!id) {
                 return;
             }
-            let payload = PlenticoreData.prepareWriteValue(id, state);
+            let payload = await this.#settings.prepareWriteValue(id, state);
             try {
                 await this.#plenticoreAPI.writeSetting(payload);
                 this.setState(id, state, true);
