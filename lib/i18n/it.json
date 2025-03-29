@@ -12,5 +12,7 @@
     "Statistic:EnergyHomeGrid:Day": "Consumo di energia fornito dalla griglia",
     "Statistic:EnergyHomePv:Day": "Consumo di energia fornito da PV",
     "Battery:MinHomeComsumption": "Consumo minimo per la casa per l'utilizzo della batteria",
-    "Battery:MinSoc": "SoC minimo della batteria"
+    "Battery:MinSoc": "SoC minimo della batteria",
+    "Update:Method": "Metodo di aggiornamento scelto: 0 = manualmente, 1 = informativo, 2 = automatico",
+    "Update:Version": "Versione disponibile dell'aggiornamento, se non zero"
 }

@@ -21,6 +21,7 @@ class PlenticoreG3 extends utils.Adapter {
     #settings;
     #mainlooptimer;
     #isInitialized = false;
+    #lastUpdateCheck = 0;
     /**
      * @param {Partial<utils.AdapterOptions>} [options] - options given from iobroker
      */
@@ -195,6 +196,7 @@ class PlenticoreG3 extends utils.Adapter {
                 // init done
                 this.setState('info.connection', true, true);
                 this.#isInitialized = true;
+                this.#lastUpdateCheck = 0;
                 this.log.info('init completed');
             } catch (e) {
                 if (e == 'auth') {
@@ -226,6 +228,21 @@ class PlenticoreG3 extends utils.Adapter {
                 this.nextLoop();
                 return;
             }
+        }
+
+        // check if an update is available to be installed.
+        const today = new Date().getDate();
+        if (today != this.#lastUpdateCheck) {
+            let method = await this.getStateAsync('settings.scb.update.Update_Method');
+            if (method != 2) {
+                this.log.info('check for update');
+                let version = await this.getStateAsync('processdata.scb.update.Update_Version');
+                if (version.val != 0) {
+                    this.log.info('new update available');
+                    await this.registerNotification('plenticore-g3', 'update', `new version available: ${version.val}`);
+                }
+            }
+            this.#lastUpdateCheck = today;
         }
 
         // timer for next interval

@@ -225,5 +225,70 @@
       },
       "native": {}
     }
+  ],
+  "notifications": [
+    {
+      "scope": "plenticore-g3",
+      "name": {
+        "en": "Kostal plenticore-g3 Adapter",
+        "de": "Kostal plenticore-g3 Adapter",
+        "ru": "Адаптер Kostal plenticore-g3",
+        "pt": "Adaptador Kostal plenticore-g3",
+        "nl": "Kostal plenticore-g3 Adapter",
+        "fr": "Adaptateur Kostal plenticore-g3",
+        "it": "Adattatore Kostal plenticore-g3",
+        "es": "Adaptador Kostal plenticore-g3",
+        "pl": "Adapter KOSTAL Plenticore- g3",
+        "uk": "Конструкційно-г3 адаптер",
+        "zh-cn": "Kostal pluticore-g3 适应器"
+      },
+      "description": {
+        "en": "These notifications represent news from your Kostal Plenticore inverter.",
+        "de": "Diese Benachrichtigungen stellen Neuigkeiten von Ihrem Kostal Plenticore Wechselrichter dar.",
+        "ru": "Эти уведомления представляют собой новости от инвертора Kostal Plenticore.",
+        "pt": "Estas notificações representam notícias do seu inversor Kostal Plenticore.",
+        "nl": "Deze meldingen vertegenwoordigen nieuws van uw Kostal Plenticore omvormer.",
+        "fr": "Ces notifications représentent les nouvelles de votre inverseur Kostal Plenticore.",
+        "it": "Queste notifiche rappresentano notizie dal tuo inverter Kostal Plenticore.",
+        "es": "Estas notificaciones representan noticias de su inversor Kostal Plenticore.",
+        "pl": "Powiadomienia te reprezentują wiadomości z inwertera Kostal Plenticore.",
+        "uk": "Ці повідомлення представляють новини від вашого інвертора Kostal Plenticore.",
+        "zh-cn": "这些通知代表了您Kostal Plenticore反转器的消息."
+      },
+      "categories": [
+        {
+          "category": "update",
+          "name": {
+            "en": "Plenticore update",
+            "de": "Plenticore Update",
+            "ru": "Обновление Plenticore",
+            "pt": "Atualização do Plenticore",
+            "nl": "Plenticore update",
+            "fr": "Mise à jour Plenticore",
+            "it": "Aggiornamento Plenticore",
+            "es": "Actualización de Plenticore",
+            "pl": "Aktualizacja instalacji",
+            "uk": "Оновлення Plenticore",
+            "zh-cn": "微量更新"
+          },
+          "description": {
+            "en": "A software update is available.",
+            "de": "Ein Software-Update ist verfügbar",
+            "ru": "Доступно обновление программного обеспечения",
+            "pt": "Uma atualização de software está disponível",
+            "nl": "Er is een software-update beschikbaar",
+            "fr": "Une mise à jour logicielle est disponible",
+            "it": "Un aggiornamento software è disponibile",
+            "es": "Una actualización de software está disponible",
+            "pl": "Aktualizacja oprogramowania jest dostępna",
+            "uk": "Доступне оновлення програмного забезпечення",
+            "zh-cn": "有软件更新"
+          },
+          "regex": [],
+          "limit": 1,
+          "severity": "notify"
+        }
+      ]
+    }
   ]
 }

@@ -41,6 +41,12 @@ Colons in the data ID are replaced by an underscore:
 <br> 'Statistic:Yield:Day' will become 'Statistic_Yield_Day'
 
 ## Changelog
+
+### **WORK IN PROGRESS**
+
+- add notification on available updates
+- make sure init completes without errors
+
 ### 0.0.8 (2025-03-28)
 
 - fix writing of settings after 0.0.7

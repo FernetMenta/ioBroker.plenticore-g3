@@ -12,5 +12,7 @@
     "Statistic:EnergyHomeGrid:Day": "网格提供的能耗",
     "Statistic:EnergyHomePv:Day": "PV提供的能耗",
     "Battery:MinHomeComsumption": "使用电池的最低房屋消费",
-    "Battery:MinSoc": "电池的最低soc"
+    "Battery:MinSoc": "电池的最低soc",
+    "Update:Method": "选择的更新方法：0 =手动，1 =信息，2 =自动",
+    "Update:Version": "可用版本的更新，如果不是零"
 }

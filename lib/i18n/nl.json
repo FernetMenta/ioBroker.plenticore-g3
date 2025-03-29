@@ -12,5 +12,7 @@
     "Statistic:EnergyHomeGrid:Day": "Energieverbruik dat werd geleverd door Grid",
     "Statistic:EnergyHomePv:Day": "Energieverbruik dat werd geleverd door PV",
     "Battery:MinHomeComsumption": "Minimaal thuisverbruik voor het gebruik van de batterij",
-    "Battery:MinSoc": "Minimale SOC van de batterij"
+    "Battery:MinSoc": "Minimale SOC van de batterij",
+    "Update:Method": "Gekozen updatemethode: 0 = handmatig, 1 = informatief, 2 = automatisch",
+    "Update:Version": "Beschikbare versie van update, zo niet nul"
 }
