@@ -202,7 +202,15 @@
       "native": {}
     },
     {
-      "_id": "processdata-available",
+      "_id": "processdata",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "processdata.all-available",
       "type": "state",
       "common": {
         "role": "config",
@@ -214,7 +222,15 @@
       "native": {}
     },
     {
-      "_id": "settings-available",
+      "_id": "settings",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "settings.all-available",
       "type": "state",
       "common": {
         "role": "config",

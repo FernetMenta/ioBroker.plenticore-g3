@@ -61,7 +61,7 @@ class Optionals extends Component {
         };
 
         this.aliveId = `system.adapter.${this.props.adapterName}.${this.props.instance}.alive`;
-        this.allAvailableId = `${this.props.adapterName}.${this.props.instance}.${this.props.type}-available`;
+        this.allAvailableId = `${this.props.adapterName}.${this.props.instance}.${this.props.type}.all-available`;
         this.optionalsId =
             this.props.type === 'processdata' ? this.props.native.pdoptionals : this.props.native.settingoptionals;
 
