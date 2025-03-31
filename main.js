@@ -49,7 +49,6 @@ class PlenticoreG3 extends utils.Adapter {
             await I18n.init(path.join(__dirname, 'lib'), this);
         }
 
-        console.log(I18n.translate('Grid_P'));
         // make sure interval is between expected values
         if (this.config.pollinginterval < 5) {
             this.config.pollinginterval = 5;
