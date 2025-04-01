@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 
 import {
     TextField,
-    Select,
     InputLabel,
-    MenuItem,
     FormControl,
     IconButton,
     InputAdornment,
@@ -205,32 +203,6 @@ class Options extends Component {
                         }}
                         margin="normal"
                     />
-                    <br />
-                    <FormControl
-                        variant="standard"
-                        style={{ ...styles.input }}
-                    >
-                        <InputLabel>{I18n.t('Language')}</InputLabel>
-                        <Select
-                            variant="standard"
-                            value={this.props.native.language || 'system'}
-                            onChange={e =>
-                                this.props.onChange('language', e.target.value === 'system' ? '' : e.target.value)
-                            }
-                        >
-                            <MenuItem value="system">{I18n.t('System language')}</MenuItem>
-                            <MenuItem value="en">English</MenuItem>
-                            <MenuItem value="de">Deutsch</MenuItem>
-                            <MenuItem value="ru">русский</MenuItem>
-                            <MenuItem value="pt">Portugues</MenuItem>
-                            <MenuItem value="nl">Nederlands</MenuItem>
-                            <MenuItem value="fr">français</MenuItem>
-                            <MenuItem value="it">Italiano</MenuItem>
-                            <MenuItem value="es">Espanol</MenuItem>
-                            <MenuItem value="pl">Polski</MenuItem>
-                            <MenuItem value="zh-cn">简体中文</MenuItem>
-                        </Select>
-                    </FormControl>
                 </div>
             </form>
         );

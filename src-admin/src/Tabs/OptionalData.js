@@ -100,6 +100,14 @@ class Optionals extends Component {
         this.setState({ rowSelectionModel: newRowSelectionModel });
     }
 
+    static #translateDescription(table) {
+        for (let row of table) {
+            if (row.description) {
+                row.description = row.description[I18n.getLanguage()];
+            }
+        }
+    }
+
     /**
      * Reads the iobroker state with all available data
      *
@@ -111,6 +119,7 @@ class Optionals extends Component {
                 let allavailable;
                 try {
                     allavailable = state && state.val ? JSON.parse(state.val) : [];
+                    Optionals.#translateDescription(allavailable);
                     this.updateDataWithOptionals(allavailable);
                 } catch {
                     allavailable = [];
@@ -153,6 +162,7 @@ class Optionals extends Component {
             let allavailable;
             try {
                 allavailable = state && state.val ? JSON.parse(state.val) : [];
+                Optionals.#translateDescription(allavailable);
                 this.updateDataWithOptionals(allavailable);
             } catch {
                 allavailable = [];

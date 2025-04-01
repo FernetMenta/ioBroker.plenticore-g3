@@ -42,12 +42,7 @@ class PlenticoreG3 extends utils.Adapter {
      */
     async onReady() {
         // Initialize your adapter here
-        if (this.config.language != '') {
-            console.log(`init to: ${this.config.language}`);
-            await I18n.init(path.join(__dirname, 'lib'), this.config.language);
-        } else {
-            await I18n.init(path.join(__dirname, 'lib'), this);
-        }
+        await I18n.init(path.join(__dirname, 'lib'), this);
 
         // make sure interval is between expected values
         if (this.config.pollinginterval < 5) {
