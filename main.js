@@ -49,7 +49,12 @@ class PlenticoreG3 extends utils.Adapter {
             await I18n.init(path.join(__dirname, 'lib'), this);
         }
 
-        console.log(I18n.translate('Grid_P'));
+        // make sure interval is between expected values
+        if (this.config.pollinginterval < 5) {
+            this.config.pollinginterval = 5;
+        } else if (this.config.pollinginterval > 60) {
+            this.config.pollinginterval = 60;
+        }
 
         // Reset the connection indicator during startup
         this.setState('info.connection', false, true);
@@ -75,7 +80,7 @@ class PlenticoreG3 extends utils.Adapter {
     onUnload(callback) {
         try {
             // Here you must clear all timeouts or intervals that may still be active
-            clearTimeout(this.#mainlooptimer);
+            this.clearTimeout(this.#mainlooptimer);
             this.#plenticoreAPI = null;
             this.setState('info.connection', false, true);
             callback();
@@ -250,7 +255,7 @@ class PlenticoreG3 extends utils.Adapter {
     }
 
     nextLoop() {
-        this.#mainlooptimer = setTimeout(
+        this.#mainlooptimer = this.setTimeout(
             () => {
                 this.mainloop();
             },

@@ -202,24 +202,40 @@
       "native": {}
     },
     {
-      "_id": "processdata-available",
+      "_id": "processdata",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "processdata.all-available",
       "type": "state",
       "common": {
-        "role": "config",
+        "role": "json",
         "name": "Available ProcessData IDs with presets",
-        "type": "json",
+        "type": "string",
         "read": true,
         "write": false
       },
       "native": {}
     },
     {
-      "_id": "settings-available",
+      "_id": "settings",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "settings.all-available",
       "type": "state",
       "common": {
-        "role": "config",
+        "role": "json",
         "name": "Available Setting IDs with presets",
-        "type": "json",
+        "type": "string",
         "read": true,
         "write": false
       },

@@ -190,7 +190,19 @@ class Options extends Component {
                                 min: 5,
                             },
                         }}
-                        onChange={e => this.props.onChange('pollinginterval', e.target.value)}
+                        onBlur={e => {
+                            var value = parseInt(e.target.value, 10);
+                            if (value > 60) {
+                                value = 60;
+                            }
+                            if (value < 5) {
+                                value = 5;
+                            }
+                            this.props.onChange('pollinginterval', value);
+                        }}
+                        onChange={e => {
+                            this.props.onChange('pollinginterval', e.target.value);
+                        }}
                         margin="normal"
                     />
                     <br />
