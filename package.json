@@ -37,7 +37,7 @@
     "@iobroker/eslint-config": "^1.0.0",
     "@iobroker/testing": "^5.0.4",
     "@sinonjs/referee-sinon": "^12.0.0",
-    "chai": "^4.5.0",
+    "chai": "^5.2.0",
     "chai-as-promised": "^8.0.1",
     "jsverify": "^0.8.4",
     "knuth-shuffle": "^1.0.8",
