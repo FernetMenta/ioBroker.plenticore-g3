@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "plenticore-g3",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "news": {
+      "0.1.1": {
+        "en": "fix object hierarchy\nfix missing translations, adjust translations based on system language\nfix state roles",
+        "de": "objekthierarchie beheben\nfehlende übersetzungen beheben, übersetzungen basierend auf systemsprache anpassen\nzustandsrollen beheben",
+        "ru": "иерархия объектов\nисправление отсутствующих переводов, корректировка переводов на основе системного языка\nисправить государственные роли",
+        "pt": "corrigir a hierarquia de objetos\ncorrigir traduções ausentes, ajustar traduções com base na linguagem do sistema\ncorrigir funções estaduais",
+        "nl": "fix objecthiërarchie\nontbrekende vertalingen oplossen, vertalingen aanpassen op basis van systeemtaal\nfix state rollen",
+        "fr": "fixer la hiérarchie des objets\ncorriger les traductions manquantes, ajuster les traductions en fonction de la langue du système\nfixer les rôles d'état",
+        "it": "correzione della gerarchia degli oggetti\ncorreggere le traduzioni mancanti, regolare le traduzioni in base alla lingua di sistema\nrisolvere i ruoli dello stato",
+        "es": "fijar la jerarquía del objeto\narreglar traducciones faltantes, ajustar traducciones basadas en el lenguaje del sistema\nfijar funciones estatales",
+        "pl": "naprawić hierarchię obiektów\nnaprawić brakujące tłumaczenia, dostosować tłumaczenia oparte na języku systemowym\nustaw role stanu",
+        "uk": "виправити ієрархію об'єкта\nвиправити відсутні переклади, налаштувати переклади на основі мови системи\nфіксувати ролі держави",
+        "zh-cn": "固定对象等级\n修复缺失的翻译, 根据系统语言调整翻译\n固定状态角色"
+      },
       "0.1.0": {
         "en": "add notification on available updates\nmake sure init completes without errors",
         "de": "benachrichtigung über verfügbare updates hinzufügen\nstellen sie sicher, dass init ohne fehler komplettiert",
@@ -80,19 +93,6 @@
         "pl": "przygotować się na iobroker repo",
         "uk": "підготовка до iobroker repo",
         "zh-cn": "准备io经纪人雷波"
-      },
-      "0.0.4-beta.1": {
-        "en": "update translations",
-        "de": "übersetzungen aktualisieren",
-        "ru": "обновление переводов",
-        "pt": "traduções de atualização",
-        "nl": "vertalingen bijwerken",
-        "fr": "mettre à jour les traductions",
-        "it": "aggiornare le traduzioni",
-        "es": "traducción actualizada",
-        "pl": "aktualizacja tłumaczeń",
-        "uk": "оновлення перекладів",
-        "zh-cn": "更新翻译"
       }
     },
     "titleLang": {
