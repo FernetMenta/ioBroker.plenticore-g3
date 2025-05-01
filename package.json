@@ -34,7 +34,7 @@
     "@iobroker/adapter-dev": "^1.4.0",
     "@iobroker/build-tools": "^2.0.15",
     "@iobroker/dev-server": "^0.7.8",
-    "@iobroker/eslint-config": "^1.0.0",
+    "@iobroker/eslint-config": "^2.0.1",
     "@iobroker/testing": "^5.0.4",
     "@sinonjs/referee-sinon": "^12.0.0",
     "chai-as-promised": "^8.0.1",
