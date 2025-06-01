@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "plenticore-g3",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "news": {
+      "0.1.2": {
+        "en": "add node 24 to tests\nchores",
+        "de": "knoten 24 zu tests hinzufügen\nchoreografie",
+        "ru": "добавить узел 24 в тесты\nработа по дому",
+        "pt": "adicionar nó 24 para testes\ntarefas",
+        "nl": "node 24 toevoegen aan tests\ntaken",
+        "fr": "ajouter le nœud 24 aux essais\ncorvées",
+        "it": "aggiungere nodo 24 ai test\ncores",
+        "es": "añadir nodo 24 a las pruebas\nacordes",
+        "pl": "dodać węzeł 24 do testów\nprace domowe",
+        "uk": "додати вузол 24 для тестів\nхори",
+        "zh-cn": "在测试中添加节点 24\n家务"
+      },
       "0.1.1": {
         "en": "fix object hierarchy\nfix missing translations, adjust translations based on system language\nfix state roles",
         "de": "objekthierarchie beheben\nfehlende übersetzungen beheben, übersetzungen basierend auf systemsprache anpassen\nzustandsrollen beheben",
@@ -80,19 +93,6 @@
         "pl": "unikać potencjalnych problemów: ss- controller > = 7, 0",
         "uk": "уникнути потенційних питань: js-controller >= 7.0.6 км",
         "zh-cn": "避免可能出现的问题: js控制器 qq 7.0.6 联合国"
-      },
-      "0.0.4": {
-        "en": "prepare for iobroker repo",
-        "de": "vorbereitung auf iobroker repo",
-        "ru": "подготовьтесь к iobroker repo",
-        "pt": "preparar para o repo do iobroker",
-        "nl": "voorbereiden voor iobroker repo",
-        "fr": "préparer pour iobroker repo",
-        "it": "preparare per iobroker repo",
-        "es": "prepararse para iobroker repo",
-        "pl": "przygotować się na iobroker repo",
-        "uk": "підготовка до iobroker repo",
-        "zh-cn": "准备io经纪人雷波"
       }
     },
     "titleLang": {
