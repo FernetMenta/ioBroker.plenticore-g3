@@ -204,6 +204,7 @@ class PlenticoreG3 extends utils.Adapter {
                     this.log.warn('terminating because of authentication issue');
                     this.terminate();
                 } else {
+                    this.log.debug(`init failed with error: ${e}`);
                     this.nextLoop();
                     return;
                 }
