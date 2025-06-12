@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "plenticore-g3",
-    "version": "0.1.2",
+    "version": "0.1.3-alpha.0",
     "news": {
+      "0.1.3-alpha.0": {
+        "en": "add some logging for debugging",
+        "de": "fügen sie einige protokolle für debugging hinzu",
+        "ru": "добавить некоторые бревна для отладки",
+        "pt": "adicionar algum registro para depuração",
+        "nl": "logging toevoegen voor debuggen",
+        "fr": "ajouter un peu d'enregistrement pour le débogage",
+        "it": "aggiungere qualche registrazione per debugging",
+        "es": "añadir un poco de registro para depurar",
+        "pl": "dodaj trochę logowania do debugowania",
+        "uk": "додати деякі журнали для видалення",
+        "zh-cn": "为调试添加一些日志"
+      },
       "0.1.2": {
         "en": "add node 24 to tests\nchores",
         "de": "knoten 24 zu tests hinzufügen\nchoreografie",
@@ -80,19 +93,6 @@
         "pl": "naprawić repo url w opakowaniu. json",
         "uk": "закріпити репо виворіт в пакеті. свінгери",
         "zh-cn": "将 repo url 固定在包装中。 贾森"
-      },
-      "0.0.5": {
-        "en": "avoid potential issues: js-controller >= 7.0.6",
-        "de": "potenzielle probleme vermeiden: js-controller >= 7.0.6",
-        "ru": "избегайте потенциальных проблем: js-контроллер >= 7.0.6",
-        "pt": "evitar possíveis problemas: - sim. 7.0.6",
-        "nl": "mogelijke problemen vermijden: js-controller 7.0,6",
-        "fr": "éviter les problèmes potentiels: js-contrôleur >= 70,6",
-        "it": "evitare potenziali problemi: >= 7.0.6",
-        "es": "evitar posibles problemas: js-controller 7.0.6",
-        "pl": "unikać potencjalnych problemów: ss- controller > = 7, 0",
-        "uk": "уникнути потенційних питань: js-controller >= 7.0.6 км",
-        "zh-cn": "避免可能出现的问题: js控制器 qq 7.0.6 联合国"
       }
     },
     "titleLang": {
