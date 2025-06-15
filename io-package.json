@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "plenticore-g3",
-    "version": "0.1.3-alpha.0",
+    "version": "0.1.3",
     "news": {
+      "0.1.3": {
+        "en": "add some logging for debugging\nfix log warnings",
+        "de": "fügen sie einige protokolle für debugging hinzu\nprotokollwarnungen fixieren",
+        "ru": "добавить некоторые бревна для отладки\nисправить лог предупреждения",
+        "pt": "adicionar algum registro para depuração\ncorrigir avisos de registo",
+        "nl": "logging toevoegen voor debuggen\nlogmeldingen herstellen",
+        "fr": "ajouter un peu d'enregistrement pour le débogage\ncorrection des avertissements de log",
+        "it": "aggiungere qualche registrazione per debugging\ncorreggere avvisi di registro",
+        "es": "añadir un poco de registro para depurar\nfijar advertencias de registro",
+        "pl": "dodaj trochę logowania do debugowania\nnaprawić ostrzeżenia dziennika",
+        "uk": "додати деякі журнали для видалення\nвиправити попередження журналів",
+        "zh-cn": "为调试添加一些日志\n修正日志警告"
+      },
       "0.1.3-alpha.0": {
         "en": "add some logging for debugging",
         "de": "fügen sie einige protokolle für debugging hinzu",
@@ -80,19 +93,6 @@
         "pl": "zastąp ':' przez '_' w identyfikatorach obiektu\nusuń niewykorzystane obiekty i kanały",
         "uk": "замінити ':' by '_' в ідентифікаторах об'єкта\nвидалити невикористані об'єкти та канали",
         "zh-cn": "在对象ID中将“:”改为“_”\n删除未使用的对象和频道"
-      },
-      "0.0.6": {
-        "en": "fix repo url in package.json",
-        "de": "repo url in paket reparieren. json",
-        "ru": "почините url в упаковке. джонсон",
-        "pt": "corrigir repo url no pacote. o que foi",
-        "nl": "repareren repo url in pakket. json",
-        "fr": "réparer les repo url dans l'emballage. json",
-        "it": "risolvere il repo url in pacchetto. j",
-        "es": "arregla la url en el paquete. json",
-        "pl": "naprawić repo url w opakowaniu. json",
-        "uk": "закріпити репо виворіт в пакеті. свінгери",
-        "zh-cn": "将 repo url 固定在包装中。 贾森"
       }
     },
     "titleLang": {
