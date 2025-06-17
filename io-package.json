@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "plenticore-g3",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "news": {
+      "0.1.4": {
+        "en": "fix logging for preset and optional data",
+        "de": "fixe protokollierung für voreingestellte und optionale daten",
+        "ru": "исправление регистрации для предустановленных и дополнительных данных",
+        "pt": "corrigir o registro para dados predefinidos e opcionais",
+        "nl": "fix logging voor vooraf ingestelde en optionele gegevens",
+        "fr": "fixer l'enregistrement pour les données prédéfinies et optionnelles",
+        "it": "correzione della registrazione per dati preimpostati e facoltativi",
+        "es": "fijar registro para datos preestablecidos y opcionales",
+        "pl": "fix logowanie dla ustawionych i opcjonalnych danych",
+        "uk": "зафіксувати заголовок для отримання та додаткових даних",
+        "zh-cn": "固定预设和可选数据的日志"
+      },
       "0.1.3": {
         "en": "add some logging for debugging\nfix log warnings",
         "de": "fügen sie einige protokolle für debugging hinzu\nprotokollwarnungen fixieren",
@@ -80,19 +93,6 @@
         "pl": "naprawić zapis ustawień po 0.0.7\nnaprawić awarię po nieudanym żądaniu API",
         "uk": "виправлено написання параметрів після 0.0.7\nвиправлення аварійних ситуацій після невдалих запитів API",
         "zh-cn": "0.7 之后设置的固定写入\naPI 请求失败后修复崩溃"
-      },
-      "0.0.7": {
-        "en": "replace ':' by '_' in object IDs\ndelete unused objects and channels",
-        "de": "ersetzen ':' durch '_' in Objekt-IDs\nungenutzte objekte und kanäle löschen",
-        "ru": "заменить \":\" на \"_\" в идентификаторах объектов\nудалить неиспользуемые объекты и каналы",
-        "pt": "substituir ':' por '_' em IDs de objeto\nexcluir objetos e canais não utilizados",
-        "nl": "':' vervangen door '_' in object-ID's\nongebruikte objecten en kanalen verwijderen",
-        "fr": "remplacer ':' par '_' dans les ID des objets\nsupprimer les objets et canaux inutilisés",
-        "it": "sostituire ':' da '_' in ID oggetto\neliminare oggetti e canali non utilizzati",
-        "es": "reemplazar ':' por '_' en IDs de objetos\neliminar objetos y canales no utilizados",
-        "pl": "zastąp ':' przez '_' w identyfikatorach obiektu\nusuń niewykorzystane obiekty i kanały",
-        "uk": "замінити ':' by '_' в ідентифікаторах об'єкта\nвидалити невикористані об'єкти та канали",
-        "zh-cn": "在对象ID中将“:”改为“_”\n删除未使用的对象和频道"
       }
     },
     "titleLang": {
