@@ -14,5 +14,7 @@
     "Battery:MinHomeComsumption": "Consommation minimale de la maison pour l'utilisation de la batterie",
     "Battery:MinSoc": "SoC minimum de la batterie",
     "Update:Method": "Méthode de mise à jour choisie: 0 = manuellement, 1 = informatif, 2 = automatique",
-    "Update:Version": "Version disponible de la mise à jour, sinon zéro"
+    "Update:Version": "Version disponible de la mise à jour, sinon zéro",
+    "Inverter:State": "Statut de l'onduleur, voir la documentation MODBUS. Le «nourrisson» (6) est un fonctionnement normal",
+    "available version": "Version disponible"
 }

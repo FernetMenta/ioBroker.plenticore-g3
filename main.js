@@ -165,6 +165,18 @@ class PlenticoreG3 extends utils.Adapter {
 
         if (!this.#isInitialized) {
             try {
+                // wait until inverter is in state FeedIn, otherwise REST API is not stable
+                let inverterStatePoll = PlenticoreData.getPollInverterStateID();
+                try {
+                    let inverterStateResp = await this.#plenticoreAPI.getProcessData(inverterStatePoll);
+                    let inverterState = inverterStateResp[0].processdata[0].value;
+                    if (inverterState != 6) {
+                        throw new Error('inverter not in state FeedIn');
+                    }
+                } catch (e) {
+                    throw new Error(e);
+                }
+
                 // want to delete unused objects later
                 let allAdapterObjs = await this.getAdapterObjectsAsync();
 
@@ -240,7 +252,8 @@ class PlenticoreG3 extends utils.Adapter {
                 let version = await this.getStateAsync('processdata.scb.update.Update_Version');
                 if (version.val != 0) {
                     this.log.info('new update available');
-                    await this.registerNotification('plenticore-g3', 'update', `new version available: ${version.val}`);
+                    let text = I18n.translate('available version');
+                    await this.registerNotification('plenticore-g3', 'update', `${text} : ${version.val}`);
                 }
             }
             this.#lastUpdateCheck = today;

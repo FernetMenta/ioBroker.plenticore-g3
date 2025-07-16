@@ -14,5 +14,7 @@
     "Battery:MinHomeComsumption": "Minimum home consumption for using the battery",
     "Battery:MinSoc": "Minimum SoC of the battery",
     "Update:Method": "Chosen update method: 0 = manually, 1 = informative, 2 = automatic",
-    "Update:Version": "Available version of update, if not zero"
+    "Update:Version": "Available version of update, if not zero",
+    "Inverter:State": "Status of inverter, see modbus documentation. 'FeedIn'(6) is normal operation",
+    "available version": "available version"
 }

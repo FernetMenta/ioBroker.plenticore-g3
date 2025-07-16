@@ -14,5 +14,7 @@
     "Battery:MinHomeComsumption": "Minimaal thuisverbruik voor het gebruik van de batterij",
     "Battery:MinSoc": "Minimale SOC van de batterij",
     "Update:Method": "Gekozen updatemethode: 0 = handmatig, 1 = informatief, 2 = automatisch",
-    "Update:Version": "Beschikbare versie van update, zo niet nul"
+    "Update:Version": "Beschikbare versie van update, zo niet nul",
+    "Inverter:State": "Status van de omvormer, zie Modbus -documentatie. 'Feedin' (6) is normaal werk",
+    "available version": "Beschikbare versie"
 }
