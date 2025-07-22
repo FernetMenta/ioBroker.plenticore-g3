@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "plenticore-g3",
-    "version": "0.1.4",
+    "version": "0.2.0",
     "news": {
+      "0.2.0": {
+        "en": "check Inverter_State for FeedIn before init\nsuspend error logging on too many errors\nadd timeout to API calls\nupdate translations",
+        "de": "inverter_State for Feed überprüfen Vor dem Init\nsuspendierfehler bei zu vielen fehlern\nzeitout zu API-Anrufen hinzufügen\nübersetzungen aktualisieren",
+        "ru": "обсуждение Inverter_State for Feed Прежде чем начать\nприостановить регистрацию ошибок на слишком много ошибок\nдобавление тайм-аута для вызовов API\nобновление переводов",
+        "pt": "check Inverter_State for Feed Antes de entrar\nsuspender o registo de erros em muitos erros\nadicionar tempo- limite às chamadas da API\natualizar traduções",
+        "nl": "controleer Inverter_State voor Feed In voor init\nfoutmelding bij te veel fouten opschorten\ntimeout toevoegen aan API-aanroepen\nvertalingen bijwerken",
+        "fr": "cochez Inverter_State pour le flux En avant init\nsuspendre l'enregistrement des erreurs sur trop d'erreurs\najouter timeout aux appels API\nmettre à jour les traductions",
+        "it": "check Inverter_State per l'alimentazione In prima init\nsospendere l'errore di registrazione su troppi errori\naggiungere timeout alle chiamate API\naggiornare le traduzioni",
+        "es": "check Inverter_State for Feed En antes de entrar\nsuspender el registro de errores en demasiados errores\nagregar tiempo a las llamadas API\ntraducción actualizada",
+        "pl": "sprawdź Inverter _ State for Feed Przed initem\nzawieszenie logowania błędów na zbyt wielu błędach\ndodaj timeout do połączeń API\naktualizacja tłumaczeń",
+        "uk": "check Inverter_State for Feed Перед входом\nпередача помилок на занадто багато помилок\nдодати час до дзвінків API\nоновлення перекладів",
+        "zh-cn": "检查种子的反转器_ 状态 进来之前\n在过多的错误上暂停错误记录\n添加超时到 API 调用\n更新翻译"
+      },
       "0.1.4": {
         "en": "fix logging for preset and optional data",
         "de": "fixe protokollierung für voreingestellte und optionale daten",
@@ -80,19 +93,6 @@
         "pl": "dodać powiadomienie o dostępnych aktualizacjach\nupewnij się, że init kończy się bez błędów",
         "uk": "додати повідомлення про доступні оновлення\nпереконайтеся, що init завершується без помилок",
         "zh-cn": "增加关于可用更新的通知\n确保它完成 没有错误"
-      },
-      "0.0.8": {
-        "en": "fix writing of settings after 0.0.7\nfix crash after failed API requests",
-        "de": "festschreiben der einstellungen nach 0,0.7\ncrash nach gescheiterten API-Anforderungen beheben",
-        "ru": "фиксировать запись настроек после 0.0.7\nсбой исправления после неудавшихся запросов API",
-        "pt": "corrigir a escrita das configurações após 0,0.7\ncorrigir falha após pedidos de API falhados",
-        "nl": "fix het schrijven van instellingen na 0.07\nreparatie crash na mislukte API-verzoeken",
-        "fr": "corriger l'écriture des paramètres après 0.0.7\ncorrection du crash après l'échec des requêtes API",
-        "it": "correzione della scrittura delle impostazioni dopo 0.0.7\nfix crash dopo le richieste API fallite",
-        "es": "fijar escritura de configuración después de 0.0.7\narreglar fallo después de las solicitudes de API falladas",
-        "pl": "naprawić zapis ustawień po 0.0.7\nnaprawić awarię po nieudanym żądaniu API",
-        "uk": "виправлено написання параметрів після 0.0.7\nвиправлення аварійних ситуацій після невдалих запитів API",
-        "zh-cn": "0.7 之后设置的固定写入\naPI 请求失败后修复崩溃"
       }
     },
     "titleLang": {
