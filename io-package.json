@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "plenticore-g3",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "news": {
+      "0.2.1": {
+        "en": "update dependencies",
+        "de": "aktualisierung der abhängigkeiten",
+        "ru": "обновление зависимостей",
+        "pt": "atualizar dependências",
+        "nl": "afhankelijkheden bijwerken",
+        "fr": "mettre à jour les dépendances",
+        "it": "aggiornamento dipendenze",
+        "es": "dependencias de actualización",
+        "pl": "aktualizacji zależności",
+        "uk": "оновлення залежності",
+        "zh-cn": "更新依赖关系"
+      },
       "0.2.0": {
         "en": "check Inverter_State for FeedIn before init\nsuspend error logging on too many errors\nadd timeout to API calls\nupdate translations",
         "de": "inverter_State for Feed überprüfen Vor dem Init\nsuspendierfehler bei zu vielen fehlern\nzeitout zu API-Anrufen hinzufügen\nübersetzungen aktualisieren",
@@ -80,19 +93,6 @@
         "pl": "naprawić hierarchię obiektów\nnaprawić brakujące tłumaczenia, dostosować tłumaczenia oparte na języku systemowym\nustaw role stanu",
         "uk": "виправити ієрархію об'єкта\nвиправити відсутні переклади, налаштувати переклади на основі мови системи\nфіксувати ролі держави",
         "zh-cn": "固定对象等级\n修复缺失的翻译, 根据系统语言调整翻译\n固定状态角色"
-      },
-      "0.1.0": {
-        "en": "add notification on available updates\nmake sure init completes without errors",
-        "de": "benachrichtigung über verfügbare updates hinzufügen\nstellen sie sicher, dass init ohne fehler komplettiert",
-        "ru": "добавить уведомления о доступных обновлениях\nубедитесь, что init завершается без ошибок",
-        "pt": "adicionar notificação sobre atualizações disponíveis\ncertifique-se de init completa sem erros",
-        "nl": "notificatie toevoegen aan beschikbare updates\nzorg ervoor dat init voltooit zonder fouten",
-        "fr": "ajouter une notification sur les mises à jour disponibles\ns'assurer que init complète sans erreurs",
-        "it": "aggiungere la notifica agli aggiornamenti disponibili\nassicurarsi init completa senza errori",
-        "es": "añadir notificación sobre actualizaciones disponibles\nasegúrese de que init completa sin errores",
-        "pl": "dodać powiadomienie o dostępnych aktualizacjach\nupewnij się, że init kończy się bez błędów",
-        "uk": "додати повідомлення про доступні оновлення\nпереконайтеся, що init завершується без помилок",
-        "zh-cn": "增加关于可用更新的通知\n确保它完成 没有错误"
       }
     },
     "titleLang": {
