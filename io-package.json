@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "plenticore-g3",
-    "version": "0.2.1",
+    "version": "0.2.0",
     "news": {
       "0.2.1": {
         "en": "update dependencies",
