@@ -41,6 +41,10 @@ Colons in the data ID are replaced by an underscore:
 <br> 'Statistic:Yield:Day' will become 'Statistic_Yield_Day'
 
 ## Changelog
+
+### **WORK IN PROGRESS**
+- update dependencies
+
 ### 0.2.0 (2025-07-22)
 - check Inverter_State for FeedIn before init
 - suspend error logging on too many errors
