@@ -1,6 +1,6 @@
 // ioBroker eslint template configuration file for js and ts files
 // Please note that esm or react based modules need additional modules loaded.
-import config from '@iobroker/eslint-config';
+import config, { reactConfig } from '@iobroker/eslint-config';
 import globals from "globals";
 
 export default [
@@ -18,7 +18,6 @@ export default [
             'node_modules/*',
             'src-admin/build/*',
             'src-admin/node_modules/*',
-            'src-admin/eslint.config.mjs',
             'admin/static/*', 
             'admin/admin.d.ts',
             '**/adapter-config.d.ts'     
@@ -44,5 +43,7 @@ export default [
         rules: {
             // 'jsdoc/require-jsdoc': 'off',
         }
-    }
+    },
+
+    ...reactConfig,
 ];
