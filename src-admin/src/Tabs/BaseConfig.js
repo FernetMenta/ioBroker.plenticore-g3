@@ -143,7 +143,18 @@ class Options extends Component {
                         control={
                             <Checkbox
                                 checked={this.props.native.https === undefined ? true : this.props.native.https}
-                                onChange={e => this.props.onChange('https', e.target.checked)}
+                                onChange={e => {
+                                    this.props.onChange('https', e.target.checked, () => {
+                                        let port = parseInt(this.props.native.port);
+                                        if (port === 80 || port === 443) {
+                                            if (e.target.checked) {
+                                                this.props.onChange('port', 443);
+                                            } else {
+                                                this.props.onChange('port', 80);
+                                            }
+                                        }
+                                    });
+                                }}
                             />
                         }
                         label={I18n.t('Use HTTPS')}
