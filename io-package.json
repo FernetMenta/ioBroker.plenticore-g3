@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "plenticore-g3",
-    "version": "0.2.1",
+    "version": "0.3.0",
     "news": {
+      "0.3.0": {
+        "en": "update documentation with soction of tested models\nenhance port selection related to http/https for base settings\ndo not poll data points related to battery, if no battery is present\nupdate dependencies",
+        "de": "aktualisierung der dokumentation mit soktion der getesteten modelle\ndie portauswahl im zusammenhang mit http/https für basiseinstellungen verbessern\nkeine datenpunkte im zusammenhang mit batterie abfragen, wenn keine batterie vorhanden ist\naktualisierung der abhängigkeiten",
+        "ru": "обновление документации с отсевом тестируемых моделей\nулучшить выбор портов, связанных с http/https для базовых настроек\nне опрашивайте данные, связанные с батареей, если батареи нет\nобновление зависимостей",
+        "pt": "atualizar documentação com socção de modelos testados\nmelhorar a seleção de portas relacionadas com http/https para configurações de base\nnão pesquise pontos de dados relacionados à bateria, se não houver bateria presente\natualizar dependências",
+        "nl": "de documentatie bijwerken met de soctie van geteste modellen\nde havenselectie voor http/https voor basisinstellingen verbeteren\nniet peilen gegevenspunten met betrekking tot batterij, als er geen batterij aanwezig is\nafhankelijkheden bijwerken",
+        "fr": "mettre à jour la documentation avec la soction des modèles testés\naméliorer la sélection des ports liés à https pour les paramètres de base\nne pas vérifier les points de données liés à la batterie, si aucune batterie n'est présente\nmettre à jour les dépendances",
+        "it": "documentazione di aggiornamento con sozione di modelli testati\nmigliorare la selezione della porta relativa a http/https per le impostazioni di base\nnon sondare i punti di dati relativi alla batteria, se nessuna batteria è presente\naggiornamento dipendenze",
+        "es": "documentación de actualización con sección de modelos probados\nmejorar la selección portuaria relacionada con http/https para configuraciones de base\nno encuesta puntos de datos relacionados con la batería, si no hay batería está presente\ndependencias de actualización",
+        "pl": "aktualizacja dokumentacji z gniazdem testowanych modeli\nzwiększenie wyboru portów w odniesieniu do ustawień podstawowych http / https\nnie ankietować punktów danych związanych z akumulatorem, jeśli nie ma baterii\naktualizacji zależności",
+        "uk": "оновлення документації з відсмоктуванням тестованих моделей\nпідвищення вибору порту, пов'язаних з http://https для базових налаштувань\nне забруднюючи дані, пов'язані з акумулятором, якщо немає акумулятора\nоновлення залежності",
+        "zh-cn": "更新文件,并使用已测试模型\n增强与 http/ https 相关的基础设置的端口选择\n如果没有电池,则不调查与电池有关的数据点\n更新依赖关系"
+      },
       "0.2.1": {
         "en": "update dependencies",
         "de": "aktualisierung der abhängigkeiten",
@@ -80,19 +93,6 @@
         "pl": "dodać węzeł 24 do testów\nprace domowe",
         "uk": "додати вузол 24 для тестів\nхори",
         "zh-cn": "在测试中添加节点 24\n家务"
-      },
-      "0.1.1": {
-        "en": "fix object hierarchy\nfix missing translations, adjust translations based on system language\nfix state roles",
-        "de": "objekthierarchie beheben\nfehlende übersetzungen beheben, übersetzungen basierend auf systemsprache anpassen\nzustandsrollen beheben",
-        "ru": "иерархия объектов\nисправление отсутствующих переводов, корректировка переводов на основе системного языка\nисправить государственные роли",
-        "pt": "corrigir a hierarquia de objetos\ncorrigir traduções ausentes, ajustar traduções com base na linguagem do sistema\ncorrigir funções estaduais",
-        "nl": "fix objecthiërarchie\nontbrekende vertalingen oplossen, vertalingen aanpassen op basis van systeemtaal\nfix state rollen",
-        "fr": "fixer la hiérarchie des objets\ncorriger les traductions manquantes, ajuster les traductions en fonction de la langue du système\nfixer les rôles d'état",
-        "it": "correzione della gerarchia degli oggetti\ncorreggere le traduzioni mancanti, regolare le traduzioni in base alla lingua di sistema\nrisolvere i ruoli dello stato",
-        "es": "fijar la jerarquía del objeto\narreglar traducciones faltantes, ajustar traducciones basadas en el lenguaje del sistema\nfijar funciones estatales",
-        "pl": "naprawić hierarchię obiektów\nnaprawić brakujące tłumaczenia, dostosować tłumaczenia oparte na języku systemowym\nustaw role stanu",
-        "uk": "виправити ієрархію об'єкта\nвиправити відсутні переклади, налаштувати переклади на основі мови системи\nфіксувати ролі держави",
-        "zh-cn": "固定对象等级\n修复缺失的翻译, 根据系统语言调整翻译\n固定状态角色"
       }
     },
     "titleLang": {
