@@ -48,6 +48,12 @@ Despite what the name of the adapter may suggest (that only G3 models are suppor
 - Plenticore BI 10/26 (G2) - FW Version 02.15.19562
 
 ## Changelog
+### **WORK IN PROGRESS**
+- update documentation with soction of tested models
+- enhance port selection related to http/https for base settings
+- do not poll data points related to battery, if no battery is present
+- update dependencies
+
 ### 0.2.1 (2025-08-29)
 - update dependencies
 
