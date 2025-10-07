@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "plenticore-g3",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "news": {
       "0.4.0": {
         "en": "improve init process: do preinit, if inverter is not in state FeedIn; trigger init as soon as inverter goes to FeedIn",

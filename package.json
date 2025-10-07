@@ -1,6 +1,6 @@
 {
   "name": "iobroker.plenticore-g3",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Adapter to communicate with a KOSTAL Plenticore Plus via local network (non-modbus)",
   "author": {
     "name": "fernetmenta",

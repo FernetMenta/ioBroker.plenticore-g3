@@ -48,7 +48,7 @@ Despite what the name of the adapter may suggest (that only G3 models are suppor
 - Plenticore BI 10/26 (G2) - FW Version 02.15.19562
 
 ## Changelog
-### **WORK IN PROGRESS**
+### 0.4.0 (2025-10-07)
 - improve init process: do preinit, if inverter is not in state FeedIn; trigger init as soon as inverter goes to FeedIn
 
 ### 0.3.0 (2025-10-06)
