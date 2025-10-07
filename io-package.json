@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "plenticore-g3",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "news": {
+      "0.4.0": {
+        "en": "improve init process: do preinit, if inverter is not in state FeedIn; trigger init as soon as inverter goes to FeedIn",
+        "de": "verbesserung des Init-Prozesses: voreinstellen, wenn der Wechselrichter nicht im Zustand FeedIn ist; Trigger init, sobald der Wechselrichter zu FeedIn geht",
+        "ru": "улучшить процесс init: сделать preinit, если инвертор не находится в состоянии FeedIn; запустить init, как только инвертор перейдет в FeedIn",
+        "pt": "melhorar o processo de init: do preinit, se o inversor não estiver no estado FeedIn; gatilho init assim que o inversor for para o FeedIn",
+        "nl": "verbeteren init proces: preinit, als omvormer is niet in staat FeedIn; trigger init zodra omvormer gaat naar FeedIn",
+        "fr": "améliorer le processus d'init: faire préinit, si l'onduleur n'est pas dans l'état FeedIn; déclencher init dès que l'onduleur va à FeedIn",
+        "it": "migliorare il processo init: fare preinit, se inverter non è in stato FeedIn; attivare init non appena inverter va a FeedIn",
+        "es": "mejorar el proceso de entrada: preinit, si el inversor no está en estado FeedIn; gatillo init tan pronto como el inversor va a FeedIn",
+        "pl": "poprawić proces init: zrobić preinit, jeśli inwerter nie jest w stanie FeedIn; uruchomić init jak tylko inwerter idzie do FeedIn",
+        "uk": "поліпшити процес init: do preinit, якщо інвертор не в державі FeedIn; запустити init, як тільки інвертор йде в FeedIn",
+        "zh-cn": "改进 init 进程 : 如果反转器不在状态 FeedIn 中, 做 prinit; 一旦反转器到 FeedIn 中, 立即触发 "
+      },
       "0.3.0": {
         "en": "update documentation with soction of tested models\nenhance port selection related to http/https for base settings\ndo not poll data points related to battery, if no battery is present\nupdate dependencies",
         "de": "aktualisierung der dokumentation mit soktion der getesteten modelle\ndie portauswahl im zusammenhang mit http/https für basiseinstellungen verbessern\nkeine datenpunkte im zusammenhang mit batterie abfragen, wenn keine batterie vorhanden ist\naktualisierung der abhängigkeiten",
@@ -80,19 +93,6 @@
         "pl": "dodaj trochę logowania do debugowania",
         "uk": "додати деякі журнали для видалення",
         "zh-cn": "为调试添加一些日志"
-      },
-      "0.1.2": {
-        "en": "add node 24 to tests\nchores",
-        "de": "knoten 24 zu tests hinzufügen\nchoreografie",
-        "ru": "добавить узел 24 в тесты\nработа по дому",
-        "pt": "adicionar nó 24 para testes\ntarefas",
-        "nl": "node 24 toevoegen aan tests\ntaken",
-        "fr": "ajouter le nœud 24 aux essais\ncorvées",
-        "it": "aggiungere nodo 24 ai test\ncores",
-        "es": "añadir nodo 24 a las pruebas\nacordes",
-        "pl": "dodać węzeł 24 do testów\nprace domowe",
-        "uk": "додати вузол 24 для тестів\nхори",
-        "zh-cn": "在测试中添加节点 24\n家务"
       }
     },
     "titleLang": {
