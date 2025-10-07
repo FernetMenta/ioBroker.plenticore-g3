@@ -15,12 +15,19 @@ const path = require('path');
 const PlenticoreAPI = require('./lib/plenticoreAPI.js');
 const PlenticoreData = require('./lib/plenticoredata.js');
 
+const InitState = {
+    Uninit: 0,
+    PreInit: 1,
+    Init: 2,
+}
+
 class PlenticoreG3 extends utils.Adapter {
     #plenticoreAPI;
     #processdata;
     #settings;
     #mainlooptimer;
-    #isInitialized = false;
+    #initState = InitState.Uninit;
+    #initCounter = 0;
     #lastUpdateCheck = 0;
     /**
      * @param {Partial<utils.AdapterOptions>} [options] - options given from iobroker
@@ -146,8 +153,11 @@ class PlenticoreG3 extends utils.Adapter {
 
     // main loop for polling and sending data
     async mainloop() {
+        let inverterState = 0;
+
         if (!this.#plenticoreAPI.loggedIn) {
-            this.#isInitialized = false;
+            this.#initState = InitState.Uninit;
+            this.#initCounter = 0;
             this.setState('info.connection', false, true);
             try {
                 await this.#plenticoreAPI.login();
@@ -163,20 +173,34 @@ class PlenticoreG3 extends utils.Adapter {
             }
         }
 
-        if (!this.#isInitialized) {
+        if (this.#initState != InitState.Init) {
+            let inverterStatePoll = PlenticoreData.getPollInverterStateID();
             try {
-                // wait until inverter is in state FeedIn, otherwise REST API is not stable
-                let inverterStatePoll = PlenticoreData.getPollInverterStateID();
-                try {
-                    let inverterStateResp = await this.#plenticoreAPI.getProcessData(inverterStatePoll);
-                    let inverterState = inverterStateResp[0].processdata[0].value;
-                    if (inverterState != 6) {
-                        throw new Error('inverter not in state FeedIn');
+                let inverterStateResp = await this.#plenticoreAPI.getProcessData(inverterStatePoll);
+                inverterState = inverterStateResp[0].processdata[0].value;
+                if (this.#initState == InitState.PreInit) {
+                    if (inverterState == 6) {
+                        this.log.info('Inverter in state FeedIn now, triggering reinit');
+                        this.#initState = InitState.Uninit;
                     }
-                } catch (e) {
-                    throw new Error(e);
+                } else if (inverterState == 6) {
+                    this.log.info('Inverter in state FeedIn, starting initialization');
+                } else if (this.#initCounter > 5) {
+                    this.log.info('Inverter not in state FeedIn, preinitialize');
+                } else {
+                    this.log.info('Inverter not in state FeedIn, retry ...');
+                    this.#initCounter++;
+                    this.nextLoop();
+                    return;
                 }
+            } catch (e) {
+                throw new Error(e);
+            }
+        }
 
+        if (this.#initState == InitState.Uninit) {
+            this.log.info('start init');
+            try {
                 // want to delete unused objects later
                 let allAdapterObjs = await this.getAdapterObjectsAsync();
 
@@ -189,7 +213,7 @@ class PlenticoreG3 extends utils.Adapter {
                     optionalProcessData = [];
                 }
                 this.#processdata.setAllIDs(allProcessData);
-                await this.#processdata.init(optionalProcessData, allAdapterObjs);
+                await this.#processdata.init(optionalProcessData, inverterState == 6 ? allAdapterObjs : undefined);
 
                 // init settings
                 let allSettings = await this.#plenticoreAPI.getAllSettings();
@@ -200,16 +224,21 @@ class PlenticoreG3 extends utils.Adapter {
                     optionalSettings = [];
                 }
                 this.#settings.setAllIDs(allSettings);
-                await this.#settings.init(optionalSettings, allAdapterObjs);
+                await this.#settings.init(optionalSettings, inverterState == 6 ? allAdapterObjs : undefined);
 
                 // subscribe to all settings that are writable
                 this.subscribeStates('settings.*');
 
                 // init done
                 this.setState('info.connection', true, true);
-                this.#isInitialized = true;
+                if (inverterState == 6) {
+                    this.#initState = InitState.Init;
+                    this.log.info('init completed');
+                } else {
+                    this.#initState = InitState.PreInit;
+                    this.log.info('preinit completed');
+                }
                 this.#lastUpdateCheck = 0;
-                this.log.info('init completed');
             } catch (e) {
                 if (e == 'auth') {
                     // stop loop due to authorization issue
