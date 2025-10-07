@@ -19,7 +19,7 @@ const InitState = {
     Uninit: 0,
     PreInit: 1,
     Init: 2,
-}
+};
 
 class PlenticoreG3 extends utils.Adapter {
     #plenticoreAPI;
