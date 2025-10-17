@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "plenticore-g3",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "news": {
+      "0.4.1": {
+        "en": "move to npm trusted publishing",
+        "de": "umzug auf npm vertrauenswürdige veröffentlichung",
+        "ru": "перейти в npm trusted publishing",
+        "pt": "mover para a publicação confiável do npm",
+        "nl": "verplaatsen naar npm vertrouwde publicatie",
+        "fr": "passer à npm publication de confiance",
+        "it": "passare a npm pubblicazione fidata",
+        "es": "pasar a npm publicación de confianza",
+        "pl": "przejść do npm zaufanych publikacji",
+        "uk": "переїзд на npm довірене видання",
+        "zh-cn": "移动到 npm 可信出版"
+      },
       "0.4.0": {
         "en": "improve init process: do preinit, if inverter is not in state FeedIn; trigger init as soon as inverter goes to FeedIn",
         "de": "verbesserung des Init-Prozesses: voreinstellen, wenn der Wechselrichter nicht im Zustand FeedIn ist; Trigger init, sobald der Wechselrichter zu FeedIn geht",
@@ -80,19 +93,6 @@
         "pl": "dodaj trochę logowania do debugowania\nnaprawić ostrzeżenia dziennika",
         "uk": "додати деякі журнали для видалення\nвиправити попередження журналів",
         "zh-cn": "为调试添加一些日志\n修正日志警告"
-      },
-      "0.1.3-alpha.0": {
-        "en": "add some logging for debugging",
-        "de": "fügen sie einige protokolle für debugging hinzu",
-        "ru": "добавить некоторые бревна для отладки",
-        "pt": "adicionar algum registro para depuração",
-        "nl": "logging toevoegen voor debuggen",
-        "fr": "ajouter un peu d'enregistrement pour le débogage",
-        "it": "aggiungere qualche registrazione per debugging",
-        "es": "añadir un poco de registro para depurar",
-        "pl": "dodaj trochę logowania do debugowania",
-        "uk": "додати деякі журнали для видалення",
-        "zh-cn": "为调试添加一些日志"
       }
     },
     "titleLang": {
