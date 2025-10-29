@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "plenticore-g3",
-    "version": "0.4.1",
+    "version": "0.5.0",
     "news": {
+      "0.5.0": {
+        "en": "make API-Call timeout configurable\nupdate translations",
+        "de": "aPI-Call Timeout konfigurierbar machen\nübersetzungen aktualisieren",
+        "ru": "сделать API-Call Timeout настраиваемым\nобновление переводов",
+        "pt": "tornar configurável o tempo- limite de chamada da API\natualizar traduções",
+        "nl": "aPI-Call timeout configureerbaar maken\nvertalingen bijwerken",
+        "fr": "configurable API-Call timeout\nmettre à jour les traductions",
+        "it": "rendere configurabile il timeout API-Call\naggiornare le traduzioni",
+        "es": "make API-Call timeout configurable\ntraducción actualizada",
+        "pl": "make API- Call timeout configurowalny\naktualizacja tłumaczeń",
+        "uk": "make API-Call налаштування часу\nоновлення перекладів",
+        "zh-cn": "使 API- Call 超时配置\n更新翻译"
+      },
       "0.4.1": {
         "en": "move to npm trusted publishing",
         "de": "umzug auf npm vertrauenswürdige veröffentlichung",
@@ -80,19 +93,6 @@
         "pl": "fix logowanie dla ustawionych i opcjonalnych danych",
         "uk": "зафіксувати заголовок для отримання та додаткових даних",
         "zh-cn": "固定预设和可选数据的日志"
-      },
-      "0.1.3": {
-        "en": "add some logging for debugging\nfix log warnings",
-        "de": "fügen sie einige protokolle für debugging hinzu\nprotokollwarnungen fixieren",
-        "ru": "добавить некоторые бревна для отладки\nисправить лог предупреждения",
-        "pt": "adicionar algum registro para depuração\ncorrigir avisos de registo",
-        "nl": "logging toevoegen voor debuggen\nlogmeldingen herstellen",
-        "fr": "ajouter un peu d'enregistrement pour le débogage\ncorrection des avertissements de log",
-        "it": "aggiungere qualche registrazione per debugging\ncorreggere avvisi di registro",
-        "es": "añadir un poco de registro para depurar\nfijar advertencias de registro",
-        "pl": "dodaj trochę logowania do debugowania\nnaprawić ostrzeżenia dziennika",
-        "uk": "додати деякі журнали для видалення\nвиправити попередження журналів",
-        "zh-cn": "为调试添加一些日志\n修正日志警告"
       }
     },
     "titleLang": {
