@@ -1,13 +1,14 @@
 {
-    "(Instance not running)": "(Екземпляр не працює)",
+    "(Instance not running)": "(Екземпляр не запущено)",
+    "API Timeout": "Тайм-аут для запитів API (секунди)",
     "Base Config": "Загальні налаштування",
+    "Description": "Опис",
     "Hostname or IP": "Ім'я хоста або IP",
-    "Port": "Порт",
+    "Language": "Мова",
     "Password": "Пароль",
     "Polling Interval": "Інтервал читання/запису",
-    "Use HTTPS": "Використання HTTPS",
-    "Language": "Мова",
-    "Process Data": "Обробка даних",
+    "Port": "Порт",
+    "Process Data": "Дані процесу",
     "Settings": "Налаштування",
-    "Description": "Опис"
+    "Use HTTPS": "Використання HTTPS"
 }

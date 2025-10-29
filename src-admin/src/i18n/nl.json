@@ -1,13 +1,14 @@
 {
-    "(Instance not running)": "(Exemplaar is niet actief)",
+    "(Instance not running)": "(Instance wordt niet uitgevoerd)",
+    "API Timeout": "Time-out voor API-verzoeken (seconden)",
     "Base Config": "Algemene instellingen",
-    "Hostname or IP": "Hostnaam of ip",
-    "Port": "Haven",
+    "Description": "Beschrijving",
+    "Hostname or IP": "Hostnaam of IP",
+    "Language": "Taal",
     "Password": "Wachtwoord",
     "Polling Interval": "Interval van lezen/schrijven",
-    "Use HTTPS": "Gebruik van HTTPS",
-    "Language": "Taal",
+    "Port": "Port",
     "Process Data": "Procesgegevens",
     "Settings": "Instellingen",
-    "Description": "Beschrijving"
+    "Use HTTPS": "Gebruik van HTTPS"
 }

@@ -1,13 +1,14 @@
 {
-    "(Instance not running)": "(Instanz läuft nicht)",
+    "(Instance not running)": "(Die Instanz läuft nicht)",
+    "API Timeout": "Zeitüberschreitung für API-Anfragen (Sekunden)",
     "Base Config": "Allgemeine Einstellungen",
+    "Description": "Beschreibung",
     "Hostname or IP": "Hostname oder IP",
-    "Port": "Hafen",
-    "Password": "Passwort",
-    "Polling Interval": "Intervall des Lesens/Schreibens",
-    "Use HTTPS": "Verwendung von HTTPS",
     "Language": "Sprache",
+    "Password": "Passwort",
+    "Polling Interval": "Intervall für Lesen/Schreiben",
+    "Port": "Port",
     "Process Data": "Prozessdaten",
     "Settings": "Einstellungen",
-    "Description": "Beschreibung"
+    "Use HTTPS": "Verwendung von HTTPS"
 }

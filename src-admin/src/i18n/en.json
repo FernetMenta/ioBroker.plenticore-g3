@@ -7,6 +7,7 @@
     "Polling Interval": "Interval of read/write",
     "Use HTTPS": "Use of HTTPS",
     "Language": "Language",
+    "API Timeout": "Timeout for API requests (seconds)",
 
     "Process Data": "Process Data",
     "Settings": "Settings",

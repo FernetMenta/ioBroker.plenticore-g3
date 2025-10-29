@@ -50,6 +50,7 @@ Despite what the name of the adapter may suggest (that only G3 models are suppor
 ## Changelog
 ### **WORK IN PROGRESS**
 - make API-Call timeout configurable
+- update translations
 
 ### 0.4.1 (2025-10-17)
 - move to npm trusted publishing

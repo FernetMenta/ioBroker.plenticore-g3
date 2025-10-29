@@ -1,13 +1,14 @@
 {
     "(Instance not running)": "(La instancia no se está ejecutando)",
+    "API Timeout": "Tiempo de espera para solicitudes API (segundos)",
     "Base Config": "Configuración general",
+    "Description": "Descripción",
     "Hostname or IP": "Nombre de host o IP",
-    "Port": "Puerto",
+    "Language": "Idioma",
     "Password": "Contraseña",
     "Polling Interval": "Intervalo de lectura/escritura",
-    "Use HTTPS": "Uso de https",
-    "Language": "Idioma",
-    "Process Data": "Datos de procesos",
+    "Port": "Puerto",
+    "Process Data": "Datos de proceso",
     "Settings": "Ajustes",
-    "Description": "Descripción"
+    "Use HTTPS": "Uso de HTTPS"
 }

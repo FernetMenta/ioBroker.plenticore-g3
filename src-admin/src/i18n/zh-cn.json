@@ -1,13 +1,14 @@
 {
-    "(Instance not running)": "（实例未运行）",
-    "Base Config": "一般设置",
-    "Hostname or IP": "主机名或IP",
-    "Port": "港口",
-    "Password": "密码",
-    "Polling Interval": "读/写的间隔",
-    "Use HTTPS": "使用HTTPS",
+    "(Instance not running)": "(实例未运行）",
+    "API Timeout": "API 请求超时（秒）",
+    "Base Config": "常规设置",
+    "Description": "说明",
+    "Hostname or IP": "主机名或 IP",
     "Language": "语言",
+    "Password": "密码",
+    "Polling Interval": "读/写间隔",
+    "Port": "港口",
     "Process Data": "过程数据",
     "Settings": "设置",
-    "Description": "描述"
+    "Use HTTPS": "使用 HTTPS"
 }
