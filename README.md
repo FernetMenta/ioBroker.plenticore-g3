@@ -48,6 +48,9 @@ Despite what the name of the adapter may suggest (that only G3 models are suppor
 - Plenticore BI 10/26 (G2) - FW Version 02.15.19562
 
 ## Changelog
+### **WORK IN PROGRESS**
+- make API-Call timeout configurable
+
 ### 0.4.1 (2025-10-17)
 - move to npm trusted publishing
 

@@ -214,6 +214,34 @@ class Options extends Component {
                         }}
                         margin="normal"
                     />
+                    <br />
+                    <TextField
+                        style={{ ...styles.input }}
+                        variant="standard"
+                        label={I18n.t('API Timeout')}
+                        value={this.props.native.apitimeout}
+                        type="number"
+                        slotProps={{
+                            htmlInput: {
+                                max: 30,
+                                min: 5,
+                            },
+                        }}
+                        onBlur={e => {
+                            var value = parseInt(e.target.value, 10);
+                            if (value > 30) {
+                                value = 30;
+                            }
+                            if (value < 5) {
+                                value = 5;
+                            }
+                            this.props.onChange('apitimeout', value);
+                        }}
+                        onChange={e => {
+                            this.props.onChange('apitimeout', e.target.value);
+                        }}
+                        margin="normal"
+                    />
                 </div>
             </form>
         );

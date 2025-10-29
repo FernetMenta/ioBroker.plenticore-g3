@@ -58,6 +58,13 @@ class PlenticoreG3 extends utils.Adapter {
             this.config.pollinginterval = 60;
         }
 
+        // make sure timeout is between expected values
+        if (this.config.apitimeout < 5) {
+            this.config.apitimeout = 5;
+        } else if (this.config.apitimeout > 30) {
+            this.config.apitimeout = 30;
+        }
+
         // Reset the connection indicator during startup
         this.setState('info.connection', false, true);
 
@@ -69,6 +76,7 @@ class PlenticoreG3 extends utils.Adapter {
             this.config.port,
             this.config.https,
             this.config.password,
+            this.config.apitimeout,
             this.log,
         );
         this.mainloop();
