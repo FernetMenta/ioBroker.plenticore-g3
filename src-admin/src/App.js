@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
+import { ThemeProvider, StyledEngineProvider, alpha } from '@mui/material/styles';
 
 import AppBar from '@mui/material/AppBar';
 import Tabs from '@mui/material/Tabs';
@@ -63,6 +63,8 @@ class App extends GenericApp {
         extendedProps.sentryDSN = 'https://yyy@sentry.iobroker.net/xx';
 
         super(props, extendedProps);
+
+        this.state.theme.alpha = alpha;
     }
 
     /**
