@@ -9,7 +9,7 @@
         "@mui/x-data-grid": "^7.27.2",
         "@sentry/browser": "^8.28.0",
         "babel-eslint": "^10.1.0",
-        "dotenv": "^16.4.7",
+        "dotenv": "^17.2.3",
         "react-scripts": "5.0.1"
     },
     "scripts": {
