@@ -34,7 +34,7 @@
     "@iobroker/build-tools": "^2.0.15",
     "@iobroker/dev-server": "^0.8.0",
     "@iobroker/eslint-config": "^2.2.0",
-    "@iobroker/testing": "^5.1.1",
+    "@iobroker/testing": "^5.2.2",
     "@sinonjs/referee-sinon": "^12.0.0",
     "jsverify": "^0.8.4",
     "knuth-shuffle": "^1.0.8",
