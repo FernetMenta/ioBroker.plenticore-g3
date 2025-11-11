@@ -32,6 +32,6 @@
         "not op_mini all"
     ],
     "devDependencies": {
-        "dotenv-cli": "^8.0.0"
+        "dotenv-cli": "^11.0.0"
     }
 }
