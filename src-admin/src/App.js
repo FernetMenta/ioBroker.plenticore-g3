@@ -8,8 +8,8 @@ import Box from '@mui/material/Box';
 
 import { GenericApp, Router, Loader, I18n } from '@iobroker/adapter-react-v5';
 
-import TabBaseConfig from './Tabs/BaseConfig';
-import TabOptionalData from './Tabs/OptionalData';
+const TabBaseConfig = React.lazy(() => import('./Tabs/BaseConfig'));
+const TabOptionalData = React.lazy(() => import('./Tabs/OptionalData'));
 
 const styles = {
     root: {},
