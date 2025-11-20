@@ -51,6 +51,7 @@ Despite what the name of the adapter may suggest (that only G3 models are suppor
 ### **WORK IN PROGRESS**
 - bump some packages
 - split react bundle
+- fix unhandled exception when polling inverter state
 
 ### 0.5.0 (2025-10-29)
 - make API-Call timeout configurable

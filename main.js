@@ -202,7 +202,9 @@ class PlenticoreG3 extends utils.Adapter {
                     return;
                 }
             } catch (e) {
-                throw new Error(e);
+                this.log.error(`cannot poll inverter state: ${e}`);
+                this.nextLoop();
+                return;
             }
         }
 
