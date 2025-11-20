@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "plenticore-g3",
-    "version": "0.5.0",
+    "version": "0.5.1",
     "news": {
+      "0.5.1": {
+        "en": "bump some packages\nsplit react bundle\nfix unhandled exception when polling inverter state\nfix missing description of preselected values (former optionals)",
+        "de": "einige pakete\nsplit reaktenbündel\nunhandled ausnahme bei der abfrage von inverterzustand beheben\ndie fehlende beschreibung der vorgewählten werte (frühere optionale)",
+        "ru": "упаковать некоторые пакеты\nсплит-реакция\nисправить необработанное исключение при опросе инверторного состояния\nисправление недостающего описания предварительно выбранных значений (бывшие опциональные значения)",
+        "pt": "bater alguns pacotes\nfeixe de reacção dividido\ncorrigir exceção não manejada ao pesquisar o estado do inversor\ncorrigir a descrição em falta dos valores pré-selecionados (antigo opcional)",
+        "nl": "bump sommige pakketten\nsplitreactiebundel\nfix unhandled uitzondering bij polling inverter toestand\nontbrekende beschrijving van voorgeselecteerde waarden vast te stellen (voormalige optionele waarden)",
+        "fr": "bomber certains paquets\nfaisceau de réaction divisé\nfixer l'exception non traitée lorsque l'état de l'inverseur de vote\ncorrection de la description manquante des valeurs présélectionnées (anciennes options)",
+        "it": "urtare alcuni pacchetti\npacchetto di reazione diviso\nfissare l'eccezione non maneggiata quando lo stato inverter inquinante\ncorreggere la descrizione mancante dei valori prescelti (ex optionals)",
+        "es": "para algunos paquetes\npaquete de reacción\nfijar la excepción sin manejar cuando encuesta estado inverter\nfijar la descripción de los valores preseleccionados (antiguos opcionales)",
+        "pl": "bump niektóre pakiety\npodzielony pakiet reakcji\nnaprawić nieobsługiwany wyjątek podczas ankiety inverter stan\nfix brakujący opis wstępnie wybranych wartości (poprzednie opcje)",
+        "uk": "бампер деякі пакети\nрозбити реанімаційний пакет\nзафіксувати несвоєчасне виключення при обпиленні інверторного стану\nфіксувати відсутній опис заданого значення (форматор опціонів)",
+        "zh-cn": "折叠一些软件包\n拆分反应捆绑\n在投票倒数状态时解决未处理的例外\n修复预选值的缺失描述( 前可选)"
+      },
       "0.5.0": {
         "en": "make API-Call timeout configurable\nupdate translations",
         "de": "aPI-Call Timeout konfigurierbar machen\nübersetzungen aktualisieren",
@@ -80,19 +93,6 @@
         "pl": "sprawdź Inverter _ State for Feed Przed initem\nzawieszenie logowania błędów na zbyt wielu błędach\ndodaj timeout do połączeń API\naktualizacja tłumaczeń",
         "uk": "check Inverter_State for Feed Перед входом\nпередача помилок на занадто багато помилок\nдодати час до дзвінків API\nоновлення перекладів",
         "zh-cn": "检查种子的反转器_ 状态 进来之前\n在过多的错误上暂停错误记录\n添加超时到 API 调用\n更新翻译"
-      },
-      "0.1.4": {
-        "en": "fix logging for preset and optional data",
-        "de": "fixe protokollierung für voreingestellte und optionale daten",
-        "ru": "исправление регистрации для предустановленных и дополнительных данных",
-        "pt": "corrigir o registro para dados predefinidos e opcionais",
-        "nl": "fix logging voor vooraf ingestelde en optionele gegevens",
-        "fr": "fixer l'enregistrement pour les données prédéfinies et optionnelles",
-        "it": "correzione della registrazione per dati preimpostati e facoltativi",
-        "es": "fijar registro para datos preestablecidos y opcionales",
-        "pl": "fix logowanie dla ustawionych i opcjonalnych danych",
-        "uk": "зафіксувати заголовок для отримання та додаткових даних",
-        "zh-cn": "固定预设和可选数据的日志"
       }
     },
     "titleLang": {

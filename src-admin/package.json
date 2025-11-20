@@ -1,6 +1,6 @@
 {
     "name": "plenticode-g3-admin",
-    "version": "0.5.0",
+    "version": "0.5.1",
     "private": true,
     "dependencies": {
         "@iobroker/adapter-react-v5": "^8.0.12",

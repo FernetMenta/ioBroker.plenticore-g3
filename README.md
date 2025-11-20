@@ -48,7 +48,7 @@ Despite what the name of the adapter may suggest (that only G3 models are suppor
 - Plenticore BI 10/26 (G2) - FW Version 02.15.19562
 
 ## Changelog
-### **WORK IN PROGRESS**
+### 0.5.1 (2025-11-20)
 - bump some packages
 - split react bundle
 - fix unhandled exception when polling inverter state
