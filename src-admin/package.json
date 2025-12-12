@@ -5,7 +5,7 @@
     "dependencies": {
         "@iobroker/adapter-react-v5": "^8.0.12",
         "@mui/icons-material": "^7.3.5",
-        "@mui/material": "^7.3.5",
+        "@mui/material": "^7.3.6",
         "@mui/x-data-grid": "^8.17.0",
         "@sentry/browser": "^10.25.0",
         "babel-eslint": "^10.1.0",
