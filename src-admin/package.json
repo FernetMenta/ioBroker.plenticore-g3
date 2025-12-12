@@ -3,7 +3,7 @@
     "version": "0.5.1",
     "private": true,
     "dependencies": {
-        "@iobroker/adapter-react-v5": "^8.0.12",
+        "@iobroker/adapter-react-v5": "^8.0.13",
         "@mui/icons-material": "^7.3.6",
         "@mui/material": "^7.3.5",
         "@mui/x-data-grid": "^8.17.0",
