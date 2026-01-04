@@ -54,6 +54,9 @@
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.40.0"
   },
+  "overrides": {
+    "picomatch": "^4.0.3"
+  },
   "main": "main.js",
   "files": [
     "admin{,/!(src-admin)/**}/!(tsconfig|tsconfig.*|.eslintrc).{json,json5}",
