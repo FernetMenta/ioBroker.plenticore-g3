@@ -29,6 +29,7 @@ class PlenticoreG3 extends utils.Adapter {
     #initState = InitState.Uninit;
     #initCounter = 0;
     #lastUpdateCheck = 0;
+    #hasBattery = false;
     /**
      * @param {Partial<utils.AdapterOptions>} [options] - options given from iobroker
      */
@@ -42,6 +43,14 @@ class PlenticoreG3 extends utils.Adapter {
         // this.on("objectChange", this.onObjectChange.bind(this));
         // this.on("message", this.onMessage.bind(this));
         this.on('unload', this.onUnload.bind(this));
+    }
+
+    setBatteryPresence(presence) {
+        this.#hasBattery = presence;
+    }
+
+    getBatteryPresence() {
+        return this.#hasBattery;
     }
 
     /**
