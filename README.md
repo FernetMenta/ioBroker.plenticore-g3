@@ -50,6 +50,8 @@ Despite what the name of the adapter may suggest (that only G3 models are suppor
 ## Changelog
 ### **WORK IN PROGRESS**
 - fix skipping optionals that have become preselected
+- fix not showing settings for battery when present
+- update dependencies
 
 ### 0.5.1 (2025-11-20)
 - bump some packages
