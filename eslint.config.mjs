@@ -21,7 +21,8 @@ export default [
             'src-admin/eslint.config.mjs',
             'admin/static/*', 
             'admin/admin.d.ts',
-            '**/adapter-config.d.ts'     
+            '**/adapter-config.d.ts',
+            'lib/third_party/*',
         ] 
     },
 

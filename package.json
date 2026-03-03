@@ -37,6 +37,7 @@
     "@iobroker/testing": "^5.2.2",
     "@iobroker/types": "^7.1.0",
     "@sinonjs/referee-sinon": "^12.0.0",
+    "@eslint/js": "^10.0.1",
     "coffee-script": "^1.12.7",
     "eslint": ">=9.32.0",
     "eslint-config-prettier": "^10.1.8",
