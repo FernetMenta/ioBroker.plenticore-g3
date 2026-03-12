@@ -206,7 +206,7 @@
       "_id": "processdata",
       "type": "channel",
       "common": {
-        "name": "Information"
+        "name": "ProcessData"
       },
       "native": {}
     },
@@ -226,7 +226,7 @@
       "_id": "settings",
       "type": "channel",
       "common": {
-        "name": "Information"
+        "name": "Settings"
       },
       "native": {}
     },
