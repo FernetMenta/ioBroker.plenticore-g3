@@ -50,6 +50,7 @@ Despite what the name of the adapter may suggest (that only G3 models are suppor
 ## Changelog
 ### **WORK IN PROGRESS**
 - update dependencies
+- fix notification, only send notification about firmware updates every 14 days
 
 ### 0.5.2 (2026-01-04)
 - fix skipping optionals that have become preselected

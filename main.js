@@ -300,8 +300,18 @@ class PlenticoreG3 extends utils.Adapter {
                 let version = await this.getStateAsync('processdata.scb.update.Update_Version');
                 if (version.val != 0) {
                     this.log.info('new update available');
-                    let text = I18n.translate('available version');
-                    await this.registerNotification('plenticore-g3', 'update', `${text} : ${version.val}`);
+                    let notification = await this.getStateAsync('info.firmwareupdate');
+                    if (
+                        !notification ||
+                        !notification.val ||
+                        notification.val != version.val ||
+                        !notification.ts ||
+                        notification.ts < Date.now() - 14 * 24 * 3600 * 1000
+                    ) {
+                        let text = I18n.translate('available version');
+                        await this.registerNotification('plenticore-g3', 'update', `${text} : ${version.val}`);
+                        this.setState('info.firmwareupdate', version.val, true);
+                    }
                 }
             }
             this.#lastUpdateCheck = today;

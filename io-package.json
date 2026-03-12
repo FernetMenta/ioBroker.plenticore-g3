@@ -203,6 +203,19 @@
       "native": {}
     },
     {
+      "_id": "info.firmwareupdate",
+      "type": "state",
+      "common": {
+        "role": "info.firmware",
+        "name": "Firmware update available",
+        "type": "number",
+        "read": true,
+        "write": false,
+        "def": 0
+      },
+      "native": {}
+    },
+    {
       "_id": "processdata",
       "type": "channel",
       "common": {
