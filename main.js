@@ -10,8 +10,8 @@ const utils = require('@iobroker/adapter-core');
 const I18n = require('@iobroker/adapter-core').I18n;
 
 // Load your modules here, e.g.:
-// const fs = require("fs");
-const path = require('path');
+// const fs = require("node:fs");
+const path = require('node:path');
 const PlenticoreAPI = require('./lib/plenticoreAPI.js');
 const PlenticoreData = require('./lib/plenticoredata.js');
 
