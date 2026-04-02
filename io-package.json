@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "plenticore-g3",
-    "version": "0.5.2",
+    "version": "0.5.3",
     "news": {
+      "0.5.3": {
+        "en": "update dependencies\nfix notification, only send notification about firmware updates every 14 days",
+        "de": "aktualisierung der abhängigkeiten\nfix benachrichtigung, nur senden benachrichtigung über firmware updates alle 14 tage",
+        "ru": "обновление зависимостей\nисправлять уведомления, отправлять уведомления об обновлениях прошивки каждые 14 дней",
+        "pt": "atualizar dependências\ncorrigir notificação, apenas enviar notificação sobre atualizações de firmware a cada 14 dias",
+        "nl": "afhankelijkheden bijwerken\nfix notificatie, alleen bericht sturen over firmware updates elke 14 dagen",
+        "fr": "mettre à jour les dépendances\ncorriger la notification, envoyer seulement une notification sur les mises à jour du firmware tous les 14 jours",
+        "it": "aggiornamento dipendenze\nfix notifica, inviare solo la notifica sugli aggiornamenti firmware ogni 14 giorni",
+        "es": "dependencias de actualización\nfijar notificación, sólo enviar notificación sobre actualizaciones de firmware cada 14 días",
+        "pl": "aktualizacji zależności\nfix notification, wysyłanie powiadomień o aktualizacjach oprogramowania firmowego tylko co 14 dni",
+        "uk": "оновлення залежності\nфіксувати повідомлення, тільки надсилати повідомлення про оновлення прошивки кожні 14 днів",
+        "zh-cn": "更新依赖关系\n固定通知, 只每14天发送一次固件更新通知"
+      },
       "0.5.2": {
         "en": "fix skipping optionals that have become preselected\nfix not showing settings for battery when present\nupdate dependencies",
         "de": "fixe sprungoptionen, die vorgewählt wurden\nbei vorhandener batterie keine einstellungen anzeigen\naktualisierung der abhängigkeiten",
@@ -80,19 +93,6 @@
         "pl": "aktualizacja dokumentacji z gniazdem testowanych modeli\nzwiększenie wyboru portów w odniesieniu do ustawień podstawowych http / https\nnie ankietować punktów danych związanych z akumulatorem, jeśli nie ma baterii\naktualizacji zależności",
         "uk": "оновлення документації з відсмоктуванням тестованих моделей\nпідвищення вибору порту, пов'язаних з http://https для базових налаштувань\nне забруднюючи дані, пов'язані з акумулятором, якщо немає акумулятора\nоновлення залежності",
         "zh-cn": "更新文件,并使用已测试模型\n增强与 http/ https 相关的基础设置的端口选择\n如果没有电池,则不调查与电池有关的数据点\n更新依赖关系"
-      },
-      "0.2.1": {
-        "en": "update dependencies",
-        "de": "aktualisierung der abhängigkeiten",
-        "ru": "обновление зависимостей",
-        "pt": "atualizar dependências",
-        "nl": "afhankelijkheden bijwerken",
-        "fr": "mettre à jour les dépendances",
-        "it": "aggiornamento dipendenze",
-        "es": "dependencias de actualización",
-        "pl": "aktualizacji zależności",
-        "uk": "оновлення залежності",
-        "zh-cn": "更新依赖关系"
       }
     },
     "titleLang": {

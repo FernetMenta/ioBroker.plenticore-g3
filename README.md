@@ -48,7 +48,7 @@ Despite what the name of the adapter may suggest (that only G3 models are suppor
 - Plenticore BI 10/26 (G2) - FW Version 02.15.19562
 
 ## Changelog
-### **WORK IN PROGRESS**
+### 0.5.3 (2026-04-02)
 - update dependencies
 - fix notification, only send notification about firmware updates every 14 days
 
