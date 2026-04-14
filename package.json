@@ -39,7 +39,7 @@
     "@sinonjs/referee-sinon": "^12.0.1",
     "@eslint/js": "^9.39.3",
     "coffee-script": "^1.12.7",
-    "eslint": ">=9.32.0",
+    "eslint": ">=10.2.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.30.0",
     "eslint-plugin-jsdoc": "^54.1.1",
