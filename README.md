@@ -159,6 +159,8 @@ Despite what the name of the adapter may suggest (that only G3 models are suppor
 
 Initial release
 
+[Older changelogs can be found there](CHANGELOG_OLD.md)
+
 ## License
 MIT License
 
