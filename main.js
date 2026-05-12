@@ -202,7 +202,7 @@ class PlenticoreG3 extends utils.Adapter {
                     }
                 } else if (inverterState == 6) {
                     this.log.info('Inverter in state FeedIn, starting initialization');
-                } else if (this.#initCounter > 5) {
+                } else if (this.#initCounter > 1) {
                     this.log.info('Inverter not in state FeedIn, preinitialize');
                 } else {
                     this.log.info('Inverter not in state FeedIn, retry ...');
