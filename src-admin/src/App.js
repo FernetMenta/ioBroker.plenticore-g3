@@ -1,5 +1,5 @@
-import React from 'react';
-import { ThemeProvider, StyledEngineProvider, alpha } from '@mui/material/styles';
+import React, { Suspense } from 'react';
+import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 
 import AppBar from '@mui/material/AppBar';
 import Tabs from '@mui/material/Tabs';
@@ -63,8 +63,6 @@ class App extends GenericApp {
         extendedProps.sentryDSN = 'https://yyy@sentry.iobroker.net/xx';
 
         super(props, extendedProps);
-
-        this.state.theme.alpha = alpha;
     }
 
     /**
@@ -109,70 +107,72 @@ class App extends GenericApp {
                     </Tabs>
                 </AppBar>
 
-                <Box
-                    component="div"
-                    sx={{ ...(this.isIFrame ? styles.tabContentIFrame : styles.tabContent) }}
-                >
-                    {(this.state.selectedTab === 'config' || !this.state.selectedTab) && (
-                        <TabBaseConfig
-                            key="config"
-                            common={this.common}
-                            socket={this.socket}
-                            native={this.state.native}
-                            onError={text =>
-                                this.setState({
-                                    errorText:
-                                        (text || text === 0) && typeof text !== 'string' ? text.toString() : text,
-                                })
-                            }
-                            onLoad={native => this.onLoadConfig(native)}
-                            instance={this.instance}
-                            adapterName={this.adapterName}
-                            changed={this.state.changed}
-                            onChange={(attr, value, cb) => this.updateNativeValue(attr, value, cb)}
-                        />
-                    )}
-                    {this.state.selectedTab === 'processdata' && (
-                        <TabOptionalData
-                            key="processdata"
-                            type="processdata"
-                            common={this.common}
-                            socket={this.socket}
-                            native={this.state.native}
-                            onError={text =>
-                                this.setState({
-                                    errorText:
-                                        (text || text === 0) && typeof text !== 'string' ? text.toString() : text,
-                                })
-                            }
-                            onLoad={native => this.onLoadConfig(native)}
-                            instance={this.instance}
-                            adapterName={this.adapterName}
-                            changed={this.state.changed}
-                            onChange={(attr, value, cb) => this.updateNativeValue(attr, value, cb)}
-                        />
-                    )}
-                    {this.state.selectedTab === 'settings' && (
-                        <TabOptionalData
-                            key="settings"
-                            type="settings"
-                            common={this.common}
-                            socket={this.socket}
-                            native={this.state.native}
-                            onError={text =>
-                                this.setState({
-                                    errorText:
-                                        (text || text === 0) && typeof text !== 'string' ? text.toString() : text,
-                                })
-                            }
-                            onLoad={native => this.onLoadConfig(native)}
-                            instance={this.instance}
-                            adapterName={this.adapterName}
-                            changed={this.state.changed}
-                            onChange={(attr, value, cb) => this.updateNativeValue(attr, value, cb)}
-                        />
-                    )}
-                </Box>
+                <Suspense>
+                    <Box
+                        component="div"
+                        sx={{ ...(this.isIFrame ? styles.tabContentIFrame : styles.tabContent) }}
+                    >
+                        {(this.state.selectedTab === 'config' || !this.state.selectedTab) && (
+                            <TabBaseConfig
+                                key="config"
+                                common={this.common}
+                                socket={this.socket}
+                                native={this.state.native}
+                                onError={text =>
+                                    this.setState({
+                                        errorText:
+                                            (text || text === 0) && typeof text !== 'string' ? text.toString() : text,
+                                    })
+                                }
+                                onLoad={native => this.onLoadConfig(native)}
+                                instance={this.instance}
+                                adapterName={this.adapterName}
+                                changed={this.state.changed}
+                                onChange={(attr, value, cb) => this.updateNativeValue(attr, value, cb)}
+                            />
+                        )}
+                        {this.state.selectedTab === 'processdata' && (
+                            <TabOptionalData
+                                key="processdata"
+                                type="processdata"
+                                common={this.common}
+                                socket={this.socket}
+                                native={this.state.native}
+                                onError={text =>
+                                    this.setState({
+                                        errorText:
+                                            (text || text === 0) && typeof text !== 'string' ? text.toString() : text,
+                                    })
+                                }
+                                onLoad={native => this.onLoadConfig(native)}
+                                instance={this.instance}
+                                adapterName={this.adapterName}
+                                changed={this.state.changed}
+                                onChange={(attr, value, cb) => this.updateNativeValue(attr, value, cb)}
+                            />
+                        )}
+                        {this.state.selectedTab === 'settings' && (
+                            <TabOptionalData
+                                key="settings"
+                                type="settings"
+                                common={this.common}
+                                socket={this.socket}
+                                native={this.state.native}
+                                onError={text =>
+                                    this.setState({
+                                        errorText:
+                                            (text || text === 0) && typeof text !== 'string' ? text.toString() : text,
+                                    })
+                                }
+                                onLoad={native => this.onLoadConfig(native)}
+                                instance={this.instance}
+                                adapterName={this.adapterName}
+                                changed={this.state.changed}
+                                onChange={(attr, value, cb) => this.updateNativeValue(attr, value, cb)}
+                            />
+                        )}
+                    </Box>
+                </Suspense>
                 {this.renderSaveCloseButtons()}
             </>
         );

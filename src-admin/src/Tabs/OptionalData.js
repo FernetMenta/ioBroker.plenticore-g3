@@ -57,10 +57,11 @@ class Optionals extends Component {
             isInstanceAlive: false,
             errorWithPercent: false,
             availabledata: [],
-            rowSelectionModel: {
-                type: 'include',
-                ids: new Set(),
-            },
+            rowSelectionModel: [],
+            // rowSelectionModel: {
+            //     type: 'include',
+            //     ids: new Set(),
+            // },
         };
 
         this.aliveId = `system.adapter.${this.props.adapterName}.${this.props.instance}.alive`;
@@ -86,10 +87,11 @@ class Optionals extends Component {
      * @param {Array} data - array of IDs and with descriptions
      */
     updateDataWithOptionals(data) {
-        let newRowSelectionModel = {
-            type: 'include',
-            ids: new Set(),
-        };
+        let newRowSelectionModel = [];
+        // let newRowSelectionModel = {
+        //     type: 'include',
+        //     ids: new Set(),
+        // };
         let optionals = [];
         try {
             optionals = JSON.parse(this.optionalsId);
@@ -100,7 +102,7 @@ class Optionals extends Component {
             let found = data.find(elem => elem.id === option.id);
             if (found && !found.preselected) {
                 found.description = option.description;
-                newRowSelectionModel.ids.add(found.id);
+                newRowSelectionModel.push(found.id);
             }
         }
         this.setState({ rowSelectionModel: newRowSelectionModel });
@@ -180,7 +182,7 @@ class Optionals extends Component {
     onRowSelectionModelChange = newRowSelectionModel => {
         this.setState({ rowSelectionModel: newRowSelectionModel });
         let optionals = [];
-        for (const id of newRowSelectionModel.ids) {
+        for (const id of newRowSelectionModel) {
             let found = this.state.allavailable.find(elem => elem.id === id);
             if (found) {
                 optionals.push(found);
@@ -193,7 +195,7 @@ class Optionals extends Component {
     };
 
     onProcessUpdateRow = updatedRow => {
-        let isSelected = this.state.rowSelectionModel.ids.has(updatedRow.id);
+        let isSelected = this.state.rowSelectionModel.includes(updatedRow.id);
         if (isSelected) {
             let optionals = [];
             try {
