@@ -50,6 +50,8 @@ Despite what the name of the adapter may suggest (that only G3 models are suppor
 ## Changelog
 ### **WORK IN PROGRESS**
 - (copilot) Adapter requires node.js >= 22 now
+- update dependencies
+- reduce number of retries on init
 
 ### 0.5.3 (2026-04-02)
 - update dependencies
