@@ -4,8 +4,8 @@
     "private": true,
     "dependencies": {
         "@iobroker/adapter-react-v5": "^8.2.2",
-        "@mui/icons-material": "^7.3.9",
-        "@mui/material": "^9.0.0",
+        "@mui/icons-material": "^9.0.1",
+        "@mui/material": "^9.0.1",
         "@mui/x-data-grid": "^9.0.4",
         "@sentry/browser": "^10.51.0",
         "babel-eslint": "^10.1.0",
