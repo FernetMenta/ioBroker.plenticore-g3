@@ -18,6 +18,11 @@ updates:
       - '**/*'
     cooldown:
       default-days: 7
+    ignore:
+      - dependency-name: "@types/node"
+      # Ignore major updates for Node
+      update-types: ["version-update:semver-major"]
+
 
   - package-ecosystem: 'github-actions'
     directory: '/'
