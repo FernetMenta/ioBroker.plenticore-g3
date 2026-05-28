@@ -8,7 +8,7 @@
         "@mui/material": "^6.5.0",
         "@mui/x-data-grid": "^7.29.13",
         "@emotion/styled": "^11.11.0",
-        "@sentry/browser": "^10.30.0",
+        "@sentry/browser": "^10.53.1",
         "babel-eslint": "^10.1.0",
         "dotenv": "^17.3.1",
         "react-scripts": "5.0.1",
