@@ -72,7 +72,9 @@ Despite what the name of the adapter may suggest (that only G3 models are suppor
 - make API-Call timeout configurable
 - update translations
 
-[Older changelogs can be found there](CHANGELOG_OLD.md)## License
+[Older changelogs can be found there](CHANGELOG_OLD.md)
+
+## License
 MIT License
 
 Copyright (c) 2025-2026 fernetmenta <fernetmenta@online.de>
