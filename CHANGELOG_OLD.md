@@ -1,4 +1,8 @@
 # Older changes
+## 0.5.0 (2025-10-29)
+- make API-Call timeout configurable
+- update translations
+
 ## 0.4.1 (2025-10-17)
 - move to npm trusted publishing
 

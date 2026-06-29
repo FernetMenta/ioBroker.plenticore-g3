@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "plenticore-g3",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "news": {
+      "1.0.1": {
+        "en": "update dependencies",
+        "de": "abhängigkeiten aktualisieren",
+        "ru": "обновление зависимостей",
+        "pt": "atualizar dependências",
+        "nl": "afhankelijkheden bijwerken",
+        "fr": "mettre à jour les dépendances",
+        "it": "aggiornamento dipendenze",
+        "es": "dependencias de actualización",
+        "pl": "aktualizacji zależności",
+        "uk": "оновлення залежності",
+        "zh-cn": "更新依赖关系"
+      },
       "1.0.0": {
         "en": "Adapter requires node.js >= 22 now\nupdate dependencies\nreduce number of retries on init",
         "de": "Adapter benötigt node.js >= 22 jetzt\naktualisierung der abhängigkeiten\nreduzierung der anzahl der retries auf init",
@@ -80,19 +93,6 @@
         "pl": "przejść do npm zaufanych publikacji",
         "uk": "переїзд на npm довірене видання",
         "zh-cn": "移动到 npm 可信出版"
-      },
-      "0.4.0": {
-        "en": "improve init process: do preinit, if inverter is not in state FeedIn; trigger init as soon as inverter goes to FeedIn",
-        "de": "verbesserung des Init-Prozesses: voreinstellen, wenn der Wechselrichter nicht im Zustand FeedIn ist; Trigger init, sobald der Wechselrichter zu FeedIn geht",
-        "ru": "улучшить процесс init: сделать preinit, если инвертор не находится в состоянии FeedIn; запустить init, как только инвертор перейдет в FeedIn",
-        "pt": "melhorar o processo de init: do preinit, se o inversor não estiver no estado FeedIn; gatilho init assim que o inversor for para o FeedIn",
-        "nl": "verbeteren init proces: preinit, als omvormer is niet in staat FeedIn; trigger init zodra omvormer gaat naar FeedIn",
-        "fr": "améliorer le processus d'init: faire préinit, si l'onduleur n'est pas dans l'état FeedIn; déclencher init dès que l'onduleur va à FeedIn",
-        "it": "migliorare il processo init: fare preinit, se inverter non è in stato FeedIn; attivare init non appena inverter va a FeedIn",
-        "es": "mejorar el proceso de entrada: preinit, si el inversor no está en estado FeedIn; gatillo init tan pronto como el inversor va a FeedIn",
-        "pl": "poprawić proces init: zrobić preinit, jeśli inwerter nie jest w stanie FeedIn; uruchomić init jak tylko inwerter idzie do FeedIn",
-        "uk": "поліпшити процес init: do preinit, якщо інвертор не в державі FeedIn; запустити init, як тільки інвертор йде в FeedIn",
-        "zh-cn": "改进 init 进程 : 如果反转器不在状态 FeedIn 中, 做 prinit; 一旦反转器到 FeedIn 中, 立即触发 "
       }
     },
     "titleLang": {
