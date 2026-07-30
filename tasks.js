@@ -37,7 +37,7 @@ function copyAllFiles() {
     );
 
     copyFiles(`${SRC}/build/index.html`, 'admin');
-    fs.rename('admin/index.html', 'admin/index_m.html', () => {});
+    fs.renameSync('admin/index.html', 'admin/index_m.html');
 }
 
 function clean() {
@@ -53,23 +53,14 @@ function installNpmLocal() {
 }
 
 function patchFiles() {
-    if (fs.existsSync(`${__dirname}/admin/index.html`)) {
-        let code = fs.readFileSync(`${__dirname}/admin/index.html`).toString('utf8');
+    const adminIndex = `${__dirname}/admin/index_m.html`;
+    if (fs.existsSync(adminIndex)) {
+        let code = fs.readFileSync(adminIndex).toString('utf8');
         code = code.replace(
-            /<script>var script=document\.createElement\("script"\).+?<\/script>/,
-            `<script type="text/javascript" src="./../../lib/js/socket.io.js"></script>`,
+            /\s*<script>\s*const script = document\.createElement[\s\S]*?<\/script>/,
+            '\n    <script type="text/javascript" src="./../../lib/js/socket.io.js"></script>',
         );
-
-        fs.writeFileSync(`${__dirname}/admin/index.html`, code);
-    }
-    if (fs.existsSync(`${__dirname}/${SRC}/build/index.html`)) {
-        let code = fs.readFileSync(`${__dirname}/${SRC}/build/index.html`).toString('utf8');
-        code = code.replace(
-            /<script>var script=document\.createElement\("script"\).+?<\/script>/,
-            `<script type="text/javascript" src="./../../lib/js/socket.io.js"></script>`,
-        );
-
-        fs.writeFileSync(`${SRC}/build/index.html`, code);
+        fs.writeFileSync(adminIndex, code);
     }
 }
 
