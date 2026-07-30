@@ -9,19 +9,33 @@ export default [
     {
         // specify files to exclude from linting here
         ignores: [
-            '.dev-server/*',
-            '.vscode/',
-            '*.test.js', 
-            'test/**/*.js', 
-            '*.config.mjs', 
-            'build',
-            'node_modules/*',
-            'src-admin/build/*',
-            'src-admin/node_modules/*',
-            'admin/static/*', 
-            'admin/admin.d.ts',
-            '**/adapter-config.d.ts'     
+            'build/**',
+            'node_modules/**',
+            '*.config.mjs',
         ] 
+    },
+
+    {
+        files: ['**/*.jsx'],
+        languageOptions: {
+            ecmaVersion: 2022,
+            sourceType: "module",
+            globals: {
+                ...globals.browser,
+            },
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true,
+                },
+            },
+        },
+        rules: {
+            '@typescript-eslint/no-unsafe-argument': 'off',
+            '@typescript-eslint/no-unsafe-assignment': 'off',
+            '@typescript-eslint/no-unsafe-call': 'off',
+            '@typescript-eslint/no-unsafe-member-access': 'off',
+            '@typescript-eslint/no-unsafe-return': 'off',
+        },
     },
 
     {
@@ -31,15 +45,11 @@ export default [
             globals: {
                 ...globals.browser,
                 ...globals.node,
-                myCustomGlobal: "readonly"
             }
         }
-        // ...other config
     },
 
     {
-        // you may disable some 'jsdoc' warnings - but using jsdoc is highly recommended
-        // as this improves maintainability. jsdoc warnings will not block buiuld process.
         rules: {
             // 'jsdoc/require-jsdoc': 'off',
         }

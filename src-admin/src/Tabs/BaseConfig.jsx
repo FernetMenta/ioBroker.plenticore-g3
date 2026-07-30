@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import {
     TextField,
@@ -13,7 +12,7 @@ import {
 } from '@mui/material';
 
 import { Visibility, VisibilityOff } from '@mui/icons-material';
-import { I18n, Logo } from '@iobroker/adapter-react-v5';
+import { I18n, Logo } from '@iobroker/gui-components';
 
 const styles = {
     tab: {
@@ -40,7 +39,7 @@ const styles = {
  */
 class Options extends Component {
     /**
-     * @param {object} props - properties set when the component gets created
+     * @param props - properties set when the component gets created
      */
     constructor(props) {
         super(props);
@@ -106,6 +105,7 @@ class Options extends Component {
 
     /**
      * Renders the component
+     * @returns JSX element
      */
     render() {
         const narrowWidth = this.props.width === 'xs' || this.props.width === 'sm' || this.props.width === 'md';
@@ -247,17 +247,5 @@ class Options extends Component {
         );
     }
 }
-
-Options.propTypes = {
-    common: PropTypes.object.isRequired,
-    native: PropTypes.object.isRequired,
-    instance: PropTypes.number.isRequired,
-    adapterName: PropTypes.string.isRequired,
-    onError: PropTypes.func,
-    onLoad: PropTypes.func,
-    onChange: PropTypes.func,
-    changed: PropTypes.bool,
-    socket: PropTypes.object.isRequired,
-};
 
 export default Options;

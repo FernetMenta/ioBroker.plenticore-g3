@@ -9,18 +9,15 @@ export default [
     {
         // specify files to exclude from linting here
         ignores: [
-            '.dev-server/*',
+            '.dev-server/**',
             '.vscode/',
             '*.test.js', 
             'test/**/*.js', 
             '*.config.mjs', 
-            'build',
-            'node_modules/*',
-            'src-admin/build/*',
-            'src-admin/node_modules/*',
-            'src-admin/eslint.config.mjs',
-            'admin/static/*', 
-            'admin/admin.d.ts',
+            'build/**',
+            'node_modules/**',
+            'src-admin/**',
+            'admin/**', 
             '**/adapter-config.d.ts',
             'lib/third_party/*',
         ] 

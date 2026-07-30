@@ -7,9 +7,19 @@
 'use strict';
 
 const fs = require('node:fs');
-const { deleteFoldersRecursive, npmInstall, buildReact, copyFiles } = require('@iobroker/build-tools');
+const { execSync } = require('node:child_process');
+const { deleteFoldersRecursive, npmInstall, copyFiles } = require('@iobroker/build-tools');
 
 const SRC = 'src-admin';
+
+function buildVite() {
+    console.log(`[${new Date().toISOString()}] Building admin UI with Vite...`);
+    execSync('npx vite build', {
+        cwd: `${__dirname}/${SRC}`,
+        stdio: 'inherit',
+    });
+    console.log(`[${new Date().toISOString()}] Build completed.`);
+}
 
 function copyAllFiles() {
     deleteFoldersRecursive('admin', ['.png', '.json', 'i18n']);
@@ -18,9 +28,6 @@ function copyAllFiles() {
         [
             `${SRC}/build/**`,
             `!${SRC}/build/index.html`,
-            //            `!${SRC}/build/static/css/*.map`,
-            //            `!${SRC}/build/static/js/*.map`,
-            `!${SRC}/build/static/js/main.*.chunk.js`,
             `!${SRC}/build/static/media/*.svg`,
             `!${SRC}/build/static/media/*.txt`,
             `!${SRC}/build/i18n/*`,
@@ -31,8 +38,6 @@ function copyAllFiles() {
 
     copyFiles(`${SRC}/build/index.html`, 'admin');
     fs.rename('admin/index.html', 'admin/index_m.html', () => {});
-
-    copyFiles(`${SRC}/build/static/js/main.*.chunk.js`, 'admin/static/js');
 }
 
 function clean() {
@@ -76,10 +81,7 @@ if (process.argv.find(arg => arg === '--0-clean')) {
         process.exit(1);
     });
 } else if (process.argv.find(arg => arg === '--2-build')) {
-    buildReact(`${__dirname}/${SRC}`, { rootDir: __dirname }).catch(e => {
-        console.error(`Cannot build: ${e}`);
-        process.exit(1);
-    });
+    buildVite();
 } else if (process.argv.find(arg => arg === '--3-copy')) {
     copyAllFiles();
 } else if (process.argv.find(arg => arg === '--4-patch')) {
@@ -88,7 +90,7 @@ if (process.argv.find(arg => arg === '--0-clean')) {
     clean();
 
     installNpmLocal()
-        .then(() => buildReact(`${__dirname}/${SRC}`, { rootDir: __dirname }))
+        .then(() => buildVite())
         .then(() => copyAllFiles())
         .then(() => patchFiles());
 }

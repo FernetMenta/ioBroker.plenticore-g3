@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { darken, lighten, styled } from '@mui/material/styles';
 
 import { Box } from '@mui/material';
 
 import { DataGrid } from '@mui/x-data-grid';
-import { I18n, Logo } from '@iobroker/adapter-react-v5';
+import { I18n, Logo } from '@iobroker/gui-components';
 
 const getBackgroundColor = (color, theme, coefficient) => ({
     backgroundColor: darken(color, coefficient),
@@ -46,7 +45,7 @@ const StyledDataGrid = styled(DataGrid)(({ theme }) => ({
  */
 class Optionals extends Component {
     /**
-     * @param {object} props - properties set in App.js when component is created
+     * @param props - properties set in App.js when component is created
      */
     constructor(props) {
         super(props);
@@ -57,11 +56,7 @@ class Optionals extends Component {
             isInstanceAlive: false,
             errorWithPercent: false,
             availabledata: [],
-            rowSelectionModel: [],
-            // rowSelectionModel: {
-            //     type: 'include',
-            //     ids: new Set(),
-            // },
+            rowSelectionModel: { type: 'include', ids: new Set() },
         };
 
         this.aliveId = `system.adapter.${this.props.adapterName}.${this.props.instance}.alive`;
@@ -83,15 +78,10 @@ class Optionals extends Component {
 
     /**
      * Updates the arry of IDs in data with user defined optionals
-     *
-     * @param {Array} data - array of IDs and with descriptions
+     * @param data - array of IDs and with descriptions
      */
     updateDataWithOptionals(data) {
-        let newRowSelectionModel = [];
-        // let newRowSelectionModel = {
-        //     type: 'include',
-        //     ids: new Set(),
-        // };
+        const ids = new Set();
         let optionals = [];
         try {
             optionals = JSON.parse(this.optionalsId);
@@ -102,10 +92,10 @@ class Optionals extends Component {
             let found = data.find(elem => elem.id === option.id);
             if (found && !found.preselected) {
                 found.description = option.description;
-                newRowSelectionModel.push(found.id);
+                ids.add(found.id);
             }
         }
-        this.setState({ rowSelectionModel: newRowSelectionModel });
+        this.setState({ rowSelectionModel: { type: 'include', ids } });
     }
 
     static #translateDescription(table) {
@@ -118,8 +108,7 @@ class Optionals extends Component {
 
     /**
      * Reads the iobroker state with all available data
-     *
-     * @param {callback} cb - callback when finished
+     * @param cb - callback when finished
      */
     readStatus(cb) {
         this.props.socket.getState(this.aliveId).then(aliveState =>
@@ -182,7 +171,7 @@ class Optionals extends Component {
     onRowSelectionModelChange = newRowSelectionModel => {
         this.setState({ rowSelectionModel: newRowSelectionModel });
         let optionals = [];
-        for (const id of newRowSelectionModel) {
+        for (const id of newRowSelectionModel.ids) {
             let found = this.state.allavailable.find(elem => elem.id === id);
             if (found) {
                 optionals.push(found);
@@ -195,7 +184,7 @@ class Optionals extends Component {
     };
 
     onProcessUpdateRow = updatedRow => {
-        let isSelected = this.state.rowSelectionModel.includes(updatedRow.id);
+        let isSelected = this.state.rowSelectionModel.ids.has(updatedRow.id);
         if (isSelected) {
             let optionals = [];
             try {
@@ -217,6 +206,7 @@ class Optionals extends Component {
 
     /**
      * Renders the component
+     * @returns JSX element
      */
     render() {
         return (
@@ -251,17 +241,5 @@ class Optionals extends Component {
         );
     }
 }
-
-Optionals.propTypes = {
-    common: PropTypes.object.isRequired,
-    native: PropTypes.object.isRequired,
-    instance: PropTypes.number.isRequired,
-    adapterName: PropTypes.string.isRequired,
-    onError: PropTypes.func,
-    onLoad: PropTypes.func,
-    onChange: PropTypes.func,
-    socket: PropTypes.object.isRequired,
-    type: PropTypes.object.isRequired,
-};
 
 export default Optionals;

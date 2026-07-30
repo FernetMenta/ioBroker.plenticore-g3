@@ -6,7 +6,19 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 
-import { GenericApp, Router, Loader, I18n } from '@iobroker/adapter-react-v5';
+import { GenericApp, Router, Loader, I18n } from '@iobroker/gui-components';
+
+import en from './i18n/en.json';
+import de from './i18n/de.json';
+import ru from './i18n/ru.json';
+import pt from './i18n/pt.json';
+import nl from './i18n/nl.json';
+import fr from './i18n/fr.json';
+import it from './i18n/it.json';
+import es from './i18n/es.json';
+import pl from './i18n/pl.json';
+import uk from './i18n/uk.json';
+import zhCn from './i18n/zh-cn.json';
 
 const TabBaseConfig = React.lazy(() => import('./Tabs/BaseConfig'));
 const TabOptionalData = React.lazy(() => import('./Tabs/OptionalData'));
@@ -30,23 +42,23 @@ const styles = {
  */
 class App extends GenericApp {
     /**
-     * @param {object} props - react properties including 'adapterName'
+     * @param props - react properties including 'adapterName'
      */
     constructor(props) {
         const extendedProps = { ...props };
         extendedProps.encryptedFields = ['pass']; // this parameter will be encrypted and decrypted automatically
         extendedProps.translations = {
-            en: require('./i18n/en'),
-            de: require('./i18n/de'),
-            ru: require('./i18n/ru'),
-            pt: require('./i18n/pt'),
-            nl: require('./i18n/nl'),
-            fr: require('./i18n/fr'),
-            it: require('./i18n/it'),
-            es: require('./i18n/es'),
-            pl: require('./i18n/pl'),
-            uk: require('./i18n/uk'),
-            'zh-cn': require('./i18n/zh-cn'),
+            en,
+            de,
+            ru,
+            pt,
+            nl,
+            fr,
+            it,
+            es,
+            pl,
+            uk,
+            'zh-cn': zhCn,
         };
         // get actual admin port
         extendedProps.socket = { port: parseInt(window.location.port, 10) };
@@ -67,6 +79,7 @@ class App extends GenericApp {
 
     /**
      * returns index of selected tab
+     * @returns tab index
      */
     getSelectedTab() {
         const tab = this.state.selectedTab;
@@ -81,6 +94,7 @@ class App extends GenericApp {
 
     /**
      * renders an AppBar with Tabs
+     * @returns JSX element
      */
     renderTabsForConfig() {
         return (
@@ -180,6 +194,7 @@ class App extends GenericApp {
 
     /**
      * renders this component
+     * @returns JSX element
      */
     render() {
         if (!this.state.loaded) {
