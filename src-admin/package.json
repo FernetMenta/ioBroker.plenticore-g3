@@ -4,7 +4,7 @@
     "private": true,
     "type": "module",
     "dependencies": {
-        "@iobroker/gui-components": "^10.0.5",
+        "@iobroker/gui-components": "^10.0.12",
         "@mui/icons-material": "^9.2.0",
         "@mui/material": "^9.2.0",
         "@mui/x-data-grid": "^9.10.1",
