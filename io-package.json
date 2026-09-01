@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "plenticore-g3",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "news": {
+      "1.0.2": {
+        "en": "update dependencies",
+        "de": "Abhängigkeiten aktualisieren",
+        "ru": "обновить зависимости",
+        "pt": "atualizar dependências",
+        "nl": "afhankelijkheden bijwerken",
+        "fr": "mettre à jour les dépendances",
+        "it": "aggiornare le dipendenze",
+        "es": "actualizar dependencias",
+        "pl": "aktualizuj zależności",
+        "uk": "оновити залежності",
+        "zh-cn": "更新依赖项"
+      },
       "1.0.1": {
         "en": "update dependencies",
         "de": "abhängigkeiten aktualisieren",
@@ -80,19 +93,6 @@
         "pl": "make API- Call timeout configurowalny\naktualizacja tłumaczeń",
         "uk": "make API-Call налаштування часу\nоновлення перекладів",
         "zh-cn": "使 API- Call 超时配置\n更新翻译"
-      },
-      "0.4.1": {
-        "en": "move to npm trusted publishing",
-        "de": "umzug auf npm vertrauenswürdige veröffentlichung",
-        "ru": "перейти в npm trusted publishing",
-        "pt": "mover para a publicação confiável do npm",
-        "nl": "verplaatsen naar npm vertrouwde publicatie",
-        "fr": "passer à npm publication de confiance",
-        "it": "passare a npm pubblicazione fidata",
-        "es": "pasar a npm publicación de confianza",
-        "pl": "przejść do npm zaufanych publikacji",
-        "uk": "переїзд на npm довірене видання",
-        "zh-cn": "移动到 npm 可信出版"
       }
     },
     "titleLang": {
