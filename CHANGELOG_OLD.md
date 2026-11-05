@@ -1,4 +1,9 @@
 # Older changes
+## 0.5.2 (2026-01-04)
+- fix skipping optionals that have become preselected
+- fix not showing settings for battery when present
+- update dependencies
+
 ## 0.5.1 (2025-11-20)
 - bump some packages
 - split react bundle

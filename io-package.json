@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "plenticore-g3",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "news": {
+      "1.0.3": {
+        "en": "bump @iobroker/testing\nbump dependencies",
+        "de": "bump @iobroker /testen\nAbhängigkeiten erhöhen",
+        "ru": "bump @iobroker /тестирование\nувеличение зависимостей",
+        "pt": "bump @iobroker /teste\nbump dependências",
+        "nl": "bump @iobroker /testing\nbump afhankelijkheden",
+        "fr": "bump @iobroker /testing\nbump dependencies",
+        "it": "bump @iobroker /test\ndipendenze bump",
+        "es": "bump @iobroker /testing\naumentar dependencias",
+        "pl": "bump @iobroker /testy\nuzależnienia od wypukłości",
+        "uk": "бамп @iobroker /тестування\nзалежності від бумпів",
+        "zh-cn": "碰撞 @iobroker /testing\n增加依赖关系"
+      },
       "1.0.2": {
         "en": "update dependencies",
         "de": "Abhängigkeiten aktualisieren",
@@ -80,19 +93,6 @@
         "pl": "bump niektóre pakiety\npodzielony pakiet reakcji\nnaprawić nieobsługiwany wyjątek podczas ankiety inverter stan\nfix brakujący opis wstępnie wybranych wartości (poprzednie opcje)",
         "uk": "бампер деякі пакети\nрозбити реанімаційний пакет\nзафіксувати несвоєчасне виключення при обпиленні інверторного стану\nфіксувати відсутній опис заданого значення (форматор опціонів)",
         "zh-cn": "折叠一些软件包\n拆分反应捆绑\n在投票倒数状态时解决未处理的例外\n修复预选值的缺失描述( 前可选)"
-      },
-      "0.5.0": {
-        "en": "make API-Call timeout configurable\nupdate translations",
-        "de": "aPI-Call Timeout konfigurierbar machen\nübersetzungen aktualisieren",
-        "ru": "сделать API-Call Timeout настраиваемым\nобновление переводов",
-        "pt": "tornar configurável o tempo- limite de chamada da API\natualizar traduções",
-        "nl": "aPI-Call timeout configureerbaar maken\nvertalingen bijwerken",
-        "fr": "configurable API-Call timeout\nmettre à jour les traductions",
-        "it": "rendere configurabile il timeout API-Call\naggiornare le traduzioni",
-        "es": "make API-Call timeout configurable\ntraducción actualizada",
-        "pl": "make API- Call timeout configurowalny\naktualizacja tłumaczeń",
-        "uk": "make API-Call налаштування часу\nоновлення перекладів",
-        "zh-cn": "使 API- Call 超时配置\n更新翻译"
       }
     },
     "titleLang": {
